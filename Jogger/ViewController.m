@@ -85,4 +85,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(NSMutableArray*)makeArray:(CLLocation*)location
+{
+    NSMutableArray* a = [[NSMutableArray alloc]init];
+    CLLocationCoordinate2D currentCoordinate = location.coordinate;
+    CLLocation* loc;
+    for(int i = 0; i < 1000; i++)
+    {
+        int latitude = currentCoordinate.latitude + i * 0.01;
+        int longitude = currentCoordinate.longitude + i * 0.01;
+        loc = [[CLLocation alloc]initWithLatitude:latitude longitude:longitude];
+        [a addObject:loc];
+        
+        currentCoordinate = CLLocationCoordinate2DMake(latitude, longitude);
+    }
+    
+    return a;
+}
+
 @end
