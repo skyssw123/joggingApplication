@@ -81,7 +81,6 @@
     // and because life is too frigging short, let's just call it TWICE
     
     [self drawLineSubroutine];
-    [self drawLineSubroutine];
     
 }
 
@@ -111,16 +110,17 @@
     
     // create a polyline with all cooridnates
     self.polyline = [MKPolyline polylineWithCoordinates:coordinates count:self.allPins.count];
-    [self.mapView addOverlay:self.polyline];
     
     // create an MKPolylineView and add it to the map view
     self.lineView = [[MKPolylineView alloc] initWithPolyline:self.polyline];
     self.lineView.strokeColor = [UIColor blueColor];
     self.lineView.lineWidth = 5;
     
+    [self.mapView addOverlay:self.polyline];
+    
+    
     // for a laugh: how many polylines are we drawing here?
     self.title = [[NSString alloc]initWithFormat:@"%lu", (unsigned long)self.mapView.overlays.count];
-    
 }
 
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay {
