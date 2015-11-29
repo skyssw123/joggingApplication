@@ -28,11 +28,6 @@
     
     CLLocation *location = [self.locationManager location];
     
-    
-    long latitude = location.coordinate.latitude;
-    long longitude = location.coordinate.longitude;
-    
-    
     [self.mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
     [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
     
@@ -55,6 +50,7 @@
     CLLocation *location = [self.locationManager location];
     //MKOverlayView* overlayView = [self.mapView a];
     [self.mapView setCenterCoordinate:location.coordinate animated:YES];
+    [self.lineView removeFromSuperview];
 }
 
 - (void)addPin:(UIGestureRecognizer *)recognizer {
@@ -69,7 +65,10 @@
     
     // and add it to our view and our array
     Pin *newPin = [[Pin alloc]initWithCoordinate:mapPoint];
+    
+    
     [self.mapView addAnnotation:newPin];
+    
     [self.allPins addObject:newPin];
     
     [self drawLines:self];
@@ -113,11 +112,14 @@
     // create a polyline with all cooridnates
     MKPolyline *polyline = [MKPolyline polylineWithCoordinates:coordinates count:self.allPins.count];
     [self.mapView addOverlay:polyline];
+    
+    
+    
     self.polyline = polyline;
     
     // create an MKPolylineView and add it to the map view
-    self.lineView = [[MKPolylineView alloc]initWithPolyline:self.polyline];
-    self.lineView.strokeColor = [UIColor redColor];
+    self.lineView = [[MKPolylineView alloc] initWithPolyline:self.polyline];
+    self.lineView.strokeColor = [UIColor blueColor];
     self.lineView.lineWidth = 5;
     
     // for a laugh: how many polylines are we drawing here?
@@ -127,6 +129,7 @@
 
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay {
     
+    //return nil;
     return self.lineView;
 }
 
