@@ -50,7 +50,6 @@
     CLLocation *location = [self.locationManager location];
     //MKOverlayView* overlayView = [self.mapView a];
     [self.mapView setCenterCoordinate:location.coordinate animated:YES];
-    [self.lineView removeFromSuperview];
 }
 
 - (void)addPin:(UIGestureRecognizer *)recognizer {
@@ -76,9 +75,6 @@
 }
 
 - (IBAction)drawLines:(id)sender {
-    
-    // HACK: for some reason this only updates the map view every other time
-    // and because life is too frigging short, let's just call it TWICE
     
     [self drawLineSubroutine];
     
