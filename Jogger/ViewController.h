@@ -9,15 +9,15 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "Pin.h"
+#import "MapViewController.h"
 
 @interface ViewController : UIViewController<MKMapViewDelegate, CLLocationManagerDelegate>
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
-@property (strong, nonatomic) CLLocationManager* locationManager;
-@property (strong, nonatomic) CLLocation* currentLocation;
+@property (weak, nonatomic) IBOutlet UIView *viewForMap;
 @property (strong, nonatomic) MKPolyline* polyline;
 @property (strong, nonatomic) MKPolylineView* lineView;
 @property (strong, nonatomic) NSMutableArray* allPins;
+@property (strong, nonatomic) MapViewController* mapViewController;
 
 
 @end

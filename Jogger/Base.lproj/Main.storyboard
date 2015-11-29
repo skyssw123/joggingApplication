@@ -26,43 +26,32 @@
                                     <action selector="startButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NnZ-Ah-Zxf"/>
                                 </connections>
                             </button>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="EDq-k0-LZk">
-                                <rect key="frame" x="0.0" y="8" width="607" height="542"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qv6-zF-RG7">
+                                <rect key="frame" x="5" y="11" width="600" height="542"/>
                                 <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="607" id="cZ9-ZQ-Rst"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="cZ9-ZQ-Rst"/>
-                                    </mask>
-                                </variation>
-                            </mapView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="d4c-Pz-EEX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="08O-R4-wxB"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="EDq-k0-LZk" secondAttribute="trailing" constant="-27" id="E5J-RN-1Sy"/>
-                            <constraint firstItem="d4c-Pz-EEX" firstAttribute="top" secondItem="EDq-k0-LZk" secondAttribute="bottom" constant="20" id="Kuz-rS-9qm"/>
-                            <constraint firstItem="EDq-k0-LZk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="bmz-K3-1M8"/>
-                            <constraint firstItem="EDq-k0-LZk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jS7-hJ-oHk"/>
-                            <constraint firstItem="EDq-k0-LZk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ltL-Xc-4a4"/>
-                            <constraint firstItem="EDq-k0-LZk" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="ucR-eE-8TH"/>
-                            <constraint firstItem="EDq-k0-LZk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="w03-ok-SRJ"/>
+                            <constraint firstItem="Qv6-zF-RG7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="3jd-GM-bQg"/>
+                            <constraint firstItem="Qv6-zF-RG7" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="4MF-Ju-LPY"/>
+                            <constraint firstItem="d4c-Pz-EEX" firstAttribute="top" secondItem="Qv6-zF-RG7" secondAttribute="bottom" constant="20" id="aKI-QY-nSW"/>
+                            <constraint firstItem="Qv6-zF-RG7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="n2A-FH-mWI"/>
+                            <constraint firstItem="Qv6-zF-RG7" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="pT2-Gd-56f"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="d4c-Pz-EEX" secondAttribute="bottom" constant="20" id="yni-c4-3HL"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="E5J-RN-1Sy"/>
-                                <exclude reference="bmz-K3-1M8"/>
-                                <exclude reference="ltL-Xc-4a4"/>
+                                <exclude reference="4MF-Ju-LPY"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="mapView" destination="EDq-k0-LZk" id="vbD-9I-dDD"/>
                         <outlet property="startButton" destination="d4c-Pz-EEX" id="F0y-rb-a9C"/>
+                        <outlet property="viewForMap" destination="Qv6-zF-RG7" id="7uw-9N-JeH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

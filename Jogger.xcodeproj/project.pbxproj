@@ -12,6 +12,12 @@
 		271777D21C0AA763005FE4E0 /* Pin.m in Sources */ = {isa = PBXBuildFile; fileRef = 271777D11C0AA763005FE4E0 /* Pin.m */; };
 		271777D31C0AA763005FE4E0 /* Pin.m in Sources */ = {isa = PBXBuildFile; fileRef = 271777D11C0AA763005FE4E0 /* Pin.m */; };
 		271777D41C0AA763005FE4E0 /* Pin.m in Sources */ = {isa = PBXBuildFile; fileRef = 271777D11C0AA763005FE4E0 /* Pin.m */; };
+		271777D91C0B7ADE005FE4E0 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 271777D81C0B7ADE005FE4E0 /* MapView.xib */; };
+		271777DA1C0B7ADE005FE4E0 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 271777D81C0B7ADE005FE4E0 /* MapView.xib */; };
+		271777DB1C0B7ADE005FE4E0 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 271777D81C0B7ADE005FE4E0 /* MapView.xib */; };
+		271777DE1C0B7B7A005FE4E0 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 271777DD1C0B7B7A005FE4E0 /* MapViewController.m */; };
+		271777DF1C0B7B7A005FE4E0 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 271777DD1C0B7B7A005FE4E0 /* MapViewController.m */; };
+		271777E01C0B7B7A005FE4E0 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 271777DD1C0B7B7A005FE4E0 /* MapViewController.m */; };
 		275CAD131C0A537300190036 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 275CAD121C0A537300190036 /* main.m */; };
 		275CAD161C0A537300190036 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 275CAD151C0A537300190036 /* AppDelegate.m */; };
 		275CAD191C0A537300190036 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 275CAD181C0A537300190036 /* ViewController.m */; };
@@ -47,6 +53,9 @@
 		271777CE1C0A5CD9005FE4E0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		271777D01C0AA763005FE4E0 /* Pin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pin.h; path = ../Pin.h; sourceTree = "<group>"; };
 		271777D11C0AA763005FE4E0 /* Pin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Pin.m; path = ../Pin.m; sourceTree = "<group>"; };
+		271777D81C0B7ADE005FE4E0 /* MapView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapView.xib; sourceTree = "<group>"; };
+		271777DC1C0B7B7A005FE4E0 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		271777DD1C0B7B7A005FE4E0 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		275CAD0E1C0A537200190036 /* Jogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		275CAD121C0A537300190036 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		275CAD141C0A537300190036 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -103,6 +112,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		271777D51C0B799E005FE4E0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				271777D01C0AA763005FE4E0 /* Pin.h */,
+				271777D11C0AA763005FE4E0 /* Pin.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		271777D61C0B79A8005FE4E0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				275CAD1A1C0A537300190036 /* Main.storyboard */,
+				275CAD221C0A537300190036 /* LaunchScreen.storyboard */,
+				271777D81C0B7ADE005FE4E0 /* MapView.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		271777D71C0B79B3005FE4E0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				275CAD171C0A537300190036 /* ViewController.h */,
+				275CAD181C0A537300190036 /* ViewController.m */,
+				271777DC1C0B7B7A005FE4E0 /* MapViewController.h */,
+				271777DD1C0B7B7A005FE4E0 /* MapViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		275CAD051C0A537200190036 = {
 			isa = PBXGroup;
 			children = (
@@ -128,15 +167,12 @@
 		275CAD101C0A537200190036 /* Jogger */ = {
 			isa = PBXGroup;
 			children = (
+				271777D71C0B79B3005FE4E0 /* Controller */,
+				271777D61C0B79A8005FE4E0 /* View */,
+				271777D51C0B799E005FE4E0 /* Model */,
 				275CAD141C0A537300190036 /* AppDelegate.h */,
-				271777D01C0AA763005FE4E0 /* Pin.h */,
-				271777D11C0AA763005FE4E0 /* Pin.m */,
 				275CAD151C0A537300190036 /* AppDelegate.m */,
-				275CAD171C0A537300190036 /* ViewController.h */,
-				275CAD181C0A537300190036 /* ViewController.m */,
-				275CAD1A1C0A537300190036 /* Main.storyboard */,
 				275CAD201C0A537300190036 /* Assets.xcassets */,
-				275CAD221C0A537300190036 /* LaunchScreen.storyboard */,
 				275CAD251C0A537300190036 /* Info.plist */,
 				275CAD1D1C0A537300190036 /* Jogger.xcdatamodeld */,
 				275CAD111C0A537200190036 /* Supporting Files */,
@@ -306,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				275CAD241C0A537300190036 /* LaunchScreen.storyboard in Resources */,
+				271777D91C0B7ADE005FE4E0 /* MapView.xib in Resources */,
 				275CAD211C0A537300190036 /* Assets.xcassets in Resources */,
 				275CAD1C1C0A537300190036 /* Main.storyboard in Resources */,
 			);
@@ -315,6 +352,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				271777DA1C0B7ADE005FE4E0 /* MapView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +360,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				271777DB1C0B7ADE005FE4E0 /* MapView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,6 +497,7 @@
 				275CAD191C0A537300190036 /* ViewController.m in Sources */,
 				275CAD1F1C0A537300190036 /* Jogger.xcdatamodeld in Sources */,
 				275CAD161C0A537300190036 /* AppDelegate.m in Sources */,
+				271777DE1C0B7B7A005FE4E0 /* MapViewController.m in Sources */,
 				271777D21C0AA763005FE4E0 /* Pin.m in Sources */,
 				275CAD131C0A537300190036 /* main.m in Sources */,
 			);
@@ -467,6 +507,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				271777DF1C0B7B7A005FE4E0 /* MapViewController.m in Sources */,
 				275CAD2F1C0A537300190036 /* JoggerTests.m in Sources */,
 				271777D31C0AA763005FE4E0 /* Pin.m in Sources */,
 			);
@@ -476,6 +517,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				271777E01C0B7B7A005FE4E0 /* MapViewController.m in Sources */,
 				275CAD3A1C0A537300190036 /* JoggerUITests.m in Sources */,
 				271777D41C0AA763005FE4E0 /* Pin.m in Sources */,
 			);
