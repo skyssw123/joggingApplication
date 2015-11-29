@@ -53,7 +53,6 @@
 
 - (IBAction)startButtonClicked:(id)sender {
     CLLocation *location = [self.locationManager location];
-    NSMutableArray* array = [self makeArray:location];
     //MKOverlayView* overlayView = [self.mapView a];
     [self.mapView setCenterCoordinate:location.coordinate animated:YES];
 }
