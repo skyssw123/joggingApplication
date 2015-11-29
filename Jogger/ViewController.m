@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-
 @interface ViewController ()
 
 @end
@@ -17,29 +16,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.mapView.delegate = self;
+    self.allPins = [[NSMutableArray alloc]init];
     self.mapView.mapType = MKMapTypeStandard;
     self.mapView.showsUserLocation = YES;
-    
-    
-}
-- (void)viewWillAppear:(BOOL)animated
-{
     self.locationManager = [[CLLocationManager alloc] init];
-    
-    bool a = [CLLocationManager locationServicesEnabled];
     self.locationManager.delegate = self;
     self.locationManager.distanceFilter = kCLDistanceFilterNone;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    
     [self.locationManager requestAlwaysAuthorization];
-    
-    
     [self.locationManager startUpdatingLocation];
-    
-    
-    
-    self.geocoder = [[CLGeocoder alloc] init];
-    
     
     CLLocation *location = [self.locationManager location];
     
@@ -50,15 +35,14 @@
     
     [self.mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
     [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
-
+    
+    UILongPressGestureRecognizer *recognizer = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(addPin:)];
+    recognizer.minimumPressDuration = 0.5;
+    [self.mapView addGestureRecognizer:recognizer];
 }
-
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+- (void)viewWillAppear:(BOOL)animated
 {
-    NSLog(@"didFailWithError: %@", error);
-    UIAlertView *errorAlert = [[UIAlertView alloc]
-                               initWithTitle:@"Error" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [errorAlert show];
+
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
@@ -69,38 +53,82 @@
 
 - (IBAction)startButtonClicked:(id)sender {
     CLLocation *location = [self.locationManager location];
-    long latitude = location.coordinate.latitude;
-    long longitude = location.coordinate.longitude;
+    NSMutableArray* array = [self makeArray:location];
+    //MKOverlayView* overlayView = [self.mapView a];
     [self.mapView setCenterCoordinate:location.coordinate animated:YES];
 }
 
-
--(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
-{
-    NSLog(@"location delegation called..");
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
--(NSMutableArray*)makeArray:(CLLocation*)location
-{
-    NSMutableArray* a = [[NSMutableArray alloc]init];
-    CLLocationCoordinate2D currentCoordinate = location.coordinate;
-    CLLocation* loc;
-    for(int i = 0; i < 1000; i++)
-    {
-        int latitude = currentCoordinate.latitude + i * 0.01;
-        int longitude = currentCoordinate.longitude + i * 0.01;
-        loc = [[CLLocation alloc]initWithLatitude:latitude longitude:longitude];
-        [a addObject:loc];
-        
-        currentCoordinate = CLLocationCoordinate2DMake(latitude, longitude);
+- (void)addPin:(UIGestureRecognizer *)recognizer {
+    
+    if (recognizer.state != UIGestureRecognizerStateBegan) {
+        return;
     }
     
-    return a;
+    // convert touched position to map coordinate
+    CGPoint userTouch = [recognizer locationInView:self.mapView];
+    CLLocationCoordinate2D mapPoint = [self.mapView convertPoint:userTouch toCoordinateFromView:self.mapView];
+    
+    // and add it to our view and our array
+    Pin *newPin = [[Pin alloc]initWithCoordinate:mapPoint];
+    [self.mapView addAnnotation:newPin];
+    [self.allPins addObject:newPin];
+    
+    [self drawLines:self];
+    
+}
+
+- (IBAction)drawLines:(id)sender {
+    
+    // HACK: for some reason this only updates the map view every other time
+    // and because life is too frigging short, let's just call it TWICE
+    
+    [self drawLineSubroutine];
+    [self drawLineSubroutine];
+    
+}
+
+- (IBAction)undoLastPin:(id)sender {
+    
+    // grab the last Pin and remove it from our map view
+    Pin *latestPin = [self.allPins lastObject];
+    [self.mapView removeAnnotation:latestPin];
+    [self.allPins removeLastObject];
+    
+    // redraw the polyline
+    [self drawLines:self];
+}
+
+- (void)drawLineSubroutine {
+    
+    // remove polyline if one exists
+    [self.mapView removeOverlay:self.polyline];
+    
+    // create an array of coordinates from allPins
+    CLLocationCoordinate2D coordinates[self.allPins.count];
+    int i = 0;
+    for (Pin *currentPin in self.allPins) {
+        coordinates[i] = currentPin.coordinate;
+        i++;
+    }
+    
+    // create a polyline with all cooridnates
+    MKPolyline *polyline = [MKPolyline polylineWithCoordinates:coordinates count:self.allPins.count];
+    [self.mapView addOverlay:polyline];
+    self.polyline = polyline;
+    
+    // create an MKPolylineView and add it to the map view
+    self.lineView = [[MKPolylineView alloc]initWithPolyline:self.polyline];
+    self.lineView.strokeColor = [UIColor redColor];
+    self.lineView.lineWidth = 5;
+    
+    // for a laugh: how many polylines are we drawing here?
+    self.title = [[NSString alloc]initWithFormat:@"%lu", (unsigned long)self.mapView.overlays.count];
+    
+}
+
+- (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay {
+    
+    return self.lineView;
 }
 
 @end

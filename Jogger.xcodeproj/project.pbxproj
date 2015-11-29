@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1AB9B65BD37B488CC1787CE1 /* libPods-JoggerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 563F756ABA48BDF2A03278A4 /* libPods-JoggerTests.a */; };
 		271777CF1C0A5CD9005FE4E0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271777CE1C0A5CD9005FE4E0 /* MapKit.framework */; };
+		271777D21C0AA763005FE4E0 /* Pin.m in Sources */ = {isa = PBXBuildFile; fileRef = 271777D11C0AA763005FE4E0 /* Pin.m */; };
+		271777D31C0AA763005FE4E0 /* Pin.m in Sources */ = {isa = PBXBuildFile; fileRef = 271777D11C0AA763005FE4E0 /* Pin.m */; };
+		271777D41C0AA763005FE4E0 /* Pin.m in Sources */ = {isa = PBXBuildFile; fileRef = 271777D11C0AA763005FE4E0 /* Pin.m */; };
 		275CAD131C0A537300190036 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 275CAD121C0A537300190036 /* main.m */; };
 		275CAD161C0A537300190036 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 275CAD151C0A537300190036 /* AppDelegate.m */; };
 		275CAD191C0A537300190036 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 275CAD181C0A537300190036 /* ViewController.m */; };
@@ -42,6 +45,8 @@
 /* Begin PBXFileReference section */
 		2030390A92F16C86F93F71E8 /* libPods-Jogger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Jogger.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		271777CE1C0A5CD9005FE4E0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		271777D01C0AA763005FE4E0 /* Pin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pin.h; path = ../Pin.h; sourceTree = "<group>"; };
+		271777D11C0AA763005FE4E0 /* Pin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Pin.m; path = ../Pin.m; sourceTree = "<group>"; };
 		275CAD0E1C0A537200190036 /* Jogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		275CAD121C0A537300190036 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		275CAD141C0A537300190036 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -124,6 +129,8 @@
 			isa = PBXGroup;
 			children = (
 				275CAD141C0A537300190036 /* AppDelegate.h */,
+				271777D01C0AA763005FE4E0 /* Pin.h */,
+				271777D11C0AA763005FE4E0 /* Pin.m */,
 				275CAD151C0A537300190036 /* AppDelegate.m */,
 				275CAD171C0A537300190036 /* ViewController.h */,
 				275CAD181C0A537300190036 /* ViewController.m */,
@@ -451,6 +458,7 @@
 				275CAD191C0A537300190036 /* ViewController.m in Sources */,
 				275CAD1F1C0A537300190036 /* Jogger.xcdatamodeld in Sources */,
 				275CAD161C0A537300190036 /* AppDelegate.m in Sources */,
+				271777D21C0AA763005FE4E0 /* Pin.m in Sources */,
 				275CAD131C0A537300190036 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,6 +468,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				275CAD2F1C0A537300190036 /* JoggerTests.m in Sources */,
+				271777D31C0AA763005FE4E0 /* Pin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +477,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				275CAD3A1C0A537300190036 /* JoggerUITests.m in Sources */,
+				271777D41C0AA763005FE4E0 /* Pin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
