@@ -17,5 +17,6 @@
 @property (strong, nonatomic) MKPolyline* polyline;
 @property (strong, nonatomic) MKPolylineView* lineView;
 @property (strong, nonatomic) NSMutableArray* allPins;
+@property (nonatomic, strong) NSMutableArray* locArray;
 
 @end

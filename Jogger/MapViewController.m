@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.locArray = [[NSMutableArray alloc]init];
     self.mapView.delegate = self;
     self.allPins = [[NSMutableArray alloc]init];
     self.mapView.mapType = MKMapTypeStandard;
@@ -117,6 +117,8 @@
 {
     NSLog(@"OldLocation %f %f", oldLocation.coordinate.latitude, oldLocation.coordinate.longitude);
     NSLog(@"NewLocation %f %f", newLocation.coordinate.latitude, newLocation.coordinate.longitude);
+    [self.locArray addObject:newLocation];
+    [self drawLineSubroutine];
 }
 
 -(void)awakeFromNib

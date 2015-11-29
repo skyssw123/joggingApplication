@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 @interface ViewController ()
-@property (nonatomic, strong) NSMutableArray* locArray;
 @property BOOL isTripBeingRecorded;
 @end
 
