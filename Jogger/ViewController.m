@@ -110,12 +110,8 @@
     }
     
     // create a polyline with all cooridnates
-    MKPolyline *polyline = [MKPolyline polylineWithCoordinates:coordinates count:self.allPins.count];
-    [self.mapView addOverlay:polyline];
-    
-    
-    
-    self.polyline = polyline;
+    self.polyline = [MKPolyline polylineWithCoordinates:coordinates count:self.allPins.count];
+    [self.mapView addOverlay:self.polyline];
     
     // create an MKPolylineView and add it to the map view
     self.lineView = [[MKPolylineView alloc] initWithPolyline:self.polyline];
@@ -128,8 +124,6 @@
 }
 
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay {
-    
-    //return nil;
     return self.lineView;
 }
 
