@@ -27,7 +27,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qv6-zF-RG7">
-                                <rect key="frame" x="5" y="11" width="600" height="542"/>
+                                <rect key="frame" x="0.0" y="29" width="600" height="542"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -38,14 +38,18 @@
                             <constraint firstItem="d4c-Pz-EEX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="08O-R4-wxB"/>
                             <constraint firstItem="Qv6-zF-RG7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="3jd-GM-bQg"/>
                             <constraint firstItem="Qv6-zF-RG7" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="4MF-Ju-LPY"/>
+                            <constraint firstItem="Qv6-zF-RG7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="DxJ-xL-NoP"/>
                             <constraint firstItem="d4c-Pz-EEX" firstAttribute="top" secondItem="Qv6-zF-RG7" secondAttribute="bottom" constant="20" id="aKI-QY-nSW"/>
+                            <constraint firstItem="Qv6-zF-RG7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="jZG-sx-TSF"/>
                             <constraint firstItem="Qv6-zF-RG7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="n2A-FH-mWI"/>
                             <constraint firstItem="Qv6-zF-RG7" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="pT2-Gd-56f"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="d4c-Pz-EEX" secondAttribute="bottom" constant="20" id="yni-c4-3HL"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="3jd-GM-bQg"/>
                                 <exclude reference="4MF-Ju-LPY"/>
+                                <exclude reference="n2A-FH-mWI"/>
                             </mask>
                         </variation>
                     </view>

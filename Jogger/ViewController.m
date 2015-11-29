@@ -8,14 +8,15 @@
 
 #import "ViewController.h"
 @interface ViewController ()
-
+@property (nonatomic, strong) NSMutableArray* locArray;
+@property BOOL isTripBeingRecorded;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.isTripBeingRecorded = NO;
     self.mapViewController = [[[NSBundle mainBundle] loadNibNamed:@"MapView" owner:self options:nil] objectAtIndex:0];
     
     
@@ -34,5 +35,18 @@
 //    CLLocation *location = [self.locationManager location];
 //    //MKOverlayView* overlayView = [self.mapView a];
 //    [self.mapView setCenterCoordinate:location.coordinate animated:YES];
+    if(!self.isTripBeingRecorded)
+    {
+        self.isTripBeingRecorded = YES;
+        [self.startButton setTitle:@"START TRIP" forState:UIControlStateNormal];
+        [self.mapViewController.locationManager startUpdatingLocation];
+    }
+    else
+    {
+        self.isTripBeingRecorded = NO;
+        [self.startButton setTitle:@"STOP TRIP" forState:UIControlStateNormal];
+        [self.mapViewController.locationManager stopUpdatingLocation];
+    }
+    
 }
 @end

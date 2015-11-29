@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pin.m"
-            timestampString = "470521168.113796"
+            filePath = "Jogger/MapViewController.m"
+            timestampString = "470522441.720359"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
-            landmarkName = "-initWithCoordinate:"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "-addPin:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
