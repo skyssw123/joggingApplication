@@ -7,8 +7,12 @@
 //
 
 #import "MapViewController.h"
+#import "Localizable.strings"
+#import "Colors.h"
+
 @interface MapViewController ()
 @property BOOL isTripBeingRecorded;
+@property NSTimeInterval prevTimestamp;
 @end
 
 @implementation MapViewController
@@ -17,7 +21,10 @@
     [super viewDidLoad];
     self.mapView.delegate = self;
     self.allPins = [[NSMutableArray alloc]init];
-    
+    [self.startButton setTitle:@"START TRIP" forState:UIControlStateNormal];
+    self.startButton.backgroundColor = PRIMARY_BRAND_COLOR;
+    self.startButton.tintColor = PRIMARY_TEXT_COLOR;
+    //[self.startButton setTitleColor:PRIMARY_TEXT_COLOR forState:UIControlStateNormal];
     
     self.mapView.mapType = MKMapTypeStandard;
     self.mapView.showsUserLocation = YES;
@@ -42,11 +49,18 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
-    
+    NSTimeInterval timeInMiliseconds = [newLocation.timestamp timeIntervalSince1970];
+    NSLog(@"timestamp Mili  %f", timeInMiliseconds);
     NSLog(@"timestamp   %@", newLocation.timestamp);
     NSLog(@"OldLocation %f %f", oldLocation.coordinate.latitude, oldLocation.coordinate.longitude);
     NSLog(@"NewLocation %f %f", newLocation.coordinate.latitude, newLocation.coordinate.longitude);
-    [self.allLocs addObject:newLocation];
+    
+    if(timeInMiliseconds - self.prevTimestamp > 15)
+    {
+        [self.mapView setCenterCoordinate:newLocation.coordinate animated:YES];
+        [self.allLocs addObject:newLocation];
+        self.prevTimestamp = timeInMiliseconds;
+    }
 }
 
 - (IBAction)startButtonClicked:(id)sender
