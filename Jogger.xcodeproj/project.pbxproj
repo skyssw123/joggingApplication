@@ -103,6 +103,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		271777E11C0BE84C005FE4E0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				271777D01C0AA763005FE4E0 /* Pin.h */,
+				271777D11C0AA763005FE4E0 /* Pin.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		271777E21C0BE851005FE4E0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				275CAD1A1C0A537300190036 /* Main.storyboard */,
+				275CAD221C0A537300190036 /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		271777E31C0BE859005FE4E0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				275CAD171C0A537300190036 /* ViewController.h */,
+				275CAD181C0A537300190036 /* ViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		275CAD051C0A537200190036 = {
 			isa = PBXGroup;
 			children = (
@@ -128,15 +155,12 @@
 		275CAD101C0A537200190036 /* Jogger */ = {
 			isa = PBXGroup;
 			children = (
+				271777E31C0BE859005FE4E0 /* Controller */,
+				271777E21C0BE851005FE4E0 /* View */,
+				271777E11C0BE84C005FE4E0 /* Model */,
 				275CAD141C0A537300190036 /* AppDelegate.h */,
-				271777D01C0AA763005FE4E0 /* Pin.h */,
-				271777D11C0AA763005FE4E0 /* Pin.m */,
 				275CAD151C0A537300190036 /* AppDelegate.m */,
-				275CAD171C0A537300190036 /* ViewController.h */,
-				275CAD181C0A537300190036 /* ViewController.m */,
-				275CAD1A1C0A537300190036 /* Main.storyboard */,
 				275CAD201C0A537300190036 /* Assets.xcassets */,
-				275CAD221C0A537300190036 /* LaunchScreen.storyboard */,
 				275CAD251C0A537300190036 /* Info.plist */,
 				275CAD1D1C0A537300190036 /* Jogger.xcdatamodeld */,
 				275CAD111C0A537200190036 /* Supporting Files */,
