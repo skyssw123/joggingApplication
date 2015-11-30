@@ -44,6 +44,7 @@
 {
     NSLog(@"OldLocation %f %f", oldLocation.coordinate.latitude, oldLocation.coordinate.longitude);
     NSLog(@"NewLocation %f %f", newLocation.coordinate.latitude, newLocation.coordinate.longitude);
+    [self.allLocs addObject:newLocation];
 }
 
 - (IBAction)startButtonClicked:(id)sender
@@ -53,13 +54,14 @@
         [self.locationManager stopUpdatingLocation];
         [self.startButton setTitle:@"START TRIP" forState:UIControlStateNormal];
         self.isTripBeingRecorded = NO;
+        [self drawLineAtOnce:self.allLocs withColor:[UIColor blackColor] withLineWidth:10];
     }
     
     else
     {
         [self.locationManager startUpdatingLocation];
         [self.startButton setTitle:@"STOP TRIP" forState:UIControlStateNormal];
-        self.isTripBeingRecorded = NO;
+        self.isTripBeingRecorded = YES;
     }
 }
 
