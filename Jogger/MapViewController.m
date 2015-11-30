@@ -6,17 +6,19 @@
 //  Copyright © 2015 sin. All rights reserved.
 //
 
-#import "ViewController.h"
-@interface ViewController ()
-
+#import "MapViewController.h"
+@interface MapViewController ()
+@property BOOL isTripBeingRecorded;
 @end
 
-@implementation ViewController
+@implementation MapViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.mapView.delegate = self;
     self.allPins = [[NSMutableArray alloc]init];
+    self.allLocs = [[NSMutableArray alloc]init];
+    
     self.mapView.mapType = MKMapTypeStandard;
     self.mapView.showsUserLocation = YES;
     self.locationManager = [[CLLocationManager alloc] init];
@@ -24,17 +26,15 @@
     self.locationManager.distanceFilter = kCLDistanceFilterNone;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [self.locationManager requestAlwaysAuthorization];
-    [self.locationManager startUpdatingLocation];
-    
-    CLLocation *location = [self.locationManager location];
     
     [self.mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
     [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
-    
     UILongPressGestureRecognizer *recognizer = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(addPin:)];
     recognizer.minimumPressDuration = 0.5;
     [self.mapView addGestureRecognizer:recognizer];
 }
+
+
 - (void)viewWillAppear:(BOOL)animated
 {
 
@@ -46,11 +46,21 @@
     NSLog(@"NewLocation %f %f", newLocation.coordinate.latitude, newLocation.coordinate.longitude);
 }
 
-- (IBAction)startButtonClicked:(id)sender {
-    CLLocation *location = [self.locationManager location];
-    //MKOverlayView* overlayView = [self.mapView a];
-    [self.mapView setCenterCoordinate:location.coordinate animated:YES];
-    [self.lineView removeFromSuperview];
+- (IBAction)startButtonClicked:(id)sender
+{
+    if(self.isTripBeingRecorded)
+    {
+        [self.locationManager stopUpdatingLocation];
+        [self.startButton setTitle:@"START TRIP" forState:UIControlStateNormal];
+        self.isTripBeingRecorded = NO;
+    }
+    
+    else
+    {
+        [self.locationManager startUpdatingLocation];
+        [self.startButton setTitle:@"STOP TRIP" forState:UIControlStateNormal];
+        self.isTripBeingRecorded = NO;
+    }
 }
 
 - (void)addPin:(UIGestureRecognizer *)recognizer {
@@ -68,52 +78,34 @@
     
     
     [self.mapView addAnnotation:newPin];
-    
     [self.allPins addObject:newPin];
-    [self drawLineSubroutine];
+    [self drawLineAtOnce:self.allPins withColor:[UIColor blackColor] withLineWidth:10];
     
 }
-
-- (IBAction)undoLastPin:(id)sender {
-    
-    // grab the last Pin and remove it from our map view
-    Pin *latestPin = [self.allPins lastObject];
-    [self.mapView removeAnnotation:latestPin];
-    [self.allPins removeLastObject];
-    
-    // redraw the polyline
-    [self drawLineSubroutine];
-}
-
-- (void)drawLineSubroutine {
-    
-    // remove polyline if one exists
+- (void)drawLineAtOnce:(NSMutableArray*)allPins withColor:(UIColor*)color withLineWidth:(int)lineWidth
+{
     [self.mapView removeOverlay:self.polyline];
-    
     // create an array of coordinates from allPins
-    CLLocationCoordinate2D coordinates[self.allPins.count];
+    CLLocationCoordinate2D coordinates[allPins.count];
     int i = 0;
-    for (Pin *currentPin in self.allPins) {
+    for (Pin *currentPin in allPins) {
         coordinates[i] = currentPin.coordinate;
         i++;
     }
     
-    // create a polyline with all cooridnates
-    self.polyline = [MKPolyline polylineWithCoordinates:coordinates count:self.allPins.count];
-    
-    // create an MKPolylineView and add it to the map view
+    self.polyline = [MKPolyline polylineWithCoordinates:coordinates count:allPins.count];
     self.lineView = [[MKPolylineView alloc] initWithPolyline:self.polyline];
-    self.lineView.strokeColor = [UIColor blueColor];
-    self.lineView.lineWidth = 5;
-    
+    self.lineView.strokeColor = color;
+    self.lineView.lineWidth = lineWidth;
+
     [self.mapView addOverlay:self.polyline];
     
     // for a laugh: how many polylines are we drawing here?
     self.title = [[NSString alloc]initWithFormat:@"%lu", (unsigned long)self.mapView.overlays.count];
-    
 }
 
-- (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay {
+- (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay
+{
     return self.lineView;
 }
 

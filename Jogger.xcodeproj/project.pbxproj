@@ -14,7 +14,7 @@
 		271777D41C0AA763005FE4E0 /* Pin.m in Sources */ = {isa = PBXBuildFile; fileRef = 271777D11C0AA763005FE4E0 /* Pin.m */; };
 		275CAD131C0A537300190036 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 275CAD121C0A537300190036 /* main.m */; };
 		275CAD161C0A537300190036 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 275CAD151C0A537300190036 /* AppDelegate.m */; };
-		275CAD191C0A537300190036 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 275CAD181C0A537300190036 /* ViewController.m */; };
+		275CAD191C0A537300190036 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 275CAD181C0A537300190036 /* MapViewController.m */; };
 		275CAD1C1C0A537300190036 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 275CAD1A1C0A537300190036 /* Main.storyboard */; };
 		275CAD1F1C0A537300190036 /* Jogger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 275CAD1D1C0A537300190036 /* Jogger.xcdatamodeld */; };
 		275CAD211C0A537300190036 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 275CAD201C0A537300190036 /* Assets.xcassets */; };
@@ -51,8 +51,8 @@
 		275CAD121C0A537300190036 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		275CAD141C0A537300190036 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		275CAD151C0A537300190036 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		275CAD171C0A537300190036 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		275CAD181C0A537300190036 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		275CAD171C0A537300190036 /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		275CAD181C0A537300190036 /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		275CAD1B1C0A537300190036 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		275CAD1E1C0A537300190036 /* Jogger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Jogger.xcdatamodel; sourceTree = "<group>"; };
 		275CAD201C0A537300190036 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -124,8 +124,8 @@
 		271777E31C0BE859005FE4E0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				275CAD171C0A537300190036 /* ViewController.h */,
-				275CAD181C0A537300190036 /* ViewController.m */,
+				275CAD171C0A537300190036 /* MapViewController.h */,
+				275CAD181C0A537300190036 /* MapViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -479,7 +479,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				275CAD191C0A537300190036 /* ViewController.m in Sources */,
+				275CAD191C0A537300190036 /* MapViewController.m in Sources */,
 				275CAD1F1C0A537300190036 /* Jogger.xcdatamodeld in Sources */,
 				275CAD161C0A537300190036 /* AppDelegate.m in Sources */,
 				271777D21C0AA763005FE4E0 /* Pin.m in Sources */,
