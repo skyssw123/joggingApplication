@@ -9,5 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @interface FileLogging : NSObject
-
+@property (strong, nonatomic) NSString *fileHeaderMessage;
+@property (strong, nonatomic) NSString *documentDirectory;
+@property (strong, nonatomic) NSString *filePath;
+@property (strong, nonatomic) NSString *dirPath;
+@property (strong, nonatomic) NSString *fileName;
++ (FileLogging *) sharedInstance;
+- (void) log:(NSString *) message;
+- (NSString *) moveFileTo:(NSString *) directory withNewFileName:(NSString *) fileName;
+- (void) addFileHeaderMessage:(NSString *) header;
 @end

@@ -9,6 +9,7 @@
 #import "MapViewController.h"
 #import "Localizable.strings"
 #import "Colors.h"
+#import "Numbers.h"
 
 @interface MapViewController ()
 @property BOOL isTripBeingRecorded;
@@ -49,13 +50,13 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
-    NSTimeInterval timeInMiliseconds = [newLocation.timestamp timeIntervalSince1970];
+    NSTimeInterval timeInMiliseconds = [newLocation.timestamp timeIntervalSince1970] * 1000;
     NSLog(@"timestamp Mili  %f", timeInMiliseconds);
     NSLog(@"timestamp   %@", newLocation.timestamp);
     NSLog(@"OldLocation %f %f", oldLocation.coordinate.latitude, oldLocation.coordinate.longitude);
     NSLog(@"NewLocation %f %f", newLocation.coordinate.latitude, newLocation.coordinate.longitude);
     
-    if(timeInMiliseconds - self.prevTimestamp > 15)
+    if((timeInMiliseconds - self.prevTimestamp > 10000) && (newLocation.horizontalAccuracy >= DEFAULT_ACCURACY_THRESHOLD))
     {
         [self.mapView setCenterCoordinate:newLocation.coordinate animated:YES];
         [self.allLocs addObject:newLocation];

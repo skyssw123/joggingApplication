@@ -9,5 +9,6 @@
 #ifndef Numbers_h
 #define Numbers_h
 
+#define DEFAULT_ACCURACY_THRESHOLD 65.0
 
 #endif /* Numbers_h */

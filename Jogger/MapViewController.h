@@ -10,6 +10,7 @@
 #import <MapKit/MapKit.h>
 #import "Pin.h"
 #import "Localizable.strings"
+#import "FileLogging.h"
 
 @interface MapViewController : UIViewController<MKMapViewDelegate, CLLocationManagerDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
