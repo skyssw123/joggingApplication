@@ -17,7 +17,7 @@
     [super viewDidLoad];
     self.mapView.delegate = self;
     self.allPins = [[NSMutableArray alloc]init];
-    self.allLocs = [[NSMutableArray alloc]init];
+    
     
     self.mapView.mapType = MKMapTypeStandard;
     self.mapView.showsUserLocation = YES;
@@ -42,6 +42,8 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
+    
+    NSLog(@"timestamp   %@", newLocation.timestamp);
     NSLog(@"OldLocation %f %f", oldLocation.coordinate.latitude, oldLocation.coordinate.longitude);
     NSLog(@"NewLocation %f %f", newLocation.coordinate.latitude, newLocation.coordinate.longitude);
     [self.allLocs addObject:newLocation];
@@ -59,6 +61,7 @@
     
     else
     {
+        self.allLocs = [[NSMutableArray alloc]init];
         [self.locationManager startUpdatingLocation];
         [self.startButton setTitle:@"STOP TRIP" forState:UIControlStateNormal];
         self.isTripBeingRecorded = YES;
@@ -90,7 +93,7 @@
     // create an array of coordinates from allPins
     CLLocationCoordinate2D coordinates[allPins.count];
     int i = 0;
-    for (Pin *currentPin in allPins) {
+    for (CLLocation *currentPin in allPins) {
         coordinates[i] = currentPin.coordinate;
         i++;
     }
