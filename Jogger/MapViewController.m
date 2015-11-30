@@ -28,7 +28,6 @@
     [self.locationManager requestAlwaysAuthorization];
     CLLocation *location = [self.locationManager location];
     
-    
     [self.mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
     [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
     UILongPressGestureRecognizer *recognizer = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(addPin:)];
@@ -43,10 +42,8 @@
 
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
-    
-    NSLog(@"MapView: %@", mapView);
+    //NSLog(@"MapView: %@", mapView);
 }
-
 
 - (void)addPin:(UIGestureRecognizer *)recognizer {
     
