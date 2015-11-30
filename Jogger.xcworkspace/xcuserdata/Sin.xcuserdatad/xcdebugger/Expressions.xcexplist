@@ -11,14 +11,6 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[ViewController drawLineSubroutine]:ViewController.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.lineView">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "-[ViewController mapView:viewForOverlay:]:ViewController.m">
          <PersistentStrings>
             <PersistentString
@@ -49,10 +41,29 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[ViewController drawLineSubroutine]:ViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.lineView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MapViewController locationManager:didUpdateToLocation:fromLocation:]:MapViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[ViewController startButtonClicked:]:ViewController.m">
          <PersistentStrings>
             <PersistentString
                value = "self.viewForMap">
+            </PersistentString>
+            <PersistentString
+               value = "self.mapViewController">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

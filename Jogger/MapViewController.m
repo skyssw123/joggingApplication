@@ -26,13 +26,11 @@
     self.locationManager.distanceFilter = kCLDistanceFilterNone;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [self.locationManager requestAlwaysAuthorization];
-    
     CLLocation *location = [self.locationManager location];
     
     
     [self.mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
     [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
-    
     UILongPressGestureRecognizer *recognizer = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(addPin:)];
     recognizer.minimumPressDuration = 0.5;
     [self.mapView addGestureRecognizer:recognizer];
@@ -42,6 +40,14 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
+    
+    NSLog(@"MapView: %@", mapView);
+}
+
+
 - (void)addPin:(UIGestureRecognizer *)recognizer {
     
     if (recognizer.state != UIGestureRecognizerStateBegan) {
@@ -54,32 +60,11 @@
     
     // and add it to our view and our array
     Pin *newPin = [[Pin alloc]initWithCoordinate:mapPoint];
-    
-    
     [self.mapView addAnnotation:newPin];
-    
     [self.allPins addObject:newPin];
-    
-    [self drawLines:self];
-    
-}
-
-- (IBAction)drawLines:(id)sender {
-    
     [self drawLineSubroutine];
-    
 }
 
-- (IBAction)undoLastPin:(id)sender {
-    
-    // grab the last Pin and remove it from our map view
-    Pin *latestPin = [self.allPins lastObject];
-    [self.mapView removeAnnotation:latestPin];
-    [self.allPins removeLastObject];
-    
-    // redraw the polyline
-    [self drawLines:self];
-}
 
 - (void)drawLineSubroutine {
     
@@ -101,7 +86,6 @@
     self.lineView = [[MKPolylineView alloc] initWithPolyline:self.polyline];
     self.lineView.strokeColor = [UIColor blueColor];
     self.lineView.lineWidth = 5;
-    
     [self.mapView addOverlay:self.polyline];
     
     
@@ -113,6 +97,7 @@
     return self.lineView;
 }
 
+
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
     NSLog(@"OldLocation %f %f", oldLocation.coordinate.latitude, oldLocation.coordinate.longitude);
@@ -123,10 +108,7 @@
 
 -(void)awakeFromNib
 {
-    //[[NSBundle mainBundle] loadNibNamed:@"MapView" owner:self options:nil];
     [super awakeFromNib];
-    
-    //[super viewDidLoad];
     [self viewDidLoad];
 }
 

@@ -13,7 +13,8 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     self.isTripBeingRecorded = NO;
     self.mapViewController = [[[NSBundle mainBundle] loadNibNamed:@"MapView" owner:self options:nil] objectAtIndex:0];
@@ -30,22 +31,19 @@
 
 }
 
-- (IBAction)startButtonClicked:(id)sender {
-//    CLLocation *location = [self.locationManager location];
-//    //MKOverlayView* overlayView = [self.mapView a];
-//    [self.mapView setCenterCoordinate:location.coordinate animated:YES];
+- (IBAction)startButtonClicked:(id)sender
+{
     if(!self.isTripBeingRecorded)
     {
         self.isTripBeingRecorded = YES;
-        [self.startButton setTitle:@"START TRIP" forState:UIControlStateNormal];
+        [self.startButton setTitle:@"STOP TRIP" forState:UIControlStateNormal];
         [self.mapViewController.locationManager startUpdatingLocation];
     }
     else
     {
         self.isTripBeingRecorded = NO;
-        [self.startButton setTitle:@"STOP TRIP" forState:UIControlStateNormal];
+        [self.startButton setTitle:@"START TRIP" forState:UIControlStateNormal];
         [self.mapViewController.locationManager stopUpdatingLocation];
     }
-    
 }
 @end
