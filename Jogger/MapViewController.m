@@ -14,6 +14,7 @@
 @interface MapViewController ()
 @property BOOL isTripBeingRecorded;
 @property NSTimeInterval prevTimestamp;
+@property FileLogging* fileLogger;
 @end
 
 @implementation MapViewController
@@ -22,6 +23,7 @@
     [super viewDidLoad];
     self.mapView.delegate = self;
     self.allPins = [[NSMutableArray alloc]init];
+    self.fileLogger = [FileLogging sharedInstance];
     [self.startButton setTitle:@"START TRIP" forState:UIControlStateNormal];
     self.startButton.backgroundColor = PRIMARY_BRAND_COLOR;
     self.startButton.tintColor = PRIMARY_TEXT_COLOR;
@@ -42,7 +44,6 @@
     [self.mapView addGestureRecognizer:recognizer];
 }
 
-
 - (void)viewWillAppear:(BOOL)animated
 {
 
@@ -51,16 +52,22 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
     NSTimeInterval timeInMiliseconds = [newLocation.timestamp timeIntervalSince1970] * 1000;
-    NSLog(@"timestamp Mili  %f", timeInMiliseconds);
-    NSLog(@"timestamp   %@", newLocation.timestamp);
-    NSLog(@"OldLocation %f %f", oldLocation.coordinate.latitude, oldLocation.coordinate.longitude);
-    NSLog(@"NewLocation %f %f", newLocation.coordinate.latitude, newLocation.coordinate.longitude);
     
     if((timeInMiliseconds - self.prevTimestamp > 10000) && (newLocation.horizontalAccuracy >= DEFAULT_ACCURACY_THRESHOLD))
     {
         [self.mapView setCenterCoordinate:newLocation.coordinate animated:YES];
         [self.allLocs addObject:newLocation];
         self.prevTimestamp = timeInMiliseconds;
+        
+        NSString* logString1 = [NSString stringWithFormat:@"timestamp Mili  %f", timeInMiliseconds];
+        NSString* logString2 = [NSString stringWithFormat:@"timestamp   %@", newLocation.timestamp];
+        NSString* logString3 = [NSString stringWithFormat:@"NewLocation %f %f", newLocation.coordinate.latitude, newLocation.coordinate.longitude];
+        NSLog(logString1);
+        NSLog(logString2);
+        NSLog(logString3);
+        [self.fileLogger log:logString1];
+        [self.fileLogger log:logString2];
+        [self.fileLogger log:logString3];
     }
 }
 
