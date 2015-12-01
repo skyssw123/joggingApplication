@@ -18,6 +18,9 @@
 		271777EB1C0D1261005FE4E0 /* FileLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 271777EA1C0D1261005FE4E0 /* FileLogging.m */; };
 		271777EC1C0D1261005FE4E0 /* FileLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 271777EA1C0D1261005FE4E0 /* FileLogging.m */; };
 		271777ED1C0D1261005FE4E0 /* FileLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 271777EA1C0D1261005FE4E0 /* FileLogging.m */; };
+		271777F11C0D4D5B005FE4E0 /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = 271777F01C0D4D5B005FE4E0 /* Trip.m */; };
+		271777F21C0D4D5B005FE4E0 /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = 271777F01C0D4D5B005FE4E0 /* Trip.m */; };
+		271777F31C0D4D5B005FE4E0 /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = 271777F01C0D4D5B005FE4E0 /* Trip.m */; };
 		275CAD131C0A537300190036 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 275CAD121C0A537300190036 /* main.m */; };
 		275CAD161C0A537300190036 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 275CAD151C0A537300190036 /* AppDelegate.m */; };
 		275CAD191C0A537300190036 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 275CAD181C0A537300190036 /* MapViewController.m */; };
@@ -58,6 +61,8 @@
 		271777E91C0D1261005FE4E0 /* FileLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileLogging.h; sourceTree = "<group>"; };
 		271777EA1C0D1261005FE4E0 /* FileLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileLogging.m; sourceTree = "<group>"; };
 		271777EE1C0D1767005FE4E0 /* Numbers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Numbers.h; sourceTree = "<group>"; };
+		271777EF1C0D4D5B005FE4E0 /* Trip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trip.h; sourceTree = "<group>"; };
+		271777F01C0D4D5B005FE4E0 /* Trip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trip.m; sourceTree = "<group>"; };
 		275CAD0E1C0A537200190036 /* Jogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		275CAD121C0A537300190036 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		275CAD141C0A537300190036 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -121,6 +126,8 @@
 				271777D11C0AA763005FE4E0 /* Pin.m */,
 				271777E91C0D1261005FE4E0 /* FileLogging.h */,
 				271777EA1C0D1261005FE4E0 /* FileLogging.m */,
+				271777EF1C0D4D5B005FE4E0 /* Trip.h */,
+				271777F01C0D4D5B005FE4E0 /* Trip.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -500,6 +507,7 @@
 			files = (
 				275CAD191C0A537300190036 /* MapViewController.m in Sources */,
 				275CAD1F1C0A537300190036 /* Jogger.xcdatamodeld in Sources */,
+				271777F11C0D4D5B005FE4E0 /* Trip.m in Sources */,
 				275CAD161C0A537300190036 /* AppDelegate.m in Sources */,
 				271777EB1C0D1261005FE4E0 /* FileLogging.m in Sources */,
 				271777D21C0AA763005FE4E0 /* Pin.m in Sources */,
@@ -511,6 +519,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				271777F21C0D4D5B005FE4E0 /* Trip.m in Sources */,
 				271777EC1C0D1261005FE4E0 /* FileLogging.m in Sources */,
 				275CAD2F1C0A537300190036 /* JoggerTests.m in Sources */,
 				271777D31C0AA763005FE4E0 /* Pin.m in Sources */,
@@ -521,6 +530,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				271777F31C0D4D5B005FE4E0 /* Trip.m in Sources */,
 				271777ED1C0D1261005FE4E0 /* FileLogging.m in Sources */,
 				275CAD3A1C0A537300190036 /* JoggerUITests.m in Sources */,
 				271777D41C0AA763005FE4E0 /* Pin.m in Sources */,
