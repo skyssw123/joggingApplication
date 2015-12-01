@@ -23,7 +23,6 @@
         double distance;
         double time;
         double velocity;
-        NSUInteger speedEventCount = 0;
         CLLocation* currentLoc;
         CLLocation* prevLoc = _startLoc;
         NSUInteger count = [locs count];
