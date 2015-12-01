@@ -3,16 +3,78 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[MapViewController mapView:didSelectAnnotationView:]:MapViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.lineView">
+            </PersistentString>
+            <PersistentString
+               value = "self.mapView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ViewController setMapViewController:]:ViewController.h">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.mapViewController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ViewController mapView:viewForOverlay:]:ViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.lineView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[ViewController viewDidLoad]:ViewController.m">
          <PersistentStrings>
+            <PersistentString
+               value = "self.mapView.userLocation">
+            </PersistentString>
             <PersistentString
                value = "self.locationManager.location.coordinate.latitude">
             </PersistentString>
             <PersistentString
                value = "self.mapView.userLocation.location.coordinate.latitude">
             </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MapViewController awakeFromNib]:MapViewController.m">
+         <PersistentStrings>
             <PersistentString
-               value = "self.mapView.userLocation">
+               value = "self.mapView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ViewController drawLineSubroutine]:ViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.lineView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MapViewController locationManager:didUpdateToLocation:fromLocation:]:MapViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "timeInMiliseconds - self.prevTimestamp">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ViewController startButtonClicked:]:ViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.viewForMap">
+            </PersistentString>
+            <PersistentString
+               value = "self.mapViewController">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

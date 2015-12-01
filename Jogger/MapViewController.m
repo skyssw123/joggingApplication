@@ -53,7 +53,7 @@
 {
     NSTimeInterval timeInMiliseconds = [newLocation.timestamp timeIntervalSince1970] * 1000;
     
-    if((timeInMiliseconds - self.prevTimestamp > 10000) && (newLocation.horizontalAccuracy >= DEFAULT_ACCURACY_THRESHOLD))
+    if(timeInMiliseconds - self.prevTimestamp > 10000) //(newLocation.horizontalAccuracy >= DEFAULT_ACCURACY_THRESHOLD)
     {
         [self.mapView setCenterCoordinate:newLocation.coordinate animated:YES];
         [self.allLocs addObject:newLocation];
@@ -62,9 +62,9 @@
         NSString* logString1 = [NSString stringWithFormat:@"timestamp Mili  %f", timeInMiliseconds];
         NSString* logString2 = [NSString stringWithFormat:@"timestamp   %@", newLocation.timestamp];
         NSString* logString3 = [NSString stringWithFormat:@"NewLocation %f %f", newLocation.coordinate.latitude, newLocation.coordinate.longitude];
-        NSLog(logString1);
-        NSLog(logString2);
-        NSLog(logString3);
+//        NSLog(logString1);
+//        NSLog(logString2);
+//        NSLog(logString3);
         [self.fileLogger log:logString1];
         [self.fileLogger log:logString2];
         [self.fileLogger log:logString3];
