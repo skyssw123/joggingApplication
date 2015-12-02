@@ -7,7 +7,8 @@
 //
 
 #import "FileLogging.h"
-#define DEFAULT_FILENAME @"logs.txt"
+#import "Localizable.strings"
+#import "Settings.h"
 
 @implementation FileLogging
 

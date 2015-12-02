@@ -34,13 +34,11 @@
             _totalDistance += distance;
             time = [currentLoc.timestamp timeIntervalSince1970] - [prevLoc.timestamp timeIntervalSince1970];
             velocity = distance / time;
-            
             if(velocity > 2.0)
             {
                 [_speedEvents addObject:currentLoc];
                 [_speedEvents addObject:prevLoc];
             }
-            
             prevLoc = currentLoc;
         }
         

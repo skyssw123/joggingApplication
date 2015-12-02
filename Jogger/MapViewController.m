@@ -76,6 +76,7 @@
     if(self.isTripBeingRecorded)
     {
         [self.locationManager stopUpdatingLocation];
+        [self.fileLogger log:@"END OF TRIP"];
         [self.startButton setTitle:@"START TRIP" forState:UIControlStateNormal];
         self.isTripBeingRecorded = NO;
         [self drawLineAtOnce:self.allLocs withColor:[UIColor blackColor] withLineWidth:10];
@@ -85,6 +86,7 @@
     {
         self.allLocs = [[NSMutableArray alloc]init];
         [self.locationManager startUpdatingLocation];
+        [self.fileLogger log:@"START OF TRIP"];
         [self.startButton setTitle:@"STOP TRIP" forState:UIControlStateNormal];
         self.isTripBeingRecorded = YES;
     }
