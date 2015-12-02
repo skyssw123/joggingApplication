@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TripFactory.h"
 #import <MapKit/MapKit.h>
 #import "Pin.h"
 #import "Localizable.strings"

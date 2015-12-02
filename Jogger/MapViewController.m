@@ -42,6 +42,7 @@
     UILongPressGestureRecognizer *recognizer = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(addPin:)];
     recognizer.minimumPressDuration = 0.5;
     [self.mapView addGestureRecognizer:recognizer];
+    Trip* trip = [TripFactory produceTrip:lastTrip];
 }
 
 - (void)viewWillAppear:(BOOL)animated

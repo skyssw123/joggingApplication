@@ -8,11 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "Trip.h"
+#import "DDFileReader.h"
+#import "FileLogging.h"
 typedef enum
 {
-    lastTrip = 0,
+    noTrip = 0,
+    lastTrip = 1,
 }TripPeriod;
 
 @interface TripFactory : NSObject
--(Trip*)readTrip:(TripPeriod)period;
++(Trip*)produceTrip:(TripPeriod)period;
 @end

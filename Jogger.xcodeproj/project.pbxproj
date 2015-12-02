@@ -24,9 +24,9 @@
 		271777F61C0E98CA005FE4E0 /* TripFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 271777F51C0E98CA005FE4E0 /* TripFactory.m */; };
 		271777F71C0E98CA005FE4E0 /* TripFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 271777F51C0E98CA005FE4E0 /* TripFactory.m */; };
 		271777F81C0E98CA005FE4E0 /* TripFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 271777F51C0E98CA005FE4E0 /* TripFactory.m */; };
-		271777FB1C0E9B2A005FE4E0 /* FileReading.m in Sources */ = {isa = PBXBuildFile; fileRef = 271777FA1C0E9B2A005FE4E0 /* FileReading.m */; };
-		271777FC1C0E9B2A005FE4E0 /* FileReading.m in Sources */ = {isa = PBXBuildFile; fileRef = 271777FA1C0E9B2A005FE4E0 /* FileReading.m */; };
-		271777FD1C0E9B2A005FE4E0 /* FileReading.m in Sources */ = {isa = PBXBuildFile; fileRef = 271777FA1C0E9B2A005FE4E0 /* FileReading.m */; };
+		271778011C0EA705005FE4E0 /* DDFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 271778001C0EA705005FE4E0 /* DDFileReader.m */; };
+		271778021C0EA705005FE4E0 /* DDFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 271778001C0EA705005FE4E0 /* DDFileReader.m */; };
+		271778031C0EA705005FE4E0 /* DDFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 271778001C0EA705005FE4E0 /* DDFileReader.m */; };
 		275CAD131C0A537300190036 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 275CAD121C0A537300190036 /* main.m */; };
 		275CAD161C0A537300190036 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 275CAD151C0A537300190036 /* AppDelegate.m */; };
 		275CAD191C0A537300190036 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 275CAD181C0A537300190036 /* MapViewController.m */; };
@@ -71,9 +71,9 @@
 		271777F01C0D4D5B005FE4E0 /* Trip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trip.m; sourceTree = "<group>"; };
 		271777F41C0E98CA005FE4E0 /* TripFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripFactory.h; sourceTree = "<group>"; };
 		271777F51C0E98CA005FE4E0 /* TripFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripFactory.m; sourceTree = "<group>"; };
-		271777F91C0E9B2A005FE4E0 /* FileReading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileReading.h; sourceTree = "<group>"; };
-		271777FA1C0E9B2A005FE4E0 /* FileReading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileReading.m; sourceTree = "<group>"; };
 		271777FE1C0E9C6F005FE4E0 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
+		271777FF1C0EA705005FE4E0 /* DDFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDFileReader.h; sourceTree = "<group>"; };
+		271778001C0EA705005FE4E0 /* DDFileReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDFileReader.m; sourceTree = "<group>"; };
 		275CAD0E1C0A537200190036 /* Jogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		275CAD121C0A537300190036 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		275CAD141C0A537300190036 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -141,8 +141,8 @@
 				271777F01C0D4D5B005FE4E0 /* Trip.m */,
 				271777F41C0E98CA005FE4E0 /* TripFactory.h */,
 				271777F51C0E98CA005FE4E0 /* TripFactory.m */,
-				271777F91C0E9B2A005FE4E0 /* FileReading.h */,
-				271777FA1C0E9B2A005FE4E0 /* FileReading.m */,
+				271777FF1C0EA705005FE4E0 /* DDFileReader.h */,
+				271778001C0EA705005FE4E0 /* DDFileReader.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -527,8 +527,8 @@
 				275CAD161C0A537300190036 /* AppDelegate.m in Sources */,
 				271777EB1C0D1261005FE4E0 /* FileLogging.m in Sources */,
 				271777D21C0AA763005FE4E0 /* Pin.m in Sources */,
-				271777FB1C0E9B2A005FE4E0 /* FileReading.m in Sources */,
 				275CAD131C0A537300190036 /* main.m in Sources */,
+				271778011C0EA705005FE4E0 /* DDFileReader.m in Sources */,
 				271777F61C0E98CA005FE4E0 /* TripFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -537,8 +537,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				271777FC1C0E9B2A005FE4E0 /* FileReading.m in Sources */,
 				271777F21C0D4D5B005FE4E0 /* Trip.m in Sources */,
+				271778021C0EA705005FE4E0 /* DDFileReader.m in Sources */,
 				271777EC1C0D1261005FE4E0 /* FileLogging.m in Sources */,
 				275CAD2F1C0A537300190036 /* JoggerTests.m in Sources */,
 				271777F71C0E98CA005FE4E0 /* TripFactory.m in Sources */,
@@ -550,8 +550,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				271777FD1C0E9B2A005FE4E0 /* FileReading.m in Sources */,
 				271777F31C0D4D5B005FE4E0 /* Trip.m in Sources */,
+				271778031C0EA705005FE4E0 /* DDFileReader.m in Sources */,
 				271777ED1C0D1261005FE4E0 /* FileLogging.m in Sources */,
 				275CAD3A1C0A537300190036 /* JoggerUITests.m in Sources */,
 				271777F81C0E98CA005FE4E0 /* TripFactory.m in Sources */,

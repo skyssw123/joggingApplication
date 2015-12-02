@@ -8,14 +8,26 @@
 
 #import "TripFactory.h"
 
-
 @implementation TripFactory
--(Trip*)readTrip:(TripPeriod)period
+
++(Trip*)produceTrip:(TripPeriod)period
 {
     Trip* trip;
+    int selectedTrip = 0;
+    DDFileReader * reader = [[DDFileReader alloc] initWithFilePath:[FileLogging sharedInstance].filePath];
+    NSString * line = nil;
+    
     if(period == lastTrip)
     {
-        trip = 
+        while ((line = [reader readLine])) {
+            if([line isEqualToString:@"START OF TRIP"])
+                selectedTrip ++;
+            
+            if(selectedTrip == period)
+            {
+                //START RECORDING
+            }
+        }
     }
     return trip;
 }
