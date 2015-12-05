@@ -14,6 +14,8 @@
     self = [super init];
     if(self)
     {
+        if(locs == nil || locs.count == 0)
+            return nil;
         _allLocs = [NSArray arrayWithArray:locs];
         _startLoc = [_allLocs firstObject];
         _endLoc = [_allLocs lastObject];

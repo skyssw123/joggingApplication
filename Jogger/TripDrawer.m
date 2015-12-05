@@ -12,27 +12,35 @@
 @implementation TripDrawer
 - (id)initWithTrip:(Trip*)trip withMapView:(MKMapView*)mapView
 {
-    TripDrawer* tripDrawer = [[TripDrawer alloc] init];
-    int i = 0;
-    CLLocationCoordinate2D coordinates[trip.allLocs.count];
-    for (CLLocation *currentPin in trip.allLocs) {
-        coordinates[i] = currentPin.coordinate;
-        i++;
+    if(trip == nil)
+        return nil;
+    self = [super init];
+    if(self)
+    {
+        int i = 0;
+        CLLocationCoordinate2D coordinates[trip.allLocs.count];
+        for (CLLocation *currentPin in trip.allLocs) {
+            coordinates[i] = currentPin.coordinate;
+            i++;
+    	}
+    
+        _trip = trip;
+        _polyline = [MKPolyline polylineWithCoordinates:coordinates count:trip.allLocs.count];
+        _lineView = [[MKPolylineView alloc] initWithPolyline:_polyline];
+        _mapView = mapView;
+        return self;
     }
     
-    tripDrawer.trip = trip;
-    tripDrawer.polyline = [MKPolyline polylineWithCoordinates:coordinates count:trip.allLocs.count];
-    tripDrawer.lineView = [[MKPolylineView alloc] initWithPolyline:tripDrawer.polyline];
-    tripDrawer.mapView = mapView;
-    
-    return tripDrawer;
+    return nil;
 }
 
 
 - (void)drawLineAtOnceWithColor:(UIColor*)color withLineWidth:(int)lineWidth
 {
-    // create an array of coordinates from allPins
+    if(self == nil)
+        return ;
     
+    // create an array of coordinates from allPins
     self.lineView.strokeColor = color;
     self.lineView.lineWidth = lineWidth;
 
