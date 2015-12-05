@@ -36,7 +36,6 @@
     self.locationManager.distanceFilter = kCLDistanceFilterNone;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [self.locationManager requestAlwaysAuthorization];
-    
     [self.mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
     [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
     UILongPressGestureRecognizer *recognizer = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(addPin:)];
@@ -50,9 +49,22 @@
 
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+}
+
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
     NSTimeInterval timeInMiliseconds = [newLocation.timestamp timeIntervalSince1970] * 1000;
+    NSDate* timestamp = [newLocation timestamp];
+    double latitude = [newLocation coordinate].latitude;
+    double longitude = [newLocation coordinate].longitude;
+    double speed = [newLocation speed];
+    double horizontalAccuracy = [newLocation horizontalAccuracy];
+    double verticalAccuracy = [newLocation verticalAccuracy];
+    double altitude = [newLocation altitude];
+    
+    NSString* logString = [NSString stringWithFormat:@"timestamp:%@ latitude:%g longitude:%g speed:%g horizontalAccuracy:%g verticalAccuracy:%g altitude:%g ", timestamp, latitude, longitude, speed, horizontalAccuracy, verticalAccuracy, altitude];
     
     if(timeInMiliseconds - self.prevTimestamp > 10000) //(newLocation.horizontalAccuracy >= DEFAULT_ACCURACY_THRESHOLD)
     {
@@ -60,15 +72,8 @@
         [self.allLocs addObject:newLocation];
         self.prevTimestamp = timeInMiliseconds;
         
-        NSString* logString1 = [NSString stringWithFormat:@"timestamp Mili  %f", timeInMiliseconds];
-        NSString* logString2 = [NSString stringWithFormat:@"timestamp   %@", newLocation.timestamp];
-        NSString* logString3 = [NSString stringWithFormat:@"NewLocation %f %f", newLocation.coordinate.latitude, newLocation.coordinate.longitude];
-//        NSLog(logString1);
-//        NSLog(logString2);
-//        NSLog(logString3);
-        [self.fileLogger log:logString1];
-        [self.fileLogger log:logString2];
-        [self.fileLogger log:logString3];
+        NSString* logString = [NSString stringWithFormat:@"timestamp:%@ latitude:%g longitude:%g speed:%g horizontalAccuracy:%g verticalAccuracy:%g altitude:%g ", timestamp, latitude, longitude, speed, horizontalAccuracy, verticalAccuracy, altitude];
+        [self.fileLogger log:logString];
     }
 }
 
@@ -77,7 +82,6 @@
     if(self.isTripBeingRecorded)
     {
         [self.locationManager stopUpdatingLocation];
-        [self.fileLogger log:@"END OF TRIP"];
         [self.startButton setTitle:@"START TRIP" forState:UIControlStateNormal];
         self.isTripBeingRecorded = NO;
         [self drawLineAtOnce:self.allLocs withColor:[UIColor blackColor] withLineWidth:10];

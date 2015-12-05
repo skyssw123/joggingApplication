@@ -12,23 +12,25 @@
 
 +(Trip*)produceTrip:(TripPeriod)period
 {
-    Trip* trip;
     int selectedTrip = 0;
     DDFileReader * reader = [[DDFileReader alloc] initWithFilePath:[FileLogging sharedInstance].filePath];
     NSString * line = nil;
     
     if(period == lastTrip)
     {
-        while ((line = [reader readLine])) {
-            if([line isEqualToString:@"START OF TRIP"])
+        while ((line = [reader readLine]))
+        {
+            if([line isEqualToString:@"START OF TRIP\n"])
                 selectedTrip ++;
             
             if(selectedTrip == period)
             {
-                //START RECORDING
-            }
+                //CLLocation* location = [[CLLocation alloc]initWithCoordinate:(CLLocationCoordinate2D) altitude:(CLLocationDistance) horizontalAccuracy:(CLLocationAccuracy) verticalAccuracy:(CLLocationAccuracy) timestamp:(nonnull NSDate *)]
+            };
         }
     }
-    return trip;
+    //Trip* trip = [[Trip alloc]initWithLocations:];
+    //return trip;
+    return nil;
 }
 @end

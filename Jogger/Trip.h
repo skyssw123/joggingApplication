@@ -10,6 +10,7 @@
 #import <MapKit/MapKit.h>
 
 @interface Trip : NSObject
+-(id)initWithLocations:(NSMutableArray*)locs;
 @property (strong, nonatomic) NSArray* allLocs;
 @property double totalTimeInMiliSeconds;
 @property double totalDistance;
