@@ -22,5 +22,6 @@
 @property (strong, nonatomic) MKPolylineView* lineView;
 @property (strong, nonatomic) NSMutableArray* allPins;
 @property (strong, nonatomic) NSMutableArray* allLocs;
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation;
 @end
 

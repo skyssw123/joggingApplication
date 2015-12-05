@@ -27,7 +27,7 @@
         CLLocation* prevLoc = _startLoc;
         NSUInteger count = [locs count];
         
-        for(int i = 1; i <= count ; i++)
+        for(int i = 1; i <= count-1 ; i++)
         {
             currentLoc = [_allLocs objectAtIndex:i];
             distance = [currentLoc distanceFromLocation:prevLoc];

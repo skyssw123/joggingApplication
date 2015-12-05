@@ -6,10 +6,10 @@
          contextName = "-[MapViewController mapView:didSelectAnnotationView:]:MapViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "self.lineView">
+               value = "self.mapView">
             </PersistentString>
             <PersistentString
-               value = "self.mapView">
+               value = "self.lineView">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -33,13 +33,13 @@
          contextName = "-[ViewController viewDidLoad]:ViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "self.mapView.userLocation">
+               value = "self.mapView.userLocation.location.coordinate.latitude">
             </PersistentString>
             <PersistentString
                value = "self.locationManager.location.coordinate.latitude">
             </PersistentString>
             <PersistentString
-               value = "self.mapView.userLocation.location.coordinate.latitude">
+               value = "self.mapView.userLocation">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -75,6 +75,17 @@
             </PersistentString>
             <PersistentString
                value = "self.mapViewController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "+[TripFactory produceTrip:]:TripFactory.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "timestampString">
+            </PersistentString>
+            <PersistentString
+               value = "latitudeString">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

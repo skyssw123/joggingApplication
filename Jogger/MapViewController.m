@@ -7,6 +7,7 @@
 //
 
 #import "MapViewController.h"
+#import "AppDelegate.h"
 #import "Localizable.strings"
 #import "Colors.h"
 #import "Numbers.h"
@@ -31,7 +32,9 @@
     
     self.mapView.mapType = MKMapTypeStandard;
     self.mapView.showsUserLocation = YES;
-    self.locationManager = [[CLLocationManager alloc] init];
+    
+    self.locationManager = [(AppDelegate*)[[UIApplication sharedApplication] delegate] locationManager] ;
+    
     self.locationManager.delegate = self;
     self.locationManager.distanceFilter = kCLDistanceFilterNone;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -42,6 +45,7 @@
     recognizer.minimumPressDuration = 0.5;
     [self.mapView addGestureRecognizer:recognizer];
     Trip* trip = [TripFactory produceTrip:lastTrip];
+    [self drawLineAtOnce:trip.allLocs withColor:[UIColor blackColor] withLineWidth:10];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -63,17 +67,13 @@
     double verticalAccuracy = [newLocation verticalAccuracy];
     double altitude = [newLocation altitude];
     
-    NSString* logString = [NSString stringWithFormat:@"timestamp:%@ latitude:%g longitude:%g speed:%g horizontalAccuracy:%g verticalAccuracy:%g altitude:%g ", timestamp, latitude, longitude, speed, horizontalAccuracy, verticalAccuracy, altitude];
+    NSString* logString = [NSString stringWithFormat:@"timestamp=%@,latitude=%g,longitude=%g,speed=%g,horizontalAccuracy=%g,verticalAccuracy=%g,altitude=%g", timestamp, latitude, longitude, speed, horizontalAccuracy, verticalAccuracy, altitude];
     
-    if(timeInMiliseconds - self.prevTimestamp > 10000) //(newLocation.horizontalAccuracy >= DEFAULT_ACCURACY_THRESHOLD)
-    {
-        [self.mapView setCenterCoordinate:newLocation.coordinate animated:YES];
-        [self.allLocs addObject:newLocation];
-        self.prevTimestamp = timeInMiliseconds;
-        
-        NSString* logString = [NSString stringWithFormat:@"timestamp:%@ latitude:%g longitude:%g speed:%g horizontalAccuracy:%g verticalAccuracy:%g altitude:%g ", timestamp, latitude, longitude, speed, horizontalAccuracy, verticalAccuracy, altitude];
-        [self.fileLogger log:logString];
-    }
+    [self.mapView setCenterCoordinate:newLocation.coordinate animated:YES];
+    [self.allLocs addObject:newLocation];
+    self.prevTimestamp = timeInMiliseconds;
+    
+    [self.fileLogger log:logString];
 }
 
 - (IBAction)startButtonClicked:(id)sender
@@ -83,7 +83,7 @@
         [self.locationManager stopUpdatingLocation];
         [self.startButton setTitle:@"START TRIP" forState:UIControlStateNormal];
         self.isTripBeingRecorded = NO;
-        [self drawLineAtOnce:self.allLocs withColor:[UIColor blackColor] withLineWidth:10];
+        //[self drawLineAtOnce:self.allLocs withColor:[UIColor blackColor] withLineWidth:10];
     }
     
     else
