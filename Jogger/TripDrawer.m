@@ -44,10 +44,10 @@
     self.lineView.strokeColor = color;
     self.lineView.lineWidth = lineWidth;
 
-    Pin* startPin = [[Pin alloc]initWithCoordinate:self.trip.startLoc.coordinate withTitle:@"START" withSubtitle:self.trip.startLoc.timestamp];
+    Pin* startPin = [[Pin alloc]initWithCoordinate:self.trip.startLoc.coordinate withTitle:@"START" withSubtitle:@"hello"];
     [self.mapView addAnnotation:startPin];
     
-    Pin* endPin = [[Pin alloc]initWithCoordinate:self.trip.endLoc.coordinate withTitle:@"END" withSubtitle:self.trip.endLoc.timestamp];
+    Pin* endPin = [[Pin alloc]initWithCoordinate:self.trip.endLoc.coordinate withTitle:@"END" withSubtitle:@"hello"];
     [self.mapView addAnnotation:endPin];
     
     [self.mapView addOverlay:self.polyline];

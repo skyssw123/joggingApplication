@@ -16,8 +16,8 @@
     self = [super init];
     if (self) {
         _coordinate = newCoordinate;
-        _title = title;
-        _subtitle = subtitle;
+        _title = [title copy];
+        _subtitle = [subtitle copy];
     }
     return self;
 }
