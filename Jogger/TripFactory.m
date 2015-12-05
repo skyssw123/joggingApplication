@@ -18,13 +18,19 @@
     
     if(period == lastTrip)
     {
-        while ((line = [reader readLine]))
+        while((line = [reader readLine]))
         {
             if([line isEqualToString:@"START OF TRIP\n"])
                 selectedTrip ++;
-            [line componentsSeparatedByString:@","];
+            NSArray* array = [line componentsSeparatedByString:@" "];
+            if(array.count == 1)
+                break;
+            
+            
+            
             if(selectedTrip == period)
             {
+                NSArray* components = [line componentsSeparatedByString:@" "];
                 //CLLocation* location = [[CLLocation alloc]initWithCoordinate:(CLLocationCoordinate2D) altitude:(CLLocationDistance) horizontalAccuracy:(CLLocationAccuracy) verticalAccuracy:(CLLocationAccuracy) timestamp:(nonnull NSDate *)]
             };
         }
