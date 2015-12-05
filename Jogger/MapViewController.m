@@ -41,9 +41,11 @@
     [self.locationManager requestAlwaysAuthorization];
     [self.mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
     [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
-    UILongPressGestureRecognizer *recognizer = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(addPin:)];
-    recognizer.minimumPressDuration = 0.5;
-    [self.mapView addGestureRecognizer:recognizer];
+    
+    
+    //UILongPressGestureRecognizer *recognizer = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(addPin:)];
+    //recognizer.minimumPressDuration = 0.5;
+    //[self.mapView addGestureRecognizer:recognizer];
     
     Trip* trip = [TripFactory produceTrip:lastTrip];
     self.tripDrawer = [[TripDrawer alloc] initWithTrip:trip withMapView:self.mapView];

@@ -16,4 +16,5 @@
 @property (nonatomic, strong) MKPolyline* polyline;
 @property (nonatomic, strong) MKPolylineView* lineView;
 @property (nonatomic, strong) MKMapView* mapView;
+@property (nonatomic, strong) Trip* trip;
 @end

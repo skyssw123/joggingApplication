@@ -9,7 +9,6 @@
 #import "TripDrawer.h"
 #import "Pin.h"
 
-
 @implementation TripDrawer
 - (id)initWithTrip:(Trip*)trip withMapView:(MKMapView*)mapView
 {
@@ -21,39 +20,27 @@
         i++;
     }
     
+    tripDrawer.trip = trip;
     tripDrawer.polyline = [MKPolyline polylineWithCoordinates:coordinates count:trip.allLocs.count];
     tripDrawer.lineView = [[MKPolylineView alloc] initWithPolyline:tripDrawer.polyline];
-    
     tripDrawer.mapView = mapView;
     
     return tripDrawer;
 }
 
-- (void)addPin:(UIGestureRecognizer *)recognizer {
-    
-//    if (recognizer.state != UIGestureRecognizerStateBegan) {
-//        return;
-//    }
-//    
-//    // convert touched position to map coordinate
-//    CGPoint userTouch = [recognizer locationInView:self.mapView];
-//    CLLocationCoordinate2D mapPoint = [self.mapView convertPoint:userTouch toCoordinateFromView:self.mapView];
-//    
-//    // and add it to our view and our array
-//    Pin *newPin = [[Pin alloc]initWithCoordinate:mapPoint];
-//    
-//    
-//    [self.mapView addAnnotation:newPin];
-//    [self.allPins addObject:newPin];
-//    [self drawLineAtOnce:self.allPins withColor:[UIColor blackColor] withLineWidth:10];
-    
-}
+
 - (void)drawLineAtOnceWithColor:(UIColor*)color withLineWidth:(int)lineWidth
 {
     // create an array of coordinates from allPins
     
     self.lineView.strokeColor = color;
     self.lineView.lineWidth = lineWidth;
+
+    Pin* startPin = [[Pin alloc]initWithCoordinate:self.trip.startLoc.coordinate withTitle:@"START" withSubtitle:self.trip.startLoc.timestamp];
+    [self.mapView addAnnotation:startPin];
+    
+    Pin* endPin = [[Pin alloc]initWithCoordinate:self.trip.endLoc.coordinate withTitle:@"END" withSubtitle:self.trip.endLoc.timestamp];
+    [self.mapView addAnnotation:endPin];
     
     [self.mapView addOverlay:self.polyline];
 }

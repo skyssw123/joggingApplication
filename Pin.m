@@ -10,13 +10,14 @@
 
 @implementation Pin
 
-- (id)initWithCoordinate:(CLLocationCoordinate2D)newCoordinate {
+- (id)initWithCoordinate:(CLLocationCoordinate2D)newCoordinate withTitle:(NSString*)title withSubtitle:(NSString*)subtitle
+{
     
     self = [super init];
     if (self) {
         _coordinate = newCoordinate;
-        _title = @"Hello";
-        _subtitle = @"Are you still there?";
+        _title = title;
+        _subtitle = subtitle;
     }
     return self;
 }
