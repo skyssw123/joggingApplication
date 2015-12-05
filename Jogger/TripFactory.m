@@ -22,7 +22,7 @@
         {
             if([line isEqualToString:@"START OF TRIP\n"])
                 selectedTrip ++;
-            
+            [line componentsSeparatedByString:@","];
             if(selectedTrip == period)
             {
                 //CLLocation* location = [[CLLocation alloc]initWithCoordinate:(CLLocationCoordinate2D) altitude:(CLLocationDistance) horizontalAccuracy:(CLLocationAccuracy) verticalAccuracy:(CLLocationAccuracy) timestamp:(nonnull NSDate *)]

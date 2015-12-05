@@ -48,7 +48,8 @@
         //create file
         [[NSFileManager defaultManager] createFileAtPath:self.filePath contents:nil attributes:nil];
         fileHandler = [NSFileHandle fileHandleForWritingAtPath:self.filePath];
-        content = [NSString stringWithFormat:@"%@ %@", [[NSDate date] descriptionWithLocale:[NSLocale systemLocale]], message];
+        //content = [NSString stringWithFormat:@"%@ %@", [[NSDate date] descriptionWithLocale:[NSLocale systemLocale]], message];
+        content = [NSString stringWithFormat:@"%@", message];
         if(self.fileHeaderMessage){
             [fileHandler writeData:[self.fileHeaderMessage dataUsingEncoding:NSUTF8StringEncoding]];
         }
@@ -56,7 +57,8 @@
     }
     else
     {
-        content = [NSString stringWithFormat:@"\n%@ %@", [[NSDate date] descriptionWithLocale:[NSLocale systemLocale]], message];
+        //content = [NSString stringWithFormat:@"\n%@ %@", [[NSDate date] descriptionWithLocale:[NSLocale systemLocale]], message];
+        content = [NSString stringWithFormat:@"\n%@", message];
         [fileHandler seekToEndOfFile];
     }
     
