@@ -36,6 +36,9 @@
 		275CAD241C0A537300190036 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 275CAD221C0A537300190036 /* LaunchScreen.storyboard */; };
 		275CAD2F1C0A537300190036 /* JoggerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 275CAD2E1C0A537300190036 /* JoggerTests.m */; };
 		275CAD3A1C0A537300190036 /* JoggerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 275CAD391C0A537300190036 /* JoggerUITests.m */; };
+		278487911C138359003EBCF6 /* TripDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 278487901C138359003EBCF6 /* TripDrawer.m */; };
+		278487921C138359003EBCF6 /* TripDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 278487901C138359003EBCF6 /* TripDrawer.m */; };
+		278487931C138359003EBCF6 /* TripDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 278487901C138359003EBCF6 /* TripDrawer.m */; };
 		2DD29235C155A4657646E38D /* libPods-JoggerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DE0BBD0579EC7439CD61996 /* libPods-JoggerUITests.a */; };
 		F9DD7630E52C7B8C3EB70CC0 /* libPods-Jogger.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2030390A92F16C86F93F71E8 /* libPods-Jogger.a */; };
 /* End PBXBuildFile section */
@@ -91,6 +94,8 @@
 		275CAD351C0A537300190036 /* JoggerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JoggerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		275CAD391C0A537300190036 /* JoggerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JoggerUITests.m; sourceTree = "<group>"; };
 		275CAD3B1C0A537300190036 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2784878F1C138359003EBCF6 /* TripDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripDrawer.h; sourceTree = "<group>"; };
+		278487901C138359003EBCF6 /* TripDrawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripDrawer.m; sourceTree = "<group>"; };
 		3DE0BBD0579EC7439CD61996 /* libPods-JoggerUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JoggerUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CFC0E86FF5BA47D785C2E12 /* Pods-JoggerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JoggerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JoggerUITests/Pods-JoggerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		563F756ABA48BDF2A03278A4 /* libPods-JoggerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JoggerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +148,8 @@
 				271777F51C0E98CA005FE4E0 /* TripFactory.m */,
 				271777FF1C0EA705005FE4E0 /* DDFileReader.h */,
 				271778001C0EA705005FE4E0 /* DDFileReader.m */,
+				2784878F1C138359003EBCF6 /* TripDrawer.h */,
+				278487901C138359003EBCF6 /* TripDrawer.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -524,6 +531,7 @@
 				275CAD191C0A537300190036 /* MapViewController.m in Sources */,
 				275CAD1F1C0A537300190036 /* Jogger.xcdatamodeld in Sources */,
 				271777F11C0D4D5B005FE4E0 /* Trip.m in Sources */,
+				278487911C138359003EBCF6 /* TripDrawer.m in Sources */,
 				275CAD161C0A537300190036 /* AppDelegate.m in Sources */,
 				271777EB1C0D1261005FE4E0 /* FileLogging.m in Sources */,
 				271777D21C0AA763005FE4E0 /* Pin.m in Sources */,
@@ -540,6 +548,7 @@
 				271777F21C0D4D5B005FE4E0 /* Trip.m in Sources */,
 				271778021C0EA705005FE4E0 /* DDFileReader.m in Sources */,
 				271777EC1C0D1261005FE4E0 /* FileLogging.m in Sources */,
+				278487921C138359003EBCF6 /* TripDrawer.m in Sources */,
 				275CAD2F1C0A537300190036 /* JoggerTests.m in Sources */,
 				271777F71C0E98CA005FE4E0 /* TripFactory.m in Sources */,
 				271777D31C0AA763005FE4E0 /* Pin.m in Sources */,
@@ -553,6 +562,7 @@
 				271777F31C0D4D5B005FE4E0 /* Trip.m in Sources */,
 				271778031C0EA705005FE4E0 /* DDFileReader.m in Sources */,
 				271777ED1C0D1261005FE4E0 /* FileLogging.m in Sources */,
+				278487931C138359003EBCF6 /* TripDrawer.m in Sources */,
 				275CAD3A1C0A537300190036 /* JoggerUITests.m in Sources */,
 				271777F81C0E98CA005FE4E0 /* TripFactory.m in Sources */,
 				271777D41C0AA763005FE4E0 /* Pin.m in Sources */,
