@@ -21,6 +21,7 @@
         int i = 0;
         int j = 0;
         _speedEventArray = [trip.speedEvents copy];
+        _speedEventlineArray = [[NSMutableArray alloc]init];
         CLLocationCoordinate2D coordinates[trip.allLocs.count];
         
         

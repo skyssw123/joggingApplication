@@ -117,7 +117,7 @@
         {
             routeLineView.fillColor = [UIColor blueColor];
             routeLineView.strokeColor = [UIColor blueColor];
-            routeLineView.lineWidth = 10;
+            routeLineView.lineWidth = 20;
         }
         
         
