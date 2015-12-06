@@ -20,5 +20,6 @@
 @property (strong, nonatomic) CLLocation* startLoc;
 @property (strong, nonatomic) CLLocation* endLoc;
 @property (strong, nonatomic) NSMutableArray* speedEvents;
+@property (strong, nonatomic) NSMutableArray* brakingEvents;
 @property (strong, nonatomic) NSMutableArray* accelEvents;
 @end

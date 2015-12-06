@@ -51,6 +51,7 @@
     self.tripDrawer = [[TripDrawer alloc] initWithTrip:trip withMapView:self.mapView];
     [self.tripDrawer drawLineAtOnceWithColor];
     [self.tripDrawer drawSpeedingEvents];
+    [self.tripDrawer drawBrakingEvents];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -118,6 +119,11 @@
             routeLineView.fillColor = [UIColor blueColor];
             routeLineView.strokeColor = [UIColor blueColor];
             routeLineView.lineWidth = 12;
+        } else if([polyline.title isEqualToString:@"brakeLine"])
+        {
+            routeLineView.fillColor = [UIColor brownColor];
+            routeLineView.strokeColor = [UIColor brownColor];
+            routeLineView.lineWidth = 15;
         }
         
         

@@ -28,16 +28,19 @@
         _endLoc = [_allLocs lastObject];
         _totalTimeInMiliSeconds = ([_endLoc.timestamp timeIntervalSince1970] - [_startLoc.timestamp timeIntervalSince1970]) * 1000.0;
         _speedEvents = [[NSMutableArray alloc]init];
+        _brakingEvents = [[NSMutableArray alloc]init];
         NSMutableArray* speedEventArray = [[NSMutableArray alloc]init];
-        
+        NSMutableArray* brakingEventArray = [[NSMutableArray alloc]init];
         double distance;
         double time;
         double speed;
         CLLocation* currentLoc;
         CLLocation* prevLoc = _startLoc;
         CLLocation* prevSpeedingLoc = _startLoc;
+        CLLocation* prevBrakingLoc = _startLoc;
         NSUInteger count = [locs count];
         int j = 0;
+        int k = 0;
         for(int i = 1; i < count ; i++)
         {
             currentLoc = [_allLocs objectAtIndex:i];
@@ -72,10 +75,43 @@
                 prevSpeedingLoc = currentLoc;
                 j++;
             }
+            
+            else if(speed == 0.0)
+            {
+                if(k == 0)
+                {
+                    prevBrakingLoc = currentLoc;
+                }
+                time = ([currentLoc.timestamp timeIntervalSince1970] - [prevBrakingLoc.timestamp timeIntervalSince1970]) * 1000;
+                if(time < 2000)
+                    [brakingEventArray addObject:currentLoc];
+                else
+                {
+                    if(brakingEventArray.count <= 5)
+                    {
+                        brakingEventArray = [[NSMutableArray alloc]init];
+                        [brakingEventArray addObject:currentLoc];
+                    }
+                    
+                    else
+                    {
+                        SpeedEvent* brakingEvent = [[SpeedEvent alloc]initWithLocationArray:brakingEventArray];
+                        [_brakingEvents addObject:brakingEvent];
+                        brakingEventArray = [[NSMutableArray alloc]init];
+                        [brakingEventArray addObject:currentLoc];
+                    }
+                }
+                prevBrakingLoc = currentLoc;
+                k++;
+            }
+            
             prevLoc = currentLoc;
         }
         SpeedEvent* speedEvent = [[SpeedEvent alloc]initWithLocationArray:speedEventArray];
         [_speedEvents addObject:speedEvent];
+        
+        SpeedEvent* brakingEvent = [[SpeedEvent alloc]initWithLocationArray:brakingEventArray];
+        [_brakingEvents addObject:brakingEvent];
         
         _avgVelocity = _totalDistance / _totalTimeInMiliSeconds * 1000.0;
     }

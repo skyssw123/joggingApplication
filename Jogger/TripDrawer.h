@@ -15,9 +15,12 @@
 - (id)initWithTrip:(Trip*)trip withMapView:(MKMapView*)mapView;
 - (void)drawLineAtOnceWithColor;
 - (void)drawSpeedingEvents;
+- (void)drawBrakingEvents;
 @property (nonatomic, strong) MKPolyline* polyline;
 @property (nonatomic, strong) NSMutableArray* speedEventArray;
 @property (nonatomic, strong) NSMutableArray* speedEventlineArray;
+@property (nonatomic, strong) NSMutableArray* brakingEventArray;
+@property (nonatomic, strong) NSMutableArray* brakingEventlineArray;
 @property (nonatomic, strong) MKMapView* mapView;
 @property (nonatomic, strong) Trip* trip;
 @end

@@ -22,6 +22,8 @@
         int j = 0;
         _speedEventArray = [trip.speedEvents copy];
         _speedEventlineArray = [[NSMutableArray alloc]init];
+        _brakingEventArray = [trip.brakingEvents copy];
+        _brakingEventlineArray = [[NSMutableArray alloc]init];
         CLLocationCoordinate2D coordinates[trip.allLocs.count];
         
         
@@ -45,6 +47,19 @@
                  speedingCoordinates[j] = ((CLLocation *)speedEvent.locationArray[j]).coordinate;
             }
             _speedEventlineArray[i] = [MKPolyline polylineWithCoordinates:speedingCoordinates count:j];
+        }
+        
+        i = 0;
+        for(; i < _brakingEventArray.count; i++)
+        {
+            j = 0;
+            SpeedEvent* brakingEvent = _brakingEventArray[i];
+            CLLocationCoordinate2D brakingCoordinates[((SpeedEvent*)trip.brakingEvents[i]).locationArray.count];
+            for(; j < brakingEvent.locationArray.count; j++)
+            {
+                brakingCoordinates[j] = ((CLLocation *)brakingEvent.locationArray[j]).coordinate;
+            }
+            _brakingEventlineArray[i] = [MKPolyline polylineWithCoordinates:brakingCoordinates count:j];
         }
 
         _mapView = mapView;
@@ -81,6 +96,19 @@
     {
         ((MKPolyline*)self.speedEventlineArray[i]).title = @"speedLine";
         [self.mapView addOverlay:((MKPolyline*)self.speedEventlineArray[i])];
+    }
+}
+
+- (void)drawBrakingEvents
+{
+    if(self == nil)
+        return ;
+    
+    
+    for(int i = 0; i < self.brakingEventlineArray.count; i++)
+    {
+        ((MKPolyline*)self.brakingEventlineArray[i]).title = @"brakeLine";
+        [self.mapView addOverlay:((MKPolyline*)self.brakingEventlineArray[i])];
     }
 }
 
