@@ -55,10 +55,19 @@
                     [speedEventArray addObject:currentLoc];
                 else
                 {
-                    SpeedEvent* speedEvent = [[SpeedEvent alloc]initWithLocationArray:speedEventArray];
-                    [_speedEvents addObject:speedEvent];
-                    speedEventArray = [[NSMutableArray alloc]init];
-                    [speedEventArray addObject:currentLoc];
+                    if(speedEventArray.count <= 5)
+                    {
+                        speedEventArray = [[NSMutableArray alloc]init];
+                        [speedEventArray addObject:currentLoc];
+                    }
+                        
+                    else
+                    {
+                        SpeedEvent* speedEvent = [[SpeedEvent alloc]initWithLocationArray:speedEventArray];
+                        [_speedEvents addObject:speedEvent];
+                        speedEventArray = [[NSMutableArray alloc]init];
+                        [speedEventArray addObject:currentLoc];
+                    }
                 }
                 prevSpeedingLoc = currentLoc;
                 j++;
