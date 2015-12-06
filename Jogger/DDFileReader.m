@@ -78,7 +78,8 @@
     NSMutableData * currentData = [[NSMutableData alloc] init];
     BOOL shouldReadMore = YES;
     
-    while (shouldReadMore) {
+    while (shouldReadMore)
+    {
         if (currentOffset >= totalFileLength) { break; }
         NSData * chunk = [fileHandle readDataOfLength:chunkSize];
         NSRange newLineRange = [chunk rangeOfData_dd:newLineData];
