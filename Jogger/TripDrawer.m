@@ -44,7 +44,7 @@
             {
                  speedingCoordinates[j] = ((CLLocation *)speedEvent.locationArray[j]).coordinate;
             }
-            _speedEventlineArray[i] = [MKPolyline polylineWithCoordinates:speedingCoordinates count:trip.speedEvents.count];
+            _speedEventlineArray[i] = [MKPolyline polylineWithCoordinates:speedingCoordinates count:j];
         }
 
         _mapView = mapView;

@@ -18,7 +18,7 @@
             return nil;
         
         
-        NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"timestamp" ascending:YES];
+        //NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"timestamp" ascending:YES];
         //NSArray array = [NSArray arrayWithObject:sortDescriptor];
         _allLocs = [locs copy];
         //_allLocs = [_allLocs sortUsingDescriptors:array];
@@ -38,16 +38,18 @@
         CLLocation* prevSpeedingLoc = _startLoc;
         NSUInteger count = [locs count];
         int j = 0;
-        for(int i = 1; i <= count-1 ; i++)
+        for(int i = 1; i < count ; i++)
         {
             currentLoc = [_allLocs objectAtIndex:i];
             distance = [currentLoc distanceFromLocation:prevLoc];
             _totalDistance += distance;
             speed = currentLoc.speed;
-            if(speed > 1.0)
+            if(speed > 2.0)
             {
                 if(j == 0)
+                {
                     prevSpeedingLoc = currentLoc;
+                }
                 time = ([currentLoc.timestamp timeIntervalSince1970] - [prevSpeedingLoc.timestamp timeIntervalSince1970]) * 1000;
                 if(time < 2000)
                     [speedEventArray addObject:currentLoc];
