@@ -59,7 +59,7 @@
                 NSArray* altitudeArray = [(NSString*)[components objectAtIndex:6] componentsSeparatedByString:@"="];
                 NSString* altitudeString = [(NSArray*)[[altitudeArray objectAtIndex:1] componentsSeparatedByString:@"\n"] objectAtIndex:0] ;
                 
-                CLLocation* location = [[CLLocation alloc]initWithCoordinate:coordinate altitude:[altitudeString doubleValue] horizontalAccuracy:[horizontalAccuracyString doubleValue] verticalAccuracy:[verticalAccuracyString doubleValue] timestamp:date];
+                CLLocation* location = [[CLLocation alloc]initWithCoordinate:coordinate altitude:[altitudeString doubleValue] horizontalAccuracy:[horizontalAccuracyString doubleValue] verticalAccuracy:[verticalAccuracyString doubleValue] course:0 speed:[speedString doubleValue] timestamp:date];
                 [returnArray addObject:location];
             }
         }

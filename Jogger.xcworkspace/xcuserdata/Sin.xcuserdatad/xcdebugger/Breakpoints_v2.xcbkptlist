@@ -10,11 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Jogger/MapViewController.m"
-            timestampString = "471047316.800164"
+            timestampString = "471071825.469242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118">
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "-mapView:viewForOverlay:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -24,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Jogger/MapViewController.m"
-            timestampString = "471047385.950082"
+            timestampString = "471071959.996486"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "-startButtonClicked:"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "-mapView:viewForOverlay:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -40,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Jogger/TripDrawer.m"
-            timestampString = "471048091.404084"
+            timestampString = "471072192.174572"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "-drawLineAtOnceWithColor:withLineWidth:"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "-initWithTrip:withMapView:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

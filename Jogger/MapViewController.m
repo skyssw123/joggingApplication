@@ -49,7 +49,8 @@
     
     Trip* trip = [TripFactory produceTrip:lastTrip];
     self.tripDrawer = [[TripDrawer alloc] initWithTrip:trip withMapView:self.mapView];
-    [self.tripDrawer drawLineAtOnceWithColor:[UIColor blackColor] withLineWidth:10];
+    [self.tripDrawer drawLineAtOnceWithColor];
+    [self.tripDrawer drawSpeedingEvents];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -100,9 +101,30 @@
     }
 }
 
-- (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay
+-(MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay
 {
-    return self.tripDrawer.lineView;
+    if([overlay class] == MKPolyline.class)
+    {
+        MKOverlayView* overlayView = nil;
+        MKPolyline* polyline = (MKPolyline *)overlay;
+        MKPolylineView  * routeLineView = [[MKPolylineView alloc] initWithPolyline:polyline];
+        if([polyline.title isEqualToString:@"routeLine"])
+        {
+            routeLineView.fillColor = [UIColor blackColor];
+            routeLineView.strokeColor = [UIColor blackColor];
+            routeLineView.lineWidth = 8;
+        } else if([polyline.title isEqualToString:@"speedLine"])
+        {
+            routeLineView.fillColor = [UIColor blueColor];
+            routeLineView.strokeColor = [UIColor blueColor];
+            routeLineView.lineWidth = 10;
+        }
+        
+        
+        overlayView = routeLineView;
+        return overlayView;
+    } else {
+        return nil;
+    }
 }
-
 @end

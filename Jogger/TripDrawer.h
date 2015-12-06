@@ -12,9 +12,10 @@
 
 @interface TripDrawer : NSObject
 - (id)initWithTrip:(Trip*)trip withMapView:(MKMapView*)mapView;
-- (void)drawLineAtOnceWithColor:(UIColor*)color withLineWidth:(int)lineWidth;
+- (void)drawLineAtOnceWithColor;
+- (void)drawSpeedingEvents;
 @property (nonatomic, strong) MKPolyline* polyline;
-@property (nonatomic, strong) MKPolylineView* lineView;
+@property (nonatomic, strong) NSMutableArray* speedEventlineArray;
 @property (nonatomic, strong) MKMapView* mapView;
 @property (nonatomic, strong) Trip* trip;
 @end

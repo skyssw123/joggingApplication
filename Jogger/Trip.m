@@ -24,7 +24,7 @@
         
         double distance;
         double time;
-        double velocity;
+        double speed;
         CLLocation* currentLoc;
         CLLocation* prevLoc = _startLoc;
         NSUInteger count = [locs count];
@@ -35,11 +35,10 @@
             distance = [currentLoc distanceFromLocation:prevLoc];
             _totalDistance += distance;
             time = [currentLoc.timestamp timeIntervalSince1970] - [prevLoc.timestamp timeIntervalSince1970];
-            velocity = distance / time;
-            if(velocity > 3.5)
+            speed = currentLoc.speed;
+            if(speed > 3.0)
             {
                 [_speedEvents addObject:currentLoc];
-                [_speedEvents addObject:prevLoc];
             }
             prevLoc = currentLoc;
         }
