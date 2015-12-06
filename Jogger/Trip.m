@@ -16,7 +16,14 @@
     {
         if(locs == nil || locs.count == 0)
             return nil;
-        _allLocs = [NSArray arrayWithArray:locs];
+        
+        
+        NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"timestamp" ascending:YES];
+        //NSArray array = [NSArray arrayWithObject:sortDescriptor];
+        _allLocs = [locs copy];
+        //_allLocs = [_allLocs sortUsingDescriptors:array];
+
+        
         _startLoc = [_allLocs firstObject];
         _endLoc = [_allLocs lastObject];
         _totalTimeInMiliSeconds = ([_endLoc.timestamp timeIntervalSince1970] - [_startLoc.timestamp timeIntervalSince1970]) * 1000.0;
@@ -37,7 +44,7 @@
             distance = [currentLoc distanceFromLocation:prevLoc];
             _totalDistance += distance;
             speed = currentLoc.speed;
-            if(speed > 3.0)
+            if(speed > 1.0)
             {
                 if(j == 0)
                     prevSpeedingLoc = currentLoc;
