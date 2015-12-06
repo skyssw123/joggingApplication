@@ -8,6 +8,7 @@
 
 #import "TripDrawer.h"
 #import "Pin.h"
+#import "SpeedEvent.h"
 
 @implementation TripDrawer
 - (id)initWithTrip:(Trip*)trip withMapView:(MKMapView*)mapView
@@ -18,23 +19,32 @@
     if(self)
     {
         int i = 0;
-        _speedEventlineArray = [[NSMutableArray alloc]init];
+        int j = 0;
+        _speedEventArray = [trip.speedEvents copy];
         CLLocationCoordinate2D coordinates[trip.allLocs.count];
-        CLLocationCoordinate2D speedCoordinates[trip.speedEvents.count];
+        
+        
+        
         for (CLLocation *currentPin in trip.allLocs) {
             coordinates[i] = currentPin.coordinate;
             i ++;
     	}
         i = 0;
-        for(CLLocation* loc in trip.speedEvents)
-        {
-            speedCoordinates[i] = loc.coordinate;
-            i ++;
-        }
         
         _trip = trip;
         _polyline = [MKPolyline polylineWithCoordinates:coordinates count:trip.allLocs.count];
-        _speedEventlineArray[0] = [MKPolyline polylineWithCoordinates:speedCoordinates count:trip.speedEvents.count];
+        
+        for(; i < _speedEventArray.count; i++)
+        {
+            j = 0;
+            SpeedEvent* speedEvent = _speedEventArray[i];
+            CLLocationCoordinate2D speedingCoordinates[((SpeedEvent*)trip.speedEvents[i]).locationArray.count];
+            for(; j < speedEvent.locationArray.count; j++)
+            {
+                 speedingCoordinates[j] = ((CLLocation *)speedEvent.locationArray[j]).coordinate;
+            }
+            _speedEventlineArray[i] = [MKPolyline polylineWithCoordinates:speedingCoordinates count:trip.speedEvents.count];
+        }
 
         _mapView = mapView;
         return self;
@@ -65,8 +75,12 @@
     if(self == nil)
         return ;
     
-    ((MKPolyline*)self.speedEventlineArray[0]).title = @"speedLine";
-    [self.mapView addOverlay:((MKPolyline*)self.speedEventlineArray[0])];
+    
+    for(int i = 0; i < self.speedEventlineArray.count; i++)
+    {
+        ((MKPolyline*)self.speedEventlineArray[i]).title = @"speedLine";
+        [self.mapView addOverlay:((MKPolyline*)self.speedEventlineArray[i])];
+    }
 }
 
 - (void)removeOverlay

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
+#import "SpeedEvent.h"
 
 @interface Trip : NSObject
 -(id)initWithLocations:(NSMutableArray*)locs;
