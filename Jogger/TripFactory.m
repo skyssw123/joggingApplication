@@ -22,6 +22,10 @@
     {
         while((line = [reader readLine]))
         {
+            if(line == nil)
+            {
+                continue;
+            }
             if([line isEqualToString:@"START OF TRIP\n"])
             {
                 selectedTrip ++;
