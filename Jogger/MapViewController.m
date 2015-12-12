@@ -20,12 +20,28 @@
     self.mapView.mapType = MKMapTypeStandard;
     self.mapView.showsUserLocation = YES;
     [self.mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
+    
     [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
+    
     Trip* trip = [TripFactory produceTrip:lastTrip];
     self.tripDrawer = [[TripDrawer alloc] initWithTrip:trip withMapView:self.mapView];
     [self.tripDrawer drawLineAtOnceWithColor];
     [self.tripDrawer drawSpeedingEvents];
     [self.tripDrawer drawBrakingEvents];
+    
+    
+    
+    MKCoordinateRegion zoomRegion = MKCoordinateRegionForMapRect(MKMapRectMake(trip.minLatitude, trip.minLongitude, trip.maxLatitude - trip.minLatitude, trip.maxLongitude - trip.minLongitude));
+    //MKCoordinateRegion region = MKCoordinateRegionForMapRect(MKMapRectMake(0, 0, 5, 5));
+    å
+    CLLocationCoordinate2D coord = CLLocationCoordinate2DMake( ((trip.minLatitude + trip.maxLatitude)/2.0), ((trip.minLongitude + trip.maxLongitude)/2.0));
+    MKCoordinateSpan span = MKCoordinateSpanMake((trip.maxLatitude - trip.minLatitude) * 2, (trip.maxLongitude - trip.minLongitude) * 2);
+    MKCoordinateRegion adjustedRegion = MKCoordinateRegionMake(coord, span);
+    
+    
+    //adjustedRegion = [self.mapView regionThatFits:zoomRegion];
+    [self.mapView setRegion:adjustedRegion animated:YES];
+
     
     // Do any additional setup after loading the view.
 }

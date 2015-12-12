@@ -38,12 +38,30 @@
         CLLocation* prevLoc = _startLoc;
         CLLocation* prevSpeedingLoc = _startLoc;
         CLLocation* prevBrakingLoc = _startLoc;
+        
+        _maxLatitude = _startLoc.coordinate.latitude;
+        _minLatitude = _startLoc.coordinate.latitude;
+        _maxLongitude = _startLoc.coordinate.longitude;
+        _minLongitude = _startLoc.coordinate.longitude;
+        
         NSUInteger count = [locs count];
         int j = 0;
         int k = 0;
         for(int i = 1; i < count ; i++)
         {
             currentLoc = [_allLocs objectAtIndex:i];
+            
+            if(_maxLatitude < currentLoc.coordinate.latitude)
+                _maxLatitude = currentLoc.coordinate.latitude;
+            if(_minLatitude > currentLoc.coordinate.latitude)
+                _minLatitude = currentLoc.coordinate.latitude;
+            
+            if(_maxLongitude < currentLoc.coordinate.longitude)
+                _maxLongitude = currentLoc.coordinate.longitude;
+            if(_minLongitude > currentLoc.coordinate.longitude)
+                _minLongitude = currentLoc.coordinate.longitude;
+            
+            
             distance = [currentLoc distanceFromLocation:prevLoc];
             _totalDistance += distance;
             speed = currentLoc.speed;

@@ -19,6 +19,10 @@
 @property double avgAccel;
 @property (strong, nonatomic) CLLocation* startLoc;
 @property (strong, nonatomic) CLLocation* endLoc;
+@property double maxLatitude;
+@property double minLatitude;
+@property double maxLongitude;
+@property double minLongitude;
 @property (strong, nonatomic) NSMutableArray* speedEvents;
 @property (strong, nonatomic) NSMutableArray* brakingEvents;
 @property (strong, nonatomic) NSMutableArray* accelEvents;

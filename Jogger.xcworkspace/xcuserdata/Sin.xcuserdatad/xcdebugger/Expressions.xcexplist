@@ -14,6 +14,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[MapViewController viewDidLoad]:MapViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "region.span">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "+[TripFactory produceTrip:]:TripFactory.m">
          <PersistentStrings>
             <PersistentString
@@ -25,13 +33,13 @@
          contextName = "-[ViewController viewDidLoad]:ViewController.m">
          <PersistentStrings>
             <PersistentString
+               value = "self.mapView.userLocation">
+            </PersistentString>
+            <PersistentString
                value = "self.mapView.userLocation.location.coordinate.latitude">
             </PersistentString>
             <PersistentString
                value = "self.locationManager.location.coordinate.latitude">
-            </PersistentString>
-            <PersistentString
-               value = "self.mapView.userLocation">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -39,13 +47,13 @@
          contextName = "-[Trip initWithLocations:]:Trip.m">
          <PersistentStrings>
             <PersistentString
-               value = "((NSMutableArray*)_speedEvents[0]).count">
+               value = "((NSMutableArray*)[_speedEvents objectAtIndex:0]).count">
             </PersistentString>
             <PersistentString
                value = "_speedEvents">
             </PersistentString>
             <PersistentString
-               value = "((NSMutableArray*)[_speedEvents objectAtIndex:0]).count">
+               value = "((NSMutableArray*)_speedEvents[0]).count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
