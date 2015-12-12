@@ -27,9 +27,15 @@
 		271778011C0EA705005FE4E0 /* DDFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 271778001C0EA705005FE4E0 /* DDFileReader.m */; };
 		271778021C0EA705005FE4E0 /* DDFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 271778001C0EA705005FE4E0 /* DDFileReader.m */; };
 		271778031C0EA705005FE4E0 /* DDFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 271778001C0EA705005FE4E0 /* DDFileReader.m */; };
+		274F85B41C1BCFE100D83E5A /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 274F85B31C1BCFE100D83E5A /* MapView.xib */; };
+		274F85B51C1BCFE100D83E5A /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 274F85B31C1BCFE100D83E5A /* MapView.xib */; };
+		274F85B61C1BCFE100D83E5A /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 274F85B31C1BCFE100D83E5A /* MapView.xib */; };
+		274F85BE1C1BD0E200D83E5A /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274F85BD1C1BD0E200D83E5A /* MapViewController.m */; };
+		274F85BF1C1BD0E200D83E5A /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274F85BD1C1BD0E200D83E5A /* MapViewController.m */; };
+		274F85C01C1BD0E200D83E5A /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274F85BD1C1BD0E200D83E5A /* MapViewController.m */; };
 		275CAD131C0A537300190036 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 275CAD121C0A537300190036 /* main.m */; };
 		275CAD161C0A537300190036 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 275CAD151C0A537300190036 /* AppDelegate.m */; };
-		275CAD191C0A537300190036 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 275CAD181C0A537300190036 /* MapViewController.m */; };
+		275CAD191C0A537300190036 /* RecordTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 275CAD181C0A537300190036 /* RecordTripViewController.m */; };
 		275CAD1C1C0A537300190036 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 275CAD1A1C0A537300190036 /* Main.storyboard */; };
 		275CAD1F1C0A537300190036 /* Jogger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 275CAD1D1C0A537300190036 /* Jogger.xcdatamodeld */; };
 		275CAD211C0A537300190036 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 275CAD201C0A537300190036 /* Assets.xcassets */; };
@@ -39,6 +45,9 @@
 		278487911C138359003EBCF6 /* TripDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 278487901C138359003EBCF6 /* TripDrawer.m */; };
 		278487921C138359003EBCF6 /* TripDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 278487901C138359003EBCF6 /* TripDrawer.m */; };
 		278487931C138359003EBCF6 /* TripDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 278487901C138359003EBCF6 /* TripDrawer.m */; };
+		27DE81601C140BB500012334 /* SpeedEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DE815F1C140BB500012334 /* SpeedEvent.m */; };
+		27DE81611C140BB500012334 /* SpeedEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DE815F1C140BB500012334 /* SpeedEvent.m */; };
+		27DE81621C140BB500012334 /* SpeedEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DE815F1C140BB500012334 /* SpeedEvent.m */; };
 		2DD29235C155A4657646E38D /* libPods-JoggerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DE0BBD0579EC7439CD61996 /* libPods-JoggerUITests.a */; };
 		F9DD7630E52C7B8C3EB70CC0 /* libPods-Jogger.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2030390A92F16C86F93F71E8 /* libPods-Jogger.a */; };
 /* End PBXBuildFile section */
@@ -77,12 +86,15 @@
 		271777FE1C0E9C6F005FE4E0 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
 		271777FF1C0EA705005FE4E0 /* DDFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDFileReader.h; sourceTree = "<group>"; };
 		271778001C0EA705005FE4E0 /* DDFileReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDFileReader.m; sourceTree = "<group>"; };
+		274F85B31C1BCFE100D83E5A /* MapView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapView.xib; sourceTree = "<group>"; };
+		274F85BC1C1BD0E200D83E5A /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		274F85BD1C1BD0E200D83E5A /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		275CAD0E1C0A537200190036 /* Jogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		275CAD121C0A537300190036 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		275CAD141C0A537300190036 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		275CAD151C0A537300190036 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		275CAD171C0A537300190036 /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
-		275CAD181C0A537300190036 /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		275CAD171C0A537300190036 /* RecordTripViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordTripViewController.h; sourceTree = "<group>"; };
+		275CAD181C0A537300190036 /* RecordTripViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordTripViewController.m; sourceTree = "<group>"; };
 		275CAD1B1C0A537300190036 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		275CAD1E1C0A537300190036 /* Jogger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Jogger.xcdatamodel; sourceTree = "<group>"; };
 		275CAD201C0A537300190036 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -96,6 +108,8 @@
 		275CAD3B1C0A537300190036 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2784878F1C138359003EBCF6 /* TripDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripDrawer.h; sourceTree = "<group>"; };
 		278487901C138359003EBCF6 /* TripDrawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripDrawer.m; sourceTree = "<group>"; };
+		27DE815A1C1403C600012334 /* SpeedEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeedEvent.h; sourceTree = "<group>"; };
+		27DE815F1C140BB500012334 /* SpeedEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeedEvent.m; sourceTree = "<group>"; };
 		3DE0BBD0579EC7439CD61996 /* libPods-JoggerUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JoggerUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CFC0E86FF5BA47D785C2E12 /* Pods-JoggerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JoggerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JoggerUITests/Pods-JoggerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		563F756ABA48BDF2A03278A4 /* libPods-JoggerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JoggerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +164,8 @@
 				271778001C0EA705005FE4E0 /* DDFileReader.m */,
 				2784878F1C138359003EBCF6 /* TripDrawer.h */,
 				278487901C138359003EBCF6 /* TripDrawer.m */,
+				27DE815A1C1403C600012334 /* SpeedEvent.h */,
+				27DE815F1C140BB500012334 /* SpeedEvent.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -159,6 +175,7 @@
 			children = (
 				275CAD1A1C0A537300190036 /* Main.storyboard */,
 				275CAD221C0A537300190036 /* LaunchScreen.storyboard */,
+				274F85B31C1BCFE100D83E5A /* MapView.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -166,8 +183,10 @@
 		271777E31C0BE859005FE4E0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				275CAD171C0A537300190036 /* MapViewController.h */,
-				275CAD181C0A537300190036 /* MapViewController.m */,
+				275CAD171C0A537300190036 /* RecordTripViewController.h */,
+				275CAD181C0A537300190036 /* RecordTripViewController.m */,
+				274F85BC1C1BD0E200D83E5A /* MapViewController.h */,
+				274F85BD1C1BD0E200D83E5A /* MapViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -379,6 +398,7 @@
 				271777E51C0C0887005FE4E0 /* Localizable.strings in Resources */,
 				275CAD211C0A537300190036 /* Assets.xcassets in Resources */,
 				275CAD1C1C0A537300190036 /* Main.storyboard in Resources */,
+				274F85B41C1BCFE100D83E5A /* MapView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				271777E61C0C0887005FE4E0 /* Localizable.strings in Resources */,
+				274F85B51C1BCFE100D83E5A /* MapView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				271777E71C0C0887005FE4E0 /* Localizable.strings in Resources */,
+				274F85B61C1BCFE100D83E5A /* MapView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,8 +550,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				275CAD191C0A537300190036 /* MapViewController.m in Sources */,
+				27DE81601C140BB500012334 /* SpeedEvent.m in Sources */,
+				275CAD191C0A537300190036 /* RecordTripViewController.m in Sources */,
 				275CAD1F1C0A537300190036 /* Jogger.xcdatamodeld in Sources */,
+				274F85BE1C1BD0E200D83E5A /* MapViewController.m in Sources */,
 				271777F11C0D4D5B005FE4E0 /* Trip.m in Sources */,
 				278487911C138359003EBCF6 /* TripDrawer.m in Sources */,
 				275CAD161C0A537300190036 /* AppDelegate.m in Sources */,
@@ -547,6 +571,8 @@
 			files = (
 				271777F21C0D4D5B005FE4E0 /* Trip.m in Sources */,
 				271778021C0EA705005FE4E0 /* DDFileReader.m in Sources */,
+				27DE81611C140BB500012334 /* SpeedEvent.m in Sources */,
+				274F85BF1C1BD0E200D83E5A /* MapViewController.m in Sources */,
 				271777EC1C0D1261005FE4E0 /* FileLogging.m in Sources */,
 				278487921C138359003EBCF6 /* TripDrawer.m in Sources */,
 				275CAD2F1C0A537300190036 /* JoggerTests.m in Sources */,
@@ -561,6 +587,8 @@
 			files = (
 				271777F31C0D4D5B005FE4E0 /* Trip.m in Sources */,
 				271778031C0EA705005FE4E0 /* DDFileReader.m in Sources */,
+				27DE81621C140BB500012334 /* SpeedEvent.m in Sources */,
+				274F85C01C1BD0E200D83E5A /* MapViewController.m in Sources */,
 				271777ED1C0D1261005FE4E0 /* FileLogging.m in Sources */,
 				278487931C138359003EBCF6 /* TripDrawer.m in Sources */,
 				275CAD3A1C0A537300190036 /* JoggerUITests.m in Sources */,
