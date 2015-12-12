@@ -59,7 +59,6 @@
             routeLineView.lineWidth = 15;
         }
         
-        
         overlayView = routeLineView;
         return overlayView;
     } else {

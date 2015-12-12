@@ -33,6 +33,9 @@
 		274F85BE1C1BD0E200D83E5A /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274F85BD1C1BD0E200D83E5A /* MapViewController.m */; };
 		274F85BF1C1BD0E200D83E5A /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274F85BD1C1BD0E200D83E5A /* MapViewController.m */; };
 		274F85C01C1BD0E200D83E5A /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274F85BD1C1BD0E200D83E5A /* MapViewController.m */; };
+		274F85CC1C1BE01900D83E5A /* ScoringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274F85CB1C1BE01900D83E5A /* ScoringViewController.m */; };
+		274F85CD1C1BE01900D83E5A /* ScoringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274F85CB1C1BE01900D83E5A /* ScoringViewController.m */; };
+		274F85CE1C1BE01900D83E5A /* ScoringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274F85CB1C1BE01900D83E5A /* ScoringViewController.m */; };
 		275CAD131C0A537300190036 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 275CAD121C0A537300190036 /* main.m */; };
 		275CAD161C0A537300190036 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 275CAD151C0A537300190036 /* AppDelegate.m */; };
 		275CAD191C0A537300190036 /* RecordTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 275CAD181C0A537300190036 /* RecordTripViewController.m */; };
@@ -89,6 +92,8 @@
 		274F85B31C1BCFE100D83E5A /* MapView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapView.xib; sourceTree = "<group>"; };
 		274F85BC1C1BD0E200D83E5A /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		274F85BD1C1BD0E200D83E5A /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		274F85CA1C1BE01900D83E5A /* ScoringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoringViewController.h; sourceTree = "<group>"; };
+		274F85CB1C1BE01900D83E5A /* ScoringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoringViewController.m; sourceTree = "<group>"; };
 		275CAD0E1C0A537200190036 /* Jogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		275CAD121C0A537300190036 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		275CAD141C0A537300190036 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -187,6 +192,8 @@
 				275CAD181C0A537300190036 /* RecordTripViewController.m */,
 				274F85BC1C1BD0E200D83E5A /* MapViewController.h */,
 				274F85BD1C1BD0E200D83E5A /* MapViewController.m */,
+				274F85CA1C1BE01900D83E5A /* ScoringViewController.h */,
+				274F85CB1C1BE01900D83E5A /* ScoringViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -555,6 +562,7 @@
 				275CAD1F1C0A537300190036 /* Jogger.xcdatamodeld in Sources */,
 				274F85BE1C1BD0E200D83E5A /* MapViewController.m in Sources */,
 				271777F11C0D4D5B005FE4E0 /* Trip.m in Sources */,
+				274F85CC1C1BE01900D83E5A /* ScoringViewController.m in Sources */,
 				278487911C138359003EBCF6 /* TripDrawer.m in Sources */,
 				275CAD161C0A537300190036 /* AppDelegate.m in Sources */,
 				271777EB1C0D1261005FE4E0 /* FileLogging.m in Sources */,
@@ -573,6 +581,7 @@
 				271778021C0EA705005FE4E0 /* DDFileReader.m in Sources */,
 				27DE81611C140BB500012334 /* SpeedEvent.m in Sources */,
 				274F85BF1C1BD0E200D83E5A /* MapViewController.m in Sources */,
+				274F85CD1C1BE01900D83E5A /* ScoringViewController.m in Sources */,
 				271777EC1C0D1261005FE4E0 /* FileLogging.m in Sources */,
 				278487921C138359003EBCF6 /* TripDrawer.m in Sources */,
 				275CAD2F1C0A537300190036 /* JoggerTests.m in Sources */,
@@ -589,6 +598,7 @@
 				271778031C0EA705005FE4E0 /* DDFileReader.m in Sources */,
 				27DE81621C140BB500012334 /* SpeedEvent.m in Sources */,
 				274F85C01C1BD0E200D83E5A /* MapViewController.m in Sources */,
+				274F85CE1C1BE01900D83E5A /* ScoringViewController.m in Sources */,
 				271777ED1C0D1261005FE4E0 /* FileLogging.m in Sources */,
 				278487931C138359003EBCF6 /* TripDrawer.m in Sources */,
 				275CAD3A1C0A537300190036 /* JoggerUITests.m in Sources */,
