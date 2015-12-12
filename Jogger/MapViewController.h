@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "Trip.h"
+#import "TripDrawer.h"
+#import "TripFactory.h"
 
 @interface MapViewController : UIViewController <MKMapViewDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
-
+@property (strong, nonatomic) IBOutlet UIView *view;
+@property (strong, nonatomic) TripDrawer* tripDrawer;
 @end

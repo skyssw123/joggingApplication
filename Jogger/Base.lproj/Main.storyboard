@@ -17,9 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="S5k-V2-9oW">
-                                <rect key="frame" x="0.0" y="6" width="320" height="463"/>
-                            </mapView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S46-0P-HOa">
                                 <rect key="frame" x="0.0" y="477" width="320" height="42"/>
                                 <state key="normal" title="Button"/>
@@ -27,21 +24,25 @@
                                     <action selector="startButtonClicked:" destination="Jz3-mA-y23" eventType="touchUpInside" id="eNq-Nn-349"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oq6-mg-3lD">
+                                <rect key="frame" x="66" y="28" width="280" height="379"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="S5k-V2-9oW" firstAttribute="top" secondItem="FeS-6V-f3I" secondAttribute="bottom" id="1Hy-x7-jEs"/>
-                            <constraint firstItem="S46-0P-HOa" firstAttribute="top" secondItem="S5k-V2-9oW" secondAttribute="bottom" id="Ji8-ME-pi7"/>
+                            <constraint firstItem="Oq6-mg-3lD" firstAttribute="centerX" secondItem="TXV-mj-6GI" secondAttribute="centerX" id="6ZS-Ts-ku2"/>
+                            <constraint firstItem="Oq6-mg-3lD" firstAttribute="top" secondItem="FeS-6V-f3I" secondAttribute="bottom" id="Mab-j2-weP"/>
                             <constraint firstItem="S46-0P-HOa" firstAttribute="centerX" secondItem="TXV-mj-6GI" secondAttribute="centerX" id="SYl-rb-iZS"/>
                             <constraint firstItem="dxO-Ut-8tD" firstAttribute="top" secondItem="S46-0P-HOa" secondAttribute="bottom" id="TSy-PY-tO6"/>
-                            <constraint firstItem="S5k-V2-9oW" firstAttribute="centerX" secondItem="TXV-mj-6GI" secondAttribute="centerX" id="cHz-ED-H79"/>
-                            <constraint firstItem="S5k-V2-9oW" firstAttribute="width" secondItem="TXV-mj-6GI" secondAttribute="width" id="kKJ-DP-nYi"/>
+                            <constraint firstItem="Oq6-mg-3lD" firstAttribute="width" secondItem="TXV-mj-6GI" secondAttribute="width" id="pcR-kl-Ukd"/>
+                            <constraint firstItem="S46-0P-HOa" firstAttribute="top" secondItem="Oq6-mg-3lD" secondAttribute="bottom" id="yne-SF-C86"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Record Trip" id="9x4-J5-5BJ"/>
                     <connections>
-                        <outlet property="mapView" destination="S5k-V2-9oW" id="s1j-BU-jQq"/>
                         <outlet property="startButton" destination="S46-0P-HOa" id="8vp-Ku-qgw"/>
+                        <outlet property="viewForMap" destination="Oq6-mg-3lD" id="Rdy-DT-HCa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ftc-Q5-BbV" userLabel="First Responder" sceneMemberID="firstResponder"/>

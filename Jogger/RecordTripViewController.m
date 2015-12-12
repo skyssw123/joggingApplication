@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.mapView.delegate = self;
+    
     self.allPins = [[NSMutableArray alloc]init];
     self.fileLogger = [FileLogging sharedInstance];
     [self.startButton setTitle:@"START TRIP" forState:UIControlStateNormal];
@@ -30,28 +30,24 @@
     self.startButton.tintColor = PRIMARY_TEXT_COLOR;
     //[self.startButton setTitleColor:PRIMARY_TEXT_COLOR forState:UIControlStateNormal];
     
-    self.mapView.mapType = MKMapTypeStandard;
-    self.mapView.showsUserLocation = YES;
-    
     self.locationManager = [(AppDelegate*)[[UIApplication sharedApplication] delegate] locationManager] ;
-    
     self.locationManager.delegate = self;
     self.locationManager.distanceFilter = kCLDistanceFilterNone;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [self.locationManager requestAlwaysAuthorization];
-    [self.mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
-    [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
     
+    self.mapViewController.view.frame = self.viewForMap.frame;
+    self.mapViewController = [[MapViewController alloc]initWithNibName:@"MapView" bundle:nil];
+    [self addChildViewController:self.mapViewController];
+    [self.viewForMap addSubview:self.mapViewController.view];
+    [self.mapViewController didMoveToParentViewController:self];
     
 //    UILongPressGestureRecognizer *recognizer = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(addPin:)];
 //    recognizer.minimumPressDuration = 0.5;
 //    [self.mapView addGestureRecognizer:recognizer];
     
-    Trip* trip = [TripFactory produceTrip:lastTrip];
-    self.tripDrawer = [[TripDrawer alloc] initWithTrip:trip withMapView:self.mapView];
-    [self.tripDrawer drawLineAtOnceWithColor];
-    [self.tripDrawer drawSpeedingEvents];
-    [self.tripDrawer drawBrakingEvents];
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -75,7 +71,7 @@
     
     NSString* logString = [NSString stringWithFormat:@"timestamp=%@,latitude=%g,longitude=%g,speed=%g,horizontalAccuracy=%g,verticalAccuracy=%g,altitude=%g", timestamp, latitude, longitude, speed, horizontalAccuracy, verticalAccuracy, altitude];
     
-    [self.mapView setCenterCoordinate:newLocation.coordinate animated:YES];
+    //[self.mapView setCenterCoordinate:newLocation.coordinate animated:YES];
     [self.allLocs addObject:newLocation];
     self.prevTimestamp = timeInMiliseconds;
     
@@ -102,35 +98,5 @@
     }
 }
 
--(MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay
-{
-    if([overlay class] == MKPolyline.class)
-    {
-        MKOverlayView* overlayView = nil;
-        MKPolyline* polyline = (MKPolyline *)overlay;
-        MKPolylineView  * routeLineView = [[MKPolylineView alloc] initWithPolyline:polyline];
-        if([polyline.title isEqualToString:@"routeLine"])
-        {
-            routeLineView.fillColor = [UIColor blackColor];
-            routeLineView.strokeColor = [UIColor blackColor];
-            routeLineView.lineWidth = 8;
-        } else if([polyline.title isEqualToString:@"speedLine"])
-        {
-            routeLineView.fillColor = [UIColor blueColor];
-            routeLineView.strokeColor = [UIColor blueColor];
-            routeLineView.lineWidth = 12;
-        } else if([polyline.title isEqualToString:@"brakeLine"])
-        {
-            routeLineView.fillColor = [UIColor brownColor];
-            routeLineView.strokeColor = [UIColor brownColor];
-            routeLineView.lineWidth = 15;
-        }
-        
-        
-        overlayView = routeLineView;
-        return overlayView;
-    } else {
-        return nil;
-    }
-}
+
 @end

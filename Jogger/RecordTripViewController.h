@@ -13,15 +13,17 @@
 #import "Localizable.strings"
 #import "FileLogging.h"
 #import "TripDrawer.h"
+#import "MapViewController.h"
 
 @interface RecordTripViewController : UIViewController<MKMapViewDelegate, CLLocationManagerDelegate>
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
+@property (weak, nonatomic) IBOutlet UIView *viewForMap;
 @property (strong, nonatomic) CLLocationManager* locationManager;
 @property (strong, nonatomic) CLLocation* currentLocation;
 @property (strong, nonatomic) NSMutableArray* allPins;
 @property (strong, nonatomic) NSMutableArray* allLocs;
-@property (strong, nonatomic) TripDrawer* tripDrawer;
+@property (strong, nonatomic) MapViewController* mapViewController;
+
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation;
 @end
 
