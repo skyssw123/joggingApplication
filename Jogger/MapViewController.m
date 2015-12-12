@@ -30,16 +30,25 @@
     [self.tripDrawer drawBrakingEvents];
     
     
-    CLLocationCoordinate2D coord = CLLocationCoordinate2DMake( ((trip.minLatitude + trip.maxLatitude)/2.0), ((trip.minLongitude + trip.maxLongitude)/2.0));
     
+    CLLocationCoordinate2D centerCoord = CLLocationCoordinate2DMake( ((trip.minLatitude + trip.maxLatitude)/2.0) - 0.011, ((trip.minLongitude + trip.maxLongitude)/2.0) + 0.011);
+    
+    //centerCoord.longitude += self.mapView.region.span.longitudeDelta * 0.00004;
 
-    MKCoordinateSpan span = MKCoordinateSpanMake((trip.maxLatitude - trip.minLatitude) * 2, (trip.maxLongitude - trip.minLongitude) * 2);
-    MKCoordinateRegion adjustedRegion = MKCoordinateRegionMake(coord, span);
+    MKCoordinateSpan span = MKCoordinateSpanMake((trip.maxLatitude - trip.minLatitude) * 4, (trip.maxLongitude - trip.minLongitude) * 4);
+    MKCoordinateRegion adjustedRegion = MKCoordinateRegionMake(centerCoord, span);
     
     [self.mapView setRegion:adjustedRegion animated:YES];
+    [self.mapView regionThatFits:adjustedRegion];
+    
+    
     
     // Do any additional setup after loading the view.
 }
+
+- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
