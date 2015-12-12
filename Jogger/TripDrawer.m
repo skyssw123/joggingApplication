@@ -76,11 +76,12 @@
         return ;
     
     // create an array of coordinates from allPins
-
-    Pin* startPin = [[Pin alloc]initWithCoordinate:self.trip.startLoc.coordinate withTitle:@"START" withSubtitle:@"hello"];
+    NSDateFormatter *df = [[NSDateFormatter alloc]init];
+    [df setDateFormat:@"HH:mm, MMM dd, yyyy"];
+    Pin* startPin = [[Pin alloc]initWithCoordinate:self.trip.startLoc.coordinate withTitle:@"START" withSubtitle:[df stringFromDate:self.trip.startLoc.timestamp]];
     [self.mapView addAnnotation:startPin];
     
-    Pin* endPin = [[Pin alloc]initWithCoordinate:self.trip.endLoc.coordinate withTitle:@"END" withSubtitle:@"hello"];
+    Pin* endPin = [[Pin alloc]initWithCoordinate:self.trip.endLoc.coordinate withTitle:@"END" withSubtitle:[df stringFromDate:self.trip.endLoc.timestamp]];
     [self.mapView addAnnotation:endPin];
     self.polyline.title = @"routeLine";
     [self.mapView addOverlay:self.polyline];

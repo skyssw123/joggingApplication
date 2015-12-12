@@ -46,10 +46,6 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
-}
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
