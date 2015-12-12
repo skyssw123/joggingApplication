@@ -18,7 +18,7 @@
     [super viewDidLoad];
     self.mapView.delegate = self;
     self.mapView.mapType = MKMapTypeStandard;
-    self.mapView.showsUserLocation = YES;
+    self.mapView.showsUserLocation = NO;
     [self.mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
     
     [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
@@ -31,7 +31,7 @@
     
     
     
-    CLLocationCoordinate2D centerCoord = CLLocationCoordinate2DMake( ((trip.minLatitude + trip.maxLatitude)/2.0) - 0.011, ((trip.minLongitude + trip.maxLongitude)/2.0) + 0.011);
+    CLLocationCoordinate2D centerCoord = CLLocationCoordinate2DMake( ((trip.minLatitude + trip.maxLatitude)/2.0) - 0.010, ((trip.minLongitude + trip.maxLongitude)/2.0) + 0.011);
     
     //centerCoord.longitude += self.mapView.region.span.longitudeDelta * 0.00004;
 
