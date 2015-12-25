@@ -116,15 +116,21 @@
         self.timer = nil;
         self.isTripBeingRecorded = NO;
         //[self drawLineAtOnce:self.allLocs withColor:[UIColor blackColor] withLineWidth:10];
-        [self.recordingMapViewController.mapView addAnnotation:[[Pin alloc]initWithCoordinate:self.recordingMapViewController.mapView.userLocation.coordinate withTitle:@"Stop" withSubtitle:@""]];
+        
+        NSDateFormatter *df = [[NSDateFormatter alloc]init];
+        [df setDateFormat:@"HH:mm, MMM dd, yyyy"];
+        [self.recordingMapViewController.mapView addAnnotation:[[Pin alloc]initWithCoordinate:self.recordingMapViewController.mapView.userLocation.coordinate withTitle:@"Stop" withSubtitle:[df stringFromDate:[NSDate date]]]];
     }
     
     //Start button clicked
     else
     {
         [self removeAllPinsButUserLocation];
-        [self.recordingMapViewController.mapView addAnnotation:[[Pin alloc]initWithCoordinate:self.recordingMapViewController.mapView.userLocation.coordinate withTitle:@"Start" withSubtitle:@""]];
         self.startDate = [NSDate date];
+        NSDateFormatter *df = [[NSDateFormatter alloc]init];
+        [df setDateFormat:@"HH:mm, MMM dd, yyyy"];
+        [self.recordingMapViewController.mapView addAnnotation:[[Pin alloc]initWithCoordinate:self.recordingMapViewController.mapView.userLocation.coordinate withTitle:@"Start" withSubtitle:[df stringFromDate:self.startDate]]];
+        
         self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
         self.allLocs = [[NSMutableArray alloc]init];
         [self.locationManager startUpdatingLocation];

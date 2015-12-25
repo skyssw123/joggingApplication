@@ -57,35 +57,27 @@
 
 -(MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay
 {
-//    if([overlay class] == MKPolyline.class)
-//    {
-//        MKOverlayView* overlayView = nil;
-//        MKPolyline* polyline = (MKPolyline *)overlay;
-//        MKPolylineView  * routeLineView = [[MKPolylineView alloc] initWithPolyline:polyline];
-//        if([polyline.title isEqualToString:@"routeLine"])
-//        {
-//            routeLineView.fillColor = [UIColor blackColor];
-//            routeLineView.strokeColor = [UIColor blackColor];
-//            routeLineView.lineWidth = 8;
-//        } else if([polyline.title isEqualToString:@"speedLine"])
-//        {
-//            routeLineView.fillColor = [UIColor blueColor];
-//            routeLineView.strokeColor = [UIColor blueColor];
-//            routeLineView.lineWidth = 12;
-//        } else if([polyline.title isEqualToString:@"brakeLine"])
-//        {
-//            routeLineView.fillColor = [UIColor brownColor];
-//            routeLineView.strokeColor = [UIColor brownColor];
-//            routeLineView.lineWidth = 15;
-//        }
-//        
-//        overlayView = routeLineView;
-//        return overlayView;
-//    } else {
-//        return nil;
-//    }
+    if([overlay class] == MKPolyline.class)
+    {
+        MKOverlayView* overlayView = nil;
+        MKPolyline* polyline = (MKPolyline *)overlay;
+        MKPolylineView  * routeLineView = [[MKPolylineView alloc] initWithPolyline:polyline];
+        if([polyline.title isEqualToString:@"routeLine"])
+        {
+            routeLineView.fillColor = [UIColor blackColor];
+            routeLineView.strokeColor = [UIColor blackColor];
+            routeLineView.lineWidth = 8;
+        }
+        
+        overlayView = routeLineView;
+        return overlayView;
+    } else {
+        return nil;
+    }
     return nil;
 }
+
+
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {

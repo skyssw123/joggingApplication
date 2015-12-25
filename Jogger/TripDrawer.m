@@ -86,6 +86,7 @@
     [self.mapView addAnnotation:endPin];
     
     self.polyline.title = @"routeLine";
+    
     [self.mapView addOverlay:self.polyline];
 }
 
