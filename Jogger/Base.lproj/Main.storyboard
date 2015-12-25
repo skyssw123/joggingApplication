@@ -72,6 +72,12 @@
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fgp-gd-E1i" userLabel="3rd">
                                         <rect key="frame" x="0.0" y="85" width="240" height="27"/>
                                         <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hZ-L3-Hh3" userLabel="calories">
+                                                <rect key="frame" x="99" y="3" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Calories (kCal)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9k-bo-DkB">
                                                 <rect key="frame" x="99" y="-47" width="42" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -81,14 +87,22 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="8hZ-L3-Hh3" secondAttribute="trailing" constant="5" id="0ja-l8-Xq8"/>
                                             <constraint firstItem="S9k-bo-DkB" firstAttribute="centerY" secondItem="Fgp-gd-E1i" secondAttribute="centerY" id="KDK-ZU-4or"/>
                                             <constraint firstItem="S9k-bo-DkB" firstAttribute="leading" secondItem="Fgp-gd-E1i" secondAttribute="leading" constant="5" id="N70-d4-PD3"/>
+                                            <constraint firstItem="8hZ-L3-Hh3" firstAttribute="centerY" secondItem="Fgp-gd-E1i" secondAttribute="centerY" id="ml4-5b-Ihj"/>
                                             <constraint firstAttribute="height" constant="42" id="qll-bd-iBP"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Py-bZ-wfb" userLabel="2nd">
                                         <rect key="frame" x="0.0" y="8" width="240" height="42"/>
                                         <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYc-kU-pGR" userLabel="distance">
+                                                <rect key="frame" x="99" y="11" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Distance (m)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qL-uh-QXQ">
                                                 <rect key="frame" x="99" y="11" width="42" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -98,6 +112,8 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="jYc-kU-pGR" secondAttribute="trailing" constant="5" id="1Rz-Fs-p2g"/>
+                                            <constraint firstItem="jYc-kU-pGR" firstAttribute="centerY" secondItem="7Py-bZ-wfb" secondAttribute="centerY" id="FLd-Yg-kJp"/>
                                             <constraint firstItem="1qL-uh-QXQ" firstAttribute="centerY" secondItem="7Py-bZ-wfb" secondAttribute="centerY" id="KqE-Wf-Mtg"/>
                                             <constraint firstAttribute="height" constant="42" id="Qnz-00-pYo"/>
                                             <constraint firstItem="1qL-uh-QXQ" firstAttribute="leading" secondItem="7Py-bZ-wfb" secondAttribute="leading" constant="5" id="iVx-bw-rf8"/>
@@ -106,6 +122,12 @@
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ao1-jh-pFF" userLabel="1st">
                                         <rect key="frame" x="0.0" y="-13" width="240" height="43"/>
                                         <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uyD-nZ-bal" userLabel="speed">
+                                                <rect key="frame" x="99" y="11" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Avg Speed (m/min)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GtV-M6-xue">
                                                 <rect key="frame" x="99" y="11" width="42" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -116,8 +138,10 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="0wB-1h-rXF"/>
+                                            <constraint firstItem="uyD-nZ-bal" firstAttribute="centerY" secondItem="Ao1-jh-pFF" secondAttribute="centerY" id="DSL-ju-dBN"/>
                                             <constraint firstItem="GtV-M6-xue" firstAttribute="leading" secondItem="Ao1-jh-pFF" secondAttribute="leading" constant="5" id="RFO-iU-Sa3"/>
                                             <constraint firstItem="GtV-M6-xue" firstAttribute="centerY" secondItem="Ao1-jh-pFF" secondAttribute="centerY" id="ZcH-sv-z8A"/>
+                                            <constraint firstAttribute="trailing" secondItem="uyD-nZ-bal" secondAttribute="trailing" constant="5" id="dRe-Xy-SRN"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -165,12 +189,15 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Run" image="icon-record" selectedImage="icon-record-fill" id="9x4-J5-5BJ"/>
                     <connections>
+                        <outlet property="caloriesValueLabel" destination="8hZ-L3-Hh3" id="RrT-FO-6Fm"/>
+                        <outlet property="distanceValueLabel" destination="jYc-kU-pGR" id="Ezi-mf-uaP"/>
                         <outlet property="firstView" destination="Ao1-jh-pFF" id="oeP-zw-FEC"/>
                         <outlet property="fourthView" destination="zcp-6k-YxP" id="7Iw-Jj-Qbu"/>
                         <outlet property="secondView" destination="7Py-bZ-wfb" id="EQV-xp-3lf"/>
+                        <outlet property="speedValueLabel" destination="GtV-M6-xue" id="uBg-h8-Bo9"/>
                         <outlet property="startButton" destination="S46-0P-HOa" id="8vp-Ku-qgw"/>
                         <outlet property="thirdView" destination="Fgp-gd-E1i" id="pfi-9w-jcT"/>
-                        <outlet property="timeLabel" destination="Mrq-FE-PUd" id="lfe-9y-ybp"/>
+                        <outlet property="timeValueLabel" destination="Mrq-FE-PUd" id="AH8-3D-tbY"/>
                         <outlet property="viewForMap" destination="Oq6-mg-3lD" id="Rdy-DT-HCa"/>
                     </connections>
                 </viewController>

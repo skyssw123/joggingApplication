@@ -22,7 +22,10 @@
 @property (weak, nonatomic) IBOutlet UIView *firstView;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UIView *viewForMap;
-@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeValueLabel;
+@property (weak, nonatomic) IBOutlet UILabel *speedValueLabel;
+@property (weak, nonatomic) IBOutlet UILabel *distanceValueLabel;
+@property (weak, nonatomic) IBOutlet UILabel *caloriesValueLabel;
 @property (strong, nonatomic) NSTimer* timer;
 @property (strong, nonatomic) CLLocationManager* locationManager;
 @property (strong, nonatomic) CLLocation* currentLocation;

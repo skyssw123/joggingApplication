@@ -27,7 +27,7 @@
     [self.startButton setTitle:@"Start Running" forState:UIControlStateNormal];
     self.startButton.backgroundColor = PRIMARY_BUTTON_COLOR;
     self.startButton.tintColor = PRIMARY_TEXT_COLOR;
-    self.timeLabel.text = @"00 : 00 : 00.0";
+    self.timeValueLabel.text = @"00 : 00 : 00.0";
     self.locationManager = [(AppDelegate*)[[UIApplication sharedApplication] delegate] locationManager] ;
     self.locationManager.delegate = self;
     self.locationManager.distanceFilter = kCLDistanceFilterNone;
@@ -138,7 +138,7 @@
     
     // Format the elapsed time and set it to the label
     NSString *timeString = [dateFormatter stringFromDate:timerDate];
-    self.timeLabel.text = timeString;
+    self.timeValueLabel.text = timeString;
 }
 
 @end
