@@ -22,11 +22,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.allPins = [[NSMutableArray alloc]init];
     self.fileLogger = [FileLogging sharedInstance];
-    [self.startButton setTitle:@"START TRIP" forState:UIControlStateNormal];
-    self.startButton.backgroundColor = PRIMARY_BRAND_COLOR;
+    [self.startButton setTitle:@"Start Running" forState:UIControlStateNormal];
+    self.startButton.backgroundColor = PRIMARY_BUTTON_COLOR;
     self.startButton.tintColor = PRIMARY_TEXT_COLOR;
     //[self.startButton setTitleColor:PRIMARY_TEXT_COLOR forState:UIControlStateNormal];
     
@@ -83,7 +82,7 @@
     if(self.isTripBeingRecorded)
     {
         [self.locationManager stopUpdatingLocation];
-        [self.startButton setTitle:@"START TRIP" forState:UIControlStateNormal];
+        [self.startButton setTitle:@"Start Running" forState:UIControlStateNormal];
         self.isTripBeingRecorded = NO;
         //[self drawLineAtOnce:self.allLocs withColor:[UIColor blackColor] withLineWidth:10];
     }
@@ -93,7 +92,7 @@
         self.allLocs = [[NSMutableArray alloc]init];
         [self.locationManager startUpdatingLocation];
         [self.fileLogger log:@"START OF TRIP"];
-        [self.startButton setTitle:@"STOP TRIP" forState:UIControlStateNormal];
+        [self.startButton setTitle:@"Stop Running" forState:UIControlStateNormal];
         self.isTripBeingRecorded = YES;
     }
 }

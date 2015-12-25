@@ -36,6 +36,9 @@
 		274F85CC1C1BE01900D83E5A /* ScoringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274F85CB1C1BE01900D83E5A /* ScoringViewController.m */; };
 		274F85CD1C1BE01900D83E5A /* ScoringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274F85CB1C1BE01900D83E5A /* ScoringViewController.m */; };
 		274F85CE1C1BE01900D83E5A /* ScoringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274F85CB1C1BE01900D83E5A /* ScoringViewController.m */; };
+		274F85D11C2CD24600D83E5A /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274F85D01C2CD24600D83E5A /* MoreViewController.m */; };
+		274F85D21C2CD24600D83E5A /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274F85D01C2CD24600D83E5A /* MoreViewController.m */; };
+		274F85D31C2CD24600D83E5A /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274F85D01C2CD24600D83E5A /* MoreViewController.m */; };
 		275CAD131C0A537300190036 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 275CAD121C0A537300190036 /* main.m */; };
 		275CAD161C0A537300190036 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 275CAD151C0A537300190036 /* AppDelegate.m */; };
 		275CAD191C0A537300190036 /* RecordTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 275CAD181C0A537300190036 /* RecordTripViewController.m */; };
@@ -94,6 +97,8 @@
 		274F85BD1C1BD0E200D83E5A /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		274F85CA1C1BE01900D83E5A /* ScoringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoringViewController.h; sourceTree = "<group>"; };
 		274F85CB1C1BE01900D83E5A /* ScoringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoringViewController.m; sourceTree = "<group>"; };
+		274F85CF1C2CD24600D83E5A /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
+		274F85D01C2CD24600D83E5A /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
 		275CAD0E1C0A537200190036 /* Jogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		275CAD121C0A537300190036 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		275CAD141C0A537300190036 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -194,6 +199,8 @@
 				274F85BD1C1BD0E200D83E5A /* MapViewController.m */,
 				274F85CA1C1BE01900D83E5A /* ScoringViewController.h */,
 				274F85CB1C1BE01900D83E5A /* ScoringViewController.m */,
+				274F85CF1C2CD24600D83E5A /* MoreViewController.h */,
+				274F85D01C2CD24600D83E5A /* MoreViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -562,6 +569,7 @@
 				275CAD1F1C0A537300190036 /* Jogger.xcdatamodeld in Sources */,
 				274F85BE1C1BD0E200D83E5A /* MapViewController.m in Sources */,
 				271777F11C0D4D5B005FE4E0 /* Trip.m in Sources */,
+				274F85D11C2CD24600D83E5A /* MoreViewController.m in Sources */,
 				274F85CC1C1BE01900D83E5A /* ScoringViewController.m in Sources */,
 				278487911C138359003EBCF6 /* TripDrawer.m in Sources */,
 				275CAD161C0A537300190036 /* AppDelegate.m in Sources */,
@@ -586,6 +594,7 @@
 				278487921C138359003EBCF6 /* TripDrawer.m in Sources */,
 				275CAD2F1C0A537300190036 /* JoggerTests.m in Sources */,
 				271777F71C0E98CA005FE4E0 /* TripFactory.m in Sources */,
+				274F85D21C2CD24600D83E5A /* MoreViewController.m in Sources */,
 				271777D31C0AA763005FE4E0 /* Pin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -603,6 +612,7 @@
 				278487931C138359003EBCF6 /* TripDrawer.m in Sources */,
 				275CAD3A1C0A537300190036 /* JoggerUITests.m in Sources */,
 				271777F81C0E98CA005FE4E0 /* TripFactory.m in Sources */,
+				274F85D31C2CD24600D83E5A /* MoreViewController.m in Sources */,
 				271777D41C0AA763005FE4E0 /* Pin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
