@@ -29,13 +29,10 @@
     [self.tripDrawer drawSpeedingEvents];
     [self.tripDrawer drawBrakingEvents];
     
+    CLLocationCoordinate2D centerCoord = CLLocationCoordinate2DMake( ((trip.minLatitude + trip.maxLatitude)/2.0), ((trip.minLongitude + trip.maxLongitude)/2.0));
     
-    
-    CLLocationCoordinate2D centerCoord = CLLocationCoordinate2DMake( ((trip.minLatitude + trip.maxLatitude)/2.0) - 0.010, ((trip.minLongitude + trip.maxLongitude)/2.0) + 0.011);
-    
-    //centerCoord.longitude += self.mapView.region.span.longitudeDelta * 0.00004;
 
-    MKCoordinateSpan span = MKCoordinateSpanMake((trip.maxLatitude - trip.minLatitude) * 4, (trip.maxLongitude - trip.minLongitude) * 4);
+    MKCoordinateSpan span = MKCoordinateSpanMake((trip.maxLatitude - trip.minLatitude) * 5, (trip.maxLongitude - trip.minLongitude) * 5);
     MKCoordinateRegion adjustedRegion = MKCoordinateRegionMake(centerCoord, span);
     
     [self.mapView setRegion:adjustedRegion animated:YES];
