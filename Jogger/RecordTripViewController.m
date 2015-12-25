@@ -38,6 +38,18 @@
     self.recordingMapViewController = [[RecordingMapViewController alloc]initWithNibName:@"MapView" bundle:nil];
     self.recordingMapViewController.view.frame = CGRectMake(0.0, 0.0, self.viewForMap.frame.size.width, self.viewForMap.frame.size.height);
     
+    CALayer* bottomBorder1 = [CALayer layer];
+    bottomBorder1.frame = CGRectMake(0.0, 0.0, 1000, 1);
+    bottomBorder1.backgroundColor = [UIColor lightGrayColor].CGColor;
+    CALayer* bottomBorder2 = [CALayer layer];
+    bottomBorder2.frame = CGRectMake(0.0, 0.0, 1000, 1);
+    bottomBorder2.backgroundColor = [UIColor lightGrayColor].CGColor;
+    CALayer* bottomBorder3 = [CALayer layer];
+    bottomBorder3.frame = CGRectMake(0.0, 0.0, 1000, 1);
+    bottomBorder3.backgroundColor = [UIColor lightGrayColor].CGColor;
+    [self.secondView.layer addSublayer:bottomBorder1];
+    [self.thirdView.layer addSublayer:bottomBorder2];
+    [self.fourthView.layer addSublayer:bottomBorder3];
     
     [self addChildViewController:self.recordingMapViewController];
     [self.viewForMap addSubview:self.recordingMapViewController.view];

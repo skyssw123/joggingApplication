@@ -16,6 +16,10 @@
 #import "RecordingMapViewController.h"
 
 @interface RecordTripViewController : UIViewController<MKMapViewDelegate, CLLocationManagerDelegate>
+@property (weak, nonatomic) IBOutlet UIView *fourthView;
+@property (weak, nonatomic) IBOutlet UIView *thirdView;
+@property (weak, nonatomic) IBOutlet UIView *secondView;
+@property (weak, nonatomic) IBOutlet UIView *firstView;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UIView *viewForMap;
 @property (strong, nonatomic) CLLocationManager* locationManager;

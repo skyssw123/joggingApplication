@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Jogger/RecordTripViewController.m"
-            timestampString = "472718964.18972"
+            timestampString = "472722031.110735"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "-startButtonClicked:"
             landmarkType = "5">
          </BreakpointContent>
