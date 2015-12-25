@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Record Trip-->
+        <!--Record-->
         <scene sceneID="Sh5-pZ-Cei">
             <objects>
                 <viewController id="Jz3-mA-y23" customClass="RecordTripViewController" sceneMemberID="viewController">
@@ -17,29 +17,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S46-0P-HOa">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oq6-mg-3lD">
+                                <rect key="frame" x="66" y="28" width="280" height="379"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S46-0P-HOa">
                                 <rect key="frame" x="0.0" y="477" width="320" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="iEi-6X-Gp4"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="startButtonClicked:" destination="Jz3-mA-y23" eventType="touchUpInside" id="eNq-Nn-349"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oq6-mg-3lD">
-                                <rect key="frame" x="66" y="28" width="280" height="379"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Oq6-mg-3lD" firstAttribute="centerX" secondItem="TXV-mj-6GI" secondAttribute="centerX" id="6ZS-Ts-ku2"/>
                             <constraint firstItem="Oq6-mg-3lD" firstAttribute="top" secondItem="FeS-6V-f3I" secondAttribute="bottom" id="Mab-j2-weP"/>
                             <constraint firstItem="S46-0P-HOa" firstAttribute="centerX" secondItem="TXV-mj-6GI" secondAttribute="centerX" id="SYl-rb-iZS"/>
-                            <constraint firstItem="dxO-Ut-8tD" firstAttribute="top" secondItem="S46-0P-HOa" secondAttribute="bottom" id="TSy-PY-tO6"/>
+                            <constraint firstItem="S46-0P-HOa" firstAttribute="width" secondItem="TXV-mj-6GI" secondAttribute="width" id="fvq-Ew-yQZ"/>
+                            <constraint firstItem="S46-0P-HOa" firstAttribute="top" secondItem="Oq6-mg-3lD" secondAttribute="bottom" id="iCs-rS-7Vx"/>
+                            <constraint firstItem="dxO-Ut-8tD" firstAttribute="top" secondItem="S46-0P-HOa" secondAttribute="bottom" id="nFB-0d-nzr"/>
                             <constraint firstItem="Oq6-mg-3lD" firstAttribute="width" secondItem="TXV-mj-6GI" secondAttribute="width" id="pcR-kl-Ukd"/>
-                            <constraint firstItem="S46-0P-HOa" firstAttribute="top" secondItem="Oq6-mg-3lD" secondAttribute="bottom" id="yne-SF-C86"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Record Trip" id="9x4-J5-5BJ"/>
+                    <tabBarItem key="tabBarItem" title="Record" id="9x4-J5-5BJ"/>
                     <connections>
                         <outlet property="startButton" destination="S46-0P-HOa" id="8vp-Ku-qgw"/>
                         <outlet property="viewForMap" destination="Oq6-mg-3lD" id="Rdy-DT-HCa"/>
@@ -49,7 +53,7 @@
             </objects>
             <point key="canvasLocation" x="487" y="727"/>
         </scene>
-        <!--Last Trip-->
+        <!--Score-->
         <scene sceneID="zv3-uX-o0O">
             <objects>
                 <viewController id="sYb-1o-PHy" customClass="ScoringViewController" sceneMemberID="viewController">
@@ -84,7 +88,7 @@
                             <constraint firstItem="3eS-W7-or0" firstAttribute="centerX" secondItem="I9K-CX-DqY" secondAttribute="centerX" id="S0S-om-v3p"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Last Trip" id="Gx7-OV-z2z"/>
+                    <tabBarItem key="tabBarItem" title="Score" id="Gx7-OV-z2z"/>
                     <connections>
                         <outlet property="ViewForShinobiChart" destination="ZoH-VN-Szp" id="vgn-9d-cut"/>
                         <outlet property="viewForMap" destination="3eS-W7-or0" id="snG-hW-TLE"/>

@@ -19,6 +19,21 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.locationManager = [[CLLocationManager alloc]init];
+    
+    UITabBarController* tabBarController = (UITabBarController *)self.window.rootViewController;
+    UITabBar* tabBar = tabBarController.tabBar;
+    UITabBarItem* tabBarItem1 = [tabBar.items objectAtIndex:0];
+    UITabBarItem* tabBarItem2 = [tabBar.items objectAtIndex:1];
+    
+    tabBarItem1.title = @"Score";
+    tabBarItem2.title = @"Record";
+    
+    [tabBarItem1 setFinishedSelectedImage:[UIImage imageNamed:@"icon-score-fill.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"icon-score.png"]];
+    [tabBarItem2 setFinishedSelectedImage:[UIImage imageNamed:@"icon-record-fill.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"icon-record.png"]];
+    
+    UIColor *titleHighlightedColor = [UIColor colorWithRed:153/255.0 green:192/255.0 blue:48/255.0 alpha:1.0];
+    
+    
     return YES;
 }
 
