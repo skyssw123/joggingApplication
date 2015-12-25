@@ -43,7 +43,7 @@
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
     CLLocationCoordinate2D centerCoordinate = CLLocationCoordinate2DMake(self.mapView.userLocation.coordinate.latitude - 0.0015, (self.mapView.userLocation.coordinate.longitude));
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(centerCoordinate, 800, 800);
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(centerCoordinate, 1000, 1000);
     [self.mapView setRegion:region animated:YES];
 }
 
