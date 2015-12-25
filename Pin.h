@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 @import MapKit;
 
-@interface Pin : NSObject <MKAnnotation>
+@interface Pin : MKAnnotationView
 
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
 @property (nonatomic, copy) NSString *title;

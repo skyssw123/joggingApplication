@@ -12,7 +12,7 @@
 #import "TripDrawer.h"
 #import "TripFactory.h"
 
-@interface MapViewController : UIViewController <MKMapViewDelegate>
+@interface MapViewController : UIViewController <MKMapViewDelegate, MKAnnotation>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) IBOutlet UIView *view;
 @property (strong, nonatomic) TripDrawer* tripDrawer;

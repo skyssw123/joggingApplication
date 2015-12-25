@@ -86,6 +86,7 @@
     {
         [self.locationManager stopUpdatingLocation];
         [self.startButton setTitle:@"Start Running" forState:UIControlStateNormal];
+        self.startButton.backgroundColor = PRIMARY_BUTTON_COLOR;
         self.isTripBeingRecorded = NO;
         //[self drawLineAtOnce:self.allLocs withColor:[UIColor blackColor] withLineWidth:10];
     }
@@ -96,6 +97,7 @@
         [self.locationManager startUpdatingLocation];
         [self.fileLogger log:@"START OF TRIP"];
         [self.startButton setTitle:@"Stop Running" forState:UIControlStateNormal];
+        self.startButton.backgroundColor = SECONDARY_BUTTON_COLOR;
         self.isTripBeingRecorded = YES;
     }
 }
