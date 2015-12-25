@@ -63,7 +63,6 @@
 //    UILongPressGestureRecognizer *recognizer = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(addPin:)];
 //    recognizer.minimumPressDuration = 0.5;
 //    [self.mapView addGestureRecognizer:recognizer];
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -101,6 +100,9 @@
     CLLocationCoordinate2D centerCoordinate = CLLocationCoordinate2DMake(self.recordingMapViewController.mapView.userLocation.coordinate.latitude - 0.002, (self.recordingMapViewController.mapView.userLocation.coordinate.longitude));
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(centerCoordinate, 1200, 1200);
     [self.recordingMapViewController.mapView setRegion:region animated:YES];
+    
+    
+    
 }
 
 - (IBAction)startButtonClicked:(id)sender
