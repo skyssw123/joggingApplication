@@ -28,6 +28,11 @@
     self.startButton.backgroundColor = PRIMARY_BUTTON_COLOR;
     self.startButton.tintColor = PRIMARY_TEXT_COLOR;
     self.timeValueLabel.text = @"00 : 00 : 00.0";
+    self.distanceValueLabel.text = @"0";
+    self.caloriesValueLabel.text = @"0";
+    
+    self.speedValueLabel.text = @"0";
+    
     self.locationManager = [(AppDelegate*)[[UIApplication sharedApplication] delegate] locationManager] ;
     self.locationManager.delegate = self;
     self.locationManager.distanceFilter = kCLDistanceFilterNone;
