@@ -19,9 +19,6 @@
     self.mapView.delegate = self;
     self.mapView.mapType = MKMapTypeStandard;
     self.mapView.showsUserLocation = NO;
-    [self.mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
-    
-    [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
     
     Trip* trip = [TripFactory produceTrip:lastTrip];
     self.tripDrawer = [[TripDrawer alloc] initWithTrip:trip withMapView:self.mapView];
