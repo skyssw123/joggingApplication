@@ -35,11 +35,11 @@
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [self.locationManager requestAlwaysAuthorization];
     
-    self.mapViewController.view.frame = self.viewForMap.frame;
-    self.mapViewController = [[MapViewController alloc]initWithNibName:@"MapView" bundle:nil];
-    [self addChildViewController:self.mapViewController];
-    [self.viewForMap addSubview:self.mapViewController.view];
-    [self.mapViewController didMoveToParentViewController:self];
+    self.recordingMapViewController.view.frame = self.viewForMap.frame;
+    self.recordingMapViewController = [[RecordingMapViewController alloc]initWithNibName:@"MapView" bundle:nil];
+    [self addChildViewController:self.recordingMapViewController];
+    [self.viewForMap addSubview:self.recordingMapViewController.view];
+    [self.recordingMapViewController didMoveToParentViewController:self];
     
 //    UILongPressGestureRecognizer *recognizer = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(addPin:)];
 //    recognizer.minimumPressDuration = 0.5;
