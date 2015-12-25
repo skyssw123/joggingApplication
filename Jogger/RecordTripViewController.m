@@ -101,8 +101,11 @@
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(centerCoordinate, 1200, 1200);
     [self.recordingMapViewController.mapView setRegion:region animated:YES];
     
-    
-    
+    CLLocationCoordinate2D coordinates[2];
+    coordinates[0] = oldLocation.coordinate;
+    coordinates[1] = newLocation.coordinate;
+    self.polyline = [MKPolyline polylineWithCoordinates:coordinates count:2];
+    [self.recordingMapViewController.mapView addOverlay:self.polyline];
 }
 
 - (IBAction)startButtonClicked:(id)sender

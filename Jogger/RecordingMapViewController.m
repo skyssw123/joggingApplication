@@ -41,6 +41,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    self.i = 0;
 }
 
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation

@@ -17,4 +17,5 @@
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) IBOutlet UIView *view;
 @property (strong, nonatomic) TripDrawer* tripDrawer;
+@property (strong, nonatomic) MKPolyline* polyline;
 @end
