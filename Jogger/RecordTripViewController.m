@@ -49,7 +49,6 @@
     [self.secondView.layer addSublayer:bottomBorder1];
     [self.thirdView.layer addSublayer:bottomBorder2];
     [self.fourthView.layer addSublayer:bottomBorder3];
-    
     [self addChildViewController:self.recordingMapViewController];
     [self.viewForMap addSubview:self.recordingMapViewController.view];
     
