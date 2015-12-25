@@ -133,6 +133,7 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S46-0P-HOa">
                                 <rect key="frame" x="0.0" y="469" width="320" height="42"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="6q0-9n-gpJ"/>
                                     <constraint firstAttribute="height" constant="42" id="PXa-PM-HSq"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
@@ -143,15 +144,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Vpu-t7-m5J" firstAttribute="width" secondItem="TXV-mj-6GI" secondAttribute="width" id="5e1-Lb-Yxa"/>
-                            <constraint firstItem="S46-0P-HOa" firstAttribute="width" secondItem="Vpu-t7-m5J" secondAttribute="width" id="6Mu-EL-9cI"/>
                             <constraint firstItem="Oq6-mg-3lD" firstAttribute="centerX" secondItem="TXV-mj-6GI" secondAttribute="centerX" id="6ZS-Ts-ku2"/>
                             <constraint firstItem="Oq6-mg-3lD" firstAttribute="top" secondItem="FeS-6V-f3I" secondAttribute="bottom" id="Mab-j2-weP"/>
+                            <constraint firstItem="dxO-Ut-8tD" firstAttribute="top" secondItem="Oq6-mg-3lD" secondAttribute="bottom" id="Qng-5g-D6b"/>
                             <constraint firstItem="S46-0P-HOa" firstAttribute="top" secondItem="Vpu-t7-m5J" secondAttribute="bottom" id="Qpd-q7-AXZ"/>
                             <constraint firstItem="dxO-Ut-8tD" firstAttribute="top" secondItem="S46-0P-HOa" secondAttribute="bottom" id="Y1h-6T-r1U"/>
                             <constraint firstItem="Vpu-t7-m5J" firstAttribute="centerX" secondItem="TXV-mj-6GI" secondAttribute="centerX" id="gd5-6e-7nb"/>
-                            <constraint firstItem="Vpu-t7-m5J" firstAttribute="top" secondItem="Oq6-mg-3lD" secondAttribute="bottom" id="iYu-WG-QGj"/>
                             <constraint firstItem="Oq6-mg-3lD" firstAttribute="width" secondItem="TXV-mj-6GI" secondAttribute="width" id="pcR-kl-Ukd"/>
+                            <constraint firstItem="Vpu-t7-m5J" firstAttribute="width" secondItem="S46-0P-HOa" secondAttribute="width" id="vcw-NJ-rys"/>
                             <constraint firstItem="S46-0P-HOa" firstAttribute="centerX" secondItem="TXV-mj-6GI" secondAttribute="centerX" id="ztt-bg-bjA"/>
                         </constraints>
                     </view>
