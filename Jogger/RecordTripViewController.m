@@ -34,6 +34,7 @@
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [self.locationManager requestAlwaysAuthorization];
     
+    
     self.recordingMapViewController = [[RecordingMapViewController alloc]initWithNibName:@"MapView" bundle:nil];
     self.recordingMapViewController.view.frame = CGRectMake(0.0, 0.0, self.viewForMap.frame.size.width, self.viewForMap.frame.size.height);
     
@@ -58,8 +59,11 @@
 //    recognizer.minimumPressDuration = 0.5;
 //    [self.mapView addGestureRecognizer:recognizer];
     
-    
-    
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    //[self.startButton setEnabled:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -88,8 +92,10 @@
     self.prevTimestamp = timeInMiliseconds;
     
     [self.fileLogger log:logString];
-    CLLocationCoordinate2D centerCoordinate = CLLocationCoordinate2DMake(self.recordingMapViewController.mapView.userLocation.location.coordinate.latitude - 0.003, (self.recordingMapViewController.mapView.userLocation.location.coordinate.longitude));
-    [self.recordingMapViewController.mapView setCenterCoordinate:centerCoordinate animated:YES];
+    
+    CLLocationCoordinate2D centerCoordinate = CLLocationCoordinate2DMake(self.recordingMapViewController.mapView.userLocation.coordinate.latitude - 0.0015, (self.recordingMapViewController.mapView.userLocation.coordinate.longitude));
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(centerCoordinate, 800, 800);
+    [self.recordingMapViewController.mapView setRegion:region animated:YES];
 }
 
 - (IBAction)startButtonClicked:(id)sender

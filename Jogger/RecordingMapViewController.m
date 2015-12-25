@@ -18,7 +18,7 @@
     self.mapView.delegate = self;
     self.mapView.mapType = MKMapTypeStandard;
     self.mapView.showsUserLocation = YES;
-    [self.mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
+    //[self.mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
     
 //    
 //   
@@ -35,10 +35,16 @@
     
     // Do any additional setup after loading the view.
 }
+
 - (void)viewWillAppear:(BOOL)animated:(BOOL)animated
 {
-    CLLocationCoordinate2D centerCoordinate = CLLocationCoordinate2DMake(self.mapView.userLocation.coordinate.latitude - 0.003, (self.mapView.userLocation.coordinate.longitude));
-    [self.mapView setCenterCoordinate:centerCoordinate animated:YES];
+}
+
+-(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+{
+    CLLocationCoordinate2D centerCoordinate = CLLocationCoordinate2DMake(self.mapView.userLocation.coordinate.latitude - 0.0015, (self.mapView.userLocation.coordinate.longitude));
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(centerCoordinate, 800, 800);
+    [self.mapView setRegion:region animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
