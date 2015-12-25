@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Record-->
+        <!--Run-->
         <scene sceneID="Sh5-pZ-Cei">
             <objects>
                 <viewController id="Jz3-mA-y23" customClass="RecordTripViewController" sceneMemberID="viewController">
@@ -43,7 +43,7 @@
                             <constraint firstItem="Oq6-mg-3lD" firstAttribute="width" secondItem="TXV-mj-6GI" secondAttribute="width" id="pcR-kl-Ukd"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Record" id="9x4-J5-5BJ"/>
+                    <tabBarItem key="tabBarItem" title="Run" image="icon-record" selectedImage="icon-record-fill" id="9x4-J5-5BJ"/>
                     <connections>
                         <outlet property="startButton" destination="S46-0P-HOa" id="8vp-Ku-qgw"/>
                         <outlet property="viewForMap" destination="Oq6-mg-3lD" id="Rdy-DT-HCa"/>
@@ -88,7 +88,7 @@
                             <constraint firstItem="3eS-W7-or0" firstAttribute="centerX" secondItem="I9K-CX-DqY" secondAttribute="centerX" id="S0S-om-v3p"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Score" id="Gx7-OV-z2z"/>
+                    <tabBarItem key="tabBarItem" title="Score" image="icon-score" selectedImage="icon-score-fill" id="Gx7-OV-z2z"/>
                     <connections>
                         <outlet property="ViewForShinobiChart" destination="ZoH-VN-Szp" id="vgn-9d-cut"/>
                         <outlet property="viewForMap" destination="3eS-W7-or0" id="snG-hW-TLE"/>
@@ -117,4 +117,10 @@
             <point key="canvasLocation" x="-53" y="413"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon-record" width="25" height="25"/>
+        <image name="icon-record-fill" width="25" height="25"/>
+        <image name="icon-score" width="25" height="25"/>
+        <image name="icon-score-fill" width="25" height="25"/>
+    </resources>
 </document>
