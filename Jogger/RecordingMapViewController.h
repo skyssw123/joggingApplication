@@ -13,6 +13,7 @@
 #import "TripDrawer.h"
 #import "TripFactory.h"
 @interface RecordingMapViewController : UIViewController<MKMapViewDelegate>
+@property int i;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) IBOutlet UIView *view;
 @property (strong, nonatomic) TripDrawer* tripDrawer;

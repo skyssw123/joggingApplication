@@ -7,12 +7,13 @@
 //
 
 #import "RecordingMapViewController.h"
+#import "Colors.h"
 
 @interface RecordingMapViewController ()
-
 @end
 
 @implementation RecordingMapViewController
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.mapView.delegate = self;
@@ -36,7 +37,9 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)viewWillAppear:(BOOL)animated:(BOOL)animated
+
+
+- (void)viewWillAppear:(BOOL)animated
 {
 }
 
@@ -84,6 +87,32 @@
     return nil;
 }
 
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    if (self.i == 0)
+    {
+        self.i ++;
+        return nil;
+    }
+    
+    else if (self.i == 1)
+    {
+        self.i++;
+        MKPinAnnotationView* annView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"pin"];
+        annView.pinTintColor = PRIMARY_BUTTON_COLOR;
+        return annView;
+    }
+    else if (self.i == 2)
+    {
+        self.i = 1;
+        MKPinAnnotationView* annView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"pin"];
+        annView.pinTintColor = SECONDARY_BUTTON_COLOR;
+        return annView;
+    }
+    
+    else
+        return nil;
+}
 /*
  #pragma mark - Navigation
  

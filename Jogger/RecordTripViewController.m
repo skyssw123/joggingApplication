@@ -105,19 +105,25 @@
 
 - (IBAction)startButtonClicked:(id)sender
 {
+    //Stop button clicked
     if(self.isTripBeingRecorded)
     {
         [self.locationManager stopUpdatingLocation];
         [self.startButton setTitle:@"Start Running" forState:UIControlStateNormal];
+        
         self.startButton.backgroundColor = PRIMARY_BUTTON_COLOR;
         [self.timer invalidate];
         self.timer = nil;
         self.isTripBeingRecorded = NO;
         //[self drawLineAtOnce:self.allLocs withColor:[UIColor blackColor] withLineWidth:10];
+        [self.recordingMapViewController.mapView addAnnotation:[[Pin alloc]initWithCoordinate:self.recordingMapViewController.mapView.userLocation.coordinate withTitle:@"Stop" withSubtitle:@""]];
     }
     
+    //Start button clicked
     else
     {
+        [self removeAllPinsButUserLocation];
+        [self.recordingMapViewController.mapView addAnnotation:[[Pin alloc]initWithCoordinate:self.recordingMapViewController.mapView.userLocation.coordinate withTitle:@"Start" withSubtitle:@""]];
         self.startDate = [NSDate date];
         self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
         self.allLocs = [[NSMutableArray alloc]init];
@@ -126,6 +132,16 @@
         [self.startButton setTitle:@"Stop Running" forState:UIControlStateNormal];
         self.startButton.backgroundColor = SECONDARY_BUTTON_COLOR;
         self.isTripBeingRecorded = YES;
+    }
+}
+
+- (void)removeAllPinsButUserLocation
+{
+    CLLocation* userLocation = [self.recordingMapViewController.mapView userLocation];
+    [self.recordingMapViewController.mapView removeAnnotations:[self.recordingMapViewController.mapView annotations]];
+    
+    if ( userLocation != nil ) {
+        [self.recordingMapViewController.mapView addAnnotation:userLocation]; // will cause user location pin to blink
     }
 }
 
