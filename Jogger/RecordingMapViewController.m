@@ -45,8 +45,8 @@
 
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
-    CLLocationCoordinate2D centerCoordinate = CLLocationCoordinate2DMake(self.mapView.userLocation.coordinate.latitude - 0.0015, (self.mapView.userLocation.coordinate.longitude));
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(centerCoordinate, 1000, 1000);
+    CLLocationCoordinate2D centerCoordinate = CLLocationCoordinate2DMake(self.mapView.userLocation.coordinate.latitude - 0.002, (self.mapView.userLocation.coordinate.longitude));
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(centerCoordinate, 1200, 1200);
     [self.mapView setRegion:region animated:YES];
 }
 

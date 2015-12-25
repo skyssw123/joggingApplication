@@ -98,8 +98,8 @@
     
     [self.fileLogger log:logString];
     
-    CLLocationCoordinate2D centerCoordinate = CLLocationCoordinate2DMake(self.recordingMapViewController.mapView.userLocation.coordinate.latitude - 0.0015, (self.recordingMapViewController.mapView.userLocation.coordinate.longitude));
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(centerCoordinate, 1000, 1000);
+    CLLocationCoordinate2D centerCoordinate = CLLocationCoordinate2DMake(self.recordingMapViewController.mapView.userLocation.coordinate.latitude - 0.002, (self.recordingMapViewController.mapView.userLocation.coordinate.longitude));
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(centerCoordinate, 1200, 1200);
     [self.recordingMapViewController.mapView setRegion:region animated:YES];
 }
 
