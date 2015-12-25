@@ -27,7 +27,6 @@
     [self.startButton setTitle:@"Start Running" forState:UIControlStateNormal];
     self.startButton.backgroundColor = PRIMARY_BUTTON_COLOR;
     self.startButton.tintColor = PRIMARY_TEXT_COLOR;
-    //[self.startButton setTitleColor:PRIMARY_TEXT_COLOR forState:UIControlStateNormal];
     
     self.locationManager = [(AppDelegate*)[[UIApplication sharedApplication] delegate] locationManager] ;
     self.locationManager.delegate = self;
