@@ -22,11 +22,14 @@
 @property (weak, nonatomic) IBOutlet UIView *firstView;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UIView *viewForMap;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (strong, nonatomic) NSTimer* timer;
 @property (strong, nonatomic) CLLocationManager* locationManager;
 @property (strong, nonatomic) CLLocation* currentLocation;
 @property (strong, nonatomic) NSMutableArray* allPins;
 @property (strong, nonatomic) NSMutableArray* allLocs;
 @property (strong, nonatomic) RecordingMapViewController* recordingMapViewController;
+@property (strong, nonatomic) NSDate* startDate;
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation;
 @end

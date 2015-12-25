@@ -27,7 +27,7 @@
     [self.startButton setTitle:@"Start Running" forState:UIControlStateNormal];
     self.startButton.backgroundColor = PRIMARY_BUTTON_COLOR;
     self.startButton.tintColor = PRIMARY_TEXT_COLOR;
-    
+    self.timeLabel.text = @"00 : 00 : 00.0";
     self.locationManager = [(AppDelegate*)[[UIApplication sharedApplication] delegate] locationManager] ;
     self.locationManager.delegate = self;
     self.locationManager.distanceFilter = kCLDistanceFilterNone;
@@ -89,7 +89,6 @@
     self.prevTimestamp = timeInMiliseconds;
     
     [self.fileLogger log:logString];
-    
     CLLocationCoordinate2D centerCoordinate = CLLocationCoordinate2DMake(self.recordingMapViewController.mapView.userLocation.location.coordinate.latitude - 0.003, (self.recordingMapViewController.mapView.userLocation.location.coordinate.longitude));
     [self.recordingMapViewController.mapView setCenterCoordinate:centerCoordinate animated:YES];
 }
@@ -101,12 +100,16 @@
         [self.locationManager stopUpdatingLocation];
         [self.startButton setTitle:@"Start Running" forState:UIControlStateNormal];
         self.startButton.backgroundColor = PRIMARY_BUTTON_COLOR;
+        [self.timer invalidate];
+        self.timer = nil;
         self.isTripBeingRecorded = NO;
         //[self drawLineAtOnce:self.allLocs withColor:[UIColor blackColor] withLineWidth:10];
     }
     
     else
     {
+        self.startDate = [NSDate date];
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
         self.allLocs = [[NSMutableArray alloc]init];
         [self.locationManager startUpdatingLocation];
         [self.fileLogger log:@"START OF TRIP"];
@@ -116,5 +119,21 @@
     }
 }
 
+- (void)updateTimer
+{
+    // Create date from the elapsed time
+    NSDate *currentDate = [NSDate date];
+    NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:self.startDate];
+    NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
+    
+    // Create a date formatter
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"HH : mm : ss.S"];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
+    
+    // Format the elapsed time and set it to the label
+    NSString *timeString = [dateFormatter stringFromDate:timerDate];
+    self.timeLabel.text = timeString;
+}
 
 @end

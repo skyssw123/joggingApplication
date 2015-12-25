@@ -46,6 +46,12 @@
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zcp-6k-YxP" userLabel="4th">
                                         <rect key="frame" x="-8" y="85" width="240" height="43"/>
                                         <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="timeLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mrq-FE-PUd" userLabel="time">
+                                                <rect key="frame" x="99" y="11" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JiY-XU-ybj">
                                                 <rect key="frame" x="99" y="11" width="42" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -58,6 +64,8 @@
                                             <constraint firstItem="JiY-XU-ybj" firstAttribute="centerY" secondItem="zcp-6k-YxP" secondAttribute="centerY" id="3Tz-66-AOj"/>
                                             <constraint firstAttribute="height" constant="42" id="CpQ-pI-maj"/>
                                             <constraint firstItem="JiY-XU-ybj" firstAttribute="leading" secondItem="zcp-6k-YxP" secondAttribute="leading" constant="5" id="PWm-oc-cuV"/>
+                                            <constraint firstAttribute="trailing" secondItem="Mrq-FE-PUd" secondAttribute="trailing" constant="5" id="RNA-BN-qih"/>
+                                            <constraint firstItem="Mrq-FE-PUd" firstAttribute="centerY" secondItem="zcp-6k-YxP" secondAttribute="centerY" id="Y7S-tO-vUC"/>
                                             <constraint firstItem="JiY-XU-ybj" firstAttribute="centerY" secondItem="zcp-6k-YxP" secondAttribute="centerY" id="rhp-TM-hzN"/>
                                         </constraints>
                                     </view>
@@ -162,6 +170,7 @@
                         <outlet property="secondView" destination="7Py-bZ-wfb" id="EQV-xp-3lf"/>
                         <outlet property="startButton" destination="S46-0P-HOa" id="8vp-Ku-qgw"/>
                         <outlet property="thirdView" destination="Fgp-gd-E1i" id="pfi-9w-jcT"/>
+                        <outlet property="timeLabel" destination="Mrq-FE-PUd" id="lfe-9y-ybp"/>
                         <outlet property="viewForMap" destination="Oq6-mg-3lD" id="Rdy-DT-HCa"/>
                     </connections>
                 </viewController>
