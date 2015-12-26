@@ -107,7 +107,7 @@
     double verticalAccuracy = [newLocation verticalAccuracy];
     double altitude = [newLocation altitude];
     
-    NSString* logString = [NSString stringWithFormat:@"timestamp=%@,latitude=%g,longitude=%g,speed=%g,horizontalAccuracy=%g,verticalAccuracy=%g,altitude=%g", timestamp, latitude, longitude, speed, horizontalAccuracy, verticalAccuracy, altitude];
+    NSString* logString = [NSString stringWithFormat:@"timestamp=%@,latitude=%.16f,longitude=%.16f,speed=%.16f,horizontalAccuracy=%.16f,verticalAccuracy=%.16f,altitude=%.16f", timestamp, latitude, longitude, speed, horizontalAccuracy, verticalAccuracy, altitude];
     
     //[self.mapView setCenterCoordinate:newLocation.coordinate animated:YES];
     [self.allLocs addObject:newLocation];

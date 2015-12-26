@@ -36,13 +36,16 @@
          contextName = "-[Trip initWithLocations:]:Trip.m">
          <PersistentStrings>
             <PersistentString
-               value = "((NSMutableArray*)[_speedEvents objectAtIndex:0]).count">
+               value = "((NSMutableArray*)_speedEvents[0]).count">
+            </PersistentString>
+            <PersistentString
+               value = "locs.count">
             </PersistentString>
             <PersistentString
                value = "_speedEvents">
             </PersistentString>
             <PersistentString
-               value = "((NSMutableArray*)_speedEvents[0]).count">
+               value = "((NSMutableArray*)[_speedEvents objectAtIndex:0]).count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -57,9 +60,6 @@
       <ContextState
          contextName = "-[RecordTripViewController locationManager:didUpdateToLocation:fromLocation:]:RecordTripViewController.m">
          <PersistentStrings>
-            <PersistentString
-               value = "self.locationManager.desiredAccuracy">
-            </PersistentString>
             <PersistentString
                value = "coordinates[0]">
             </PersistentString>
