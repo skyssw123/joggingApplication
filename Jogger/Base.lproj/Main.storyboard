@@ -18,11 +18,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="More" image="icon-more" selectedImage="icon-more-fill" id="qIL-1F-Pq1"/>
+                    <navigationItem key="navigationItem" title="More" id="Bac-c8-b02"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mcv-SN-dRb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="95" y="1192"/>
+            <point key="canvasLocation" x="627" y="1192"/>
         </scene>
         <!--Run-->
         <scene sceneID="Sh5-pZ-Cei">
@@ -187,7 +187,7 @@
                             <constraint firstItem="S46-0P-HOa" firstAttribute="centerX" secondItem="TXV-mj-6GI" secondAttribute="centerX" id="ztt-bg-bjA"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Run" image="icon-record" selectedImage="icon-record-fill" id="9x4-J5-5BJ"/>
+                    <navigationItem key="navigationItem" title="Run" id="O1F-t5-BxM"/>
                     <connections>
                         <outlet property="caloriesValueLabel" destination="8hZ-L3-Hh3" id="RrT-FO-6Fm"/>
                         <outlet property="distanceValueLabel" destination="jYc-kU-pGR" id="Ezi-mf-uaP"/>
@@ -203,7 +203,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ftc-Q5-BbV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="487" y="727"/>
+            <point key="canvasLocation" x="1551" y="727"/>
         </scene>
         <!--Score-->
         <scene sceneID="zv3-uX-o0O">
@@ -240,7 +240,7 @@
                             <constraint firstItem="3eS-W7-or0" firstAttribute="centerX" secondItem="I9K-CX-DqY" secondAttribute="centerX" id="S0S-om-v3p"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Score" image="icon-score" selectedImage="icon-score-fill" id="Gx7-OV-z2z"/>
+                    <navigationItem key="navigationItem" title="Score" id="gRS-Y2-bz9"/>
                     <connections>
                         <outlet property="ViewForShinobiChart" destination="ZoH-VN-Szp" id="vgn-9d-cut"/>
                         <outlet property="viewForMap" destination="3eS-W7-or0" id="snG-hW-TLE"/>
@@ -248,7 +248,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X4q-fL-FxI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="487" y="98"/>
+            <point key="canvasLocation" x="1019" y="98"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="d3P-c1-snB">
@@ -260,14 +260,71 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="sYb-1o-PHy" kind="relationship" relationship="viewControllers" id="pQW-tv-ufI"/>
-                        <segue destination="Jz3-mA-y23" kind="relationship" relationship="viewControllers" id="gLD-uv-YCn"/>
-                        <segue destination="e9k-su-bIz" kind="relationship" relationship="viewControllers" id="x33-TX-AzB"/>
+                        <segue destination="umb-8d-U3D" kind="relationship" relationship="viewControllers" id="pQW-tv-ufI"/>
+                        <segue destination="n5N-Yx-vAU" kind="relationship" relationship="viewControllers" id="gLD-uv-YCn"/>
+                        <segue destination="9x8-kM-qjp" kind="relationship" relationship="viewControllers" id="x33-TX-AzB"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7qN-tr-UbF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-35" y="413"/>
+        </scene>
+        <!--Score-->
+        <scene sceneID="Mqt-8o-KGx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="umb-8d-U3D" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Score" image="icon-score" selectedImage="icon-score-fill" id="Gx7-OV-z2z"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="H7M-LL-ZhD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sYb-1o-PHy" kind="relationship" relationship="rootViewController" id="KIJ-SF-w1w"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lws-be-xmi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="487" y="98"/>
+        </scene>
+        <!--Run-->
+        <scene sceneID="kQw-xR-m0v">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="n5N-Yx-vAU" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Run" image="icon-record" selectedImage="icon-record-fill" id="9x4-J5-5BJ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XFF-Ao-Us8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Jz3-mA-y23" kind="relationship" relationship="rootViewController" id="5t2-4r-j4d"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bzF-PS-hSH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1019" y="727"/>
+        </scene>
+        <!--More-->
+        <scene sceneID="0gJ-9b-1Ve">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9x8-kM-qjp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="More" image="icon-more" selectedImage="icon-more-fill" id="qIL-1F-Pq1"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VHO-Q0-cb2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="e9k-su-bIz" kind="relationship" relationship="rootViewController" id="lty-zz-3yo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6NX-l3-OCE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="95" y="1192"/>
         </scene>
     </scenes>
     <resources>
