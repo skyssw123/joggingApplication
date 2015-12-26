@@ -23,9 +23,11 @@
         while((line = [reader readLine]))
         {
             if(line == nil)
-            {
                 continue;
-            }
+            
+            else if ([line isEqualToString:@"\n"])
+                continue;
+            
             if([line isEqualToString:@"START OF TRIP\n"])
             {
                 selectedTrip ++;
@@ -55,7 +57,7 @@
                 NSString* speedString = [speedArray objectAtIndex:1];
                 
                 NSArray* horizontalAccuracyArray = [(NSString*)[components objectAtIndex:4] componentsSeparatedByString:@"="];
-                NSString* horizontalAccuracyString = [horizontalAccuracyArray objectAtIndex:1];
+                                                                                                                                                                                                                                                                                                                                                                                          NSString* horizontalAccuracyString = [horizontalAccuracyArray objectAtIndex:1];
                 
                 NSArray* verticalAccuracyArray = [(NSString*)[components objectAtIndex:5] componentsSeparatedByString:@"="];
                 NSString* verticalAccuracyString = [verticalAccuracyArray objectAtIndex:1];

@@ -149,7 +149,7 @@
     for (j ; j < i ; j++)
     {
         double distance = ([[_allLocs objectAtIndex:j] distanceFromLocation:[_allLocs objectAtIndex:i]]);
-        if(distance > 3.5)
+        if(distance > 2.5)
             return false;
     }
     

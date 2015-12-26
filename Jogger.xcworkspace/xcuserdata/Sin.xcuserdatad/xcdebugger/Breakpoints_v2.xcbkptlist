@@ -9,29 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Jogger/Trip.m"
-            timestampString = "472789777.737681"
+            filePath = "Jogger/TripDrawer.m"
+            timestampString = "472798100.353343"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
-            landmarkName = "-isSamePoint:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Jogger/Trip.m"
-            timestampString = "472789780.393584"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
-            landmarkName = "-isSamePoint:"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "-keepDrawingLine"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
