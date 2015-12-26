@@ -66,7 +66,7 @@
             else
                 distance = [currentLoc distanceFromLocation:prevLoc];
 
-            _totalDistance += distance;
+            
             speed = currentLoc.speed;
             if(speed > 2.0)
             {
@@ -124,8 +124,9 @@
                 }
                 prevBrakingLoc = currentLoc;
                 k++;
+                distance = 0;
             }
-            
+            _totalDistance += distance;
             prevLoc = currentLoc;
         }
         SpeedEvent* speedEvent = [[SpeedEvent alloc]initWithLocationArray:speedEventArray];
@@ -140,18 +141,18 @@
 }
 -(BOOL)isSamePoint:(int)i
 {
-    int j = 0;
-    if(i < 5)
-        j = 0;
-    else
-        j = i - 5;
-    
-    for (j ; j < i ; j++)
-    {
-        double distance = ([[_allLocs objectAtIndex:j] distanceFromLocation:[_allLocs objectAtIndex:i]]);
-        if(distance > 2.5)
-            return false;
-    }
+//    int j = 0;
+//    if(i < 5)
+//        j = 0;
+//    else
+//        j = i - 5;
+//    
+//    for (j ; j < i ; j++)
+//    {
+//        double distance = ([[_allLocs objectAtIndex:j] distanceFromLocation:[_allLocs objectAtIndex:i]]);
+//        if(distance > 2.5)
+//            return false;
+//    }
     
     return true;
 }

@@ -81,7 +81,6 @@ int i = 0;
 {
     if (i != 1)
     {
-        
         i++;
         MKPinAnnotationView* annView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"pin"];
         annView.pinTintColor = PRIMARY_BUTTON_COLOR;
