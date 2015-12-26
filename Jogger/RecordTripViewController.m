@@ -25,6 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.startButton setEnabled:NO];
+    
     self.arrayCoords = [[NSMutableArray alloc]init];
     self.allPins = [[NSMutableArray alloc]init];
     self.fileLogger = [FileLogging sharedInstance];
@@ -64,14 +66,23 @@
     
     [self.recordingMapViewController didMoveToParentViewController:self];
     
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(timerExpired) userInfo:nil repeats:NO];
 //    UILongPressGestureRecognizer *recognizer = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(addPin:)];
 //    recognizer.minimumPressDuration = 0.5;
 //    [self.mapView addGestureRecognizer:recognizer];
+    //[self.startButton setEnabled:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    //[self.startButton setEnabled:YES];
+    
+}
+
+- (void)timerExpired
+{
+    [self.timer invalidate];
+    self.timer = nil;
+    [self.startButton setEnabled:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -107,8 +118,12 @@
     
     
     
+    Trip* trip = [TripFactory produceTripWithLocations:self.allLocs];
+    self.distanceValueLabel.text = [[NSNumber numberWithDouble:trip.totalDistance] stringValue];
+    self.caloriesValueLabel.text = [[NSNumber numberWithDouble:trip.calories] stringValue];
+    self.speedValueLabel.text = [[NSNumber numberWithDouble:trip.avgVelocity] stringValue];
     
-    [[[TripDrawer alloc]initWithTrip:[TripFactory produceTripWithLocations:self.allLocs] withMapView:self.recordingMapViewController.mapView] keepDrawingLine];
+    [[[TripDrawer alloc]initWithTrip:trip withMapView:self.recordingMapViewController.mapView] keepDrawingLine];
 //    CLLocationCoordinate2D coords[self.allLocs.count];
 //    int i = 0;
 //    for (CLLocation* object in self.allLocs) {

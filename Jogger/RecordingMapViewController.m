@@ -19,6 +19,7 @@
     self.mapView.delegate = self;
     self.mapView.mapType = MKMapTypeStandard;
     self.mapView.showsUserLocation = YES;
+    self.i = 0;
     //[self.mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
     
 //    
@@ -41,7 +42,6 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.i = 0;
 }
 
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation

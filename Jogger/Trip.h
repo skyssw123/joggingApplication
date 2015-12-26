@@ -14,6 +14,7 @@
 -(id)initWithLocations:(NSMutableArray*)locs;
 @property (strong, nonatomic) NSArray* allLocs;
 @property double totalTimeInMiliSeconds;
+@property double calories;
 @property double totalDistance;
 @property double avgVelocity;
 @property double avgAccel;
