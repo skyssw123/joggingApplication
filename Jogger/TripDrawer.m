@@ -69,6 +69,16 @@
     return nil;
 }
 
+- (void)keepDrawingLine
+{
+    if(self == nil)
+        return ;
+    
+    self.polyline.title = @"routeLine";
+    [self.mapView addOverlay:self.polyline];
+}
+
+
 
 - (void)drawLineAtOnceWithColor
 {

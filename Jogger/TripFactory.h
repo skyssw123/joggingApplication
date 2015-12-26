@@ -17,5 +17,6 @@ typedef enum
 }TripPeriod;
 
 @interface TripFactory : NSObject
-+(Trip*)produceTrip:(TripPeriod)period;
++(Trip*)produceTripWithLogs:(TripPeriod)period;
++(Trip*)produceTripWithLocations:(NSMutableArray*)allLocs;
 @end

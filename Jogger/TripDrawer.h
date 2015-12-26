@@ -16,6 +16,7 @@
 - (void)drawLineAtOnceWithColor;
 - (void)drawSpeedingEvents;
 - (void)drawBrakingEvents;
+- (void)keepDrawingLine;
 @property (nonatomic, strong) MKPolyline* polyline;
 @property (nonatomic, strong) NSMutableArray* speedEventArray;
 @property (nonatomic, strong) NSMutableArray* speedEventlineArray;

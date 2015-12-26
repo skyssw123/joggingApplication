@@ -20,7 +20,7 @@ int i = 0;
     self.mapView.mapType = MKMapTypeStandard;
     self.mapView.showsUserLocation = NO;
     
-    Trip* trip = [TripFactory produceTrip:lastTrip];
+    Trip* trip = [TripFactory produceTripWithLogs:lastTrip];
     self.tripDrawer = [[TripDrawer alloc] initWithTrip:trip withMapView:self.mapView];
     [self.tripDrawer drawLineAtOnceWithColor];
     [self.tripDrawer drawSpeedingEvents];

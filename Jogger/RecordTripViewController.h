@@ -34,6 +34,7 @@
 @property (strong, nonatomic) RecordingMapViewController* recordingMapViewController;
 @property (strong, nonatomic) NSDate* startDate;
 @property (strong, nonatomic) MKPolyline* polyline;
+@property (strong, nonatomic) NSMutableArray* arrayCoords;
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation;
 @end

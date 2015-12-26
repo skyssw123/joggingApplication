@@ -10,7 +10,7 @@
 
 @implementation TripFactory
 
-+(Trip*)produceTrip:(TripPeriod)period
++(Trip*)produceTripWithLogs:(TripPeriod)period
 {
     int selectedTrip = 0;
     DDFileReader * reader = [[DDFileReader alloc] initWithFilePath:[FileLogging sharedInstance].filePath];
@@ -72,5 +72,10 @@
     }
     //return trip;
     return trip;
+}
+
++(Trip*)produceTripWithLocations:(NSMutableArray*)allLocs
+{
+    return [[Trip alloc]initWithLocations:allLocs];
 }
 @end

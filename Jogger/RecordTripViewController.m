@@ -11,6 +11,9 @@
 #import "Localizable.strings"
 #import "Colors.h"
 #import "Numbers.h"
+#import "Trip.h"
+#import "TripFactory.h"
+#import "TripDrawer.h"
 
 @interface RecordTripViewController ()
 @property BOOL isTripBeingRecorded;
@@ -22,6 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.arrayCoords = [[NSMutableArray alloc]init];
     self.allPins = [[NSMutableArray alloc]init];
     self.fileLogger = [FileLogging sharedInstance];
     [self.startButton setTitle:@"Start Running" forState:UIControlStateNormal];
@@ -101,11 +105,20 @@
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(centerCoordinate, 1200, 1200);
     [self.recordingMapViewController.mapView setRegion:region animated:YES];
     
-    CLLocationCoordinate2D coordinates[2];
-    coordinates[0] = oldLocation.coordinate;
-    coordinates[1] = newLocation.coordinate;
-    self.polyline = [MKPolyline polylineWithCoordinates:coordinates count:2];
-    [self.recordingMapViewController.mapView addOverlay:self.polyline];
+    
+    
+    
+    [[[TripDrawer alloc]initWithTrip:[TripFactory produceTripWithLocations:self.allLocs] withMapView:self.recordingMapViewController.mapView] keepDrawingLine];
+//    CLLocationCoordinate2D coords[self.allLocs.count];
+//    int i = 0;
+//    for (CLLocation* object in self.allLocs) {
+//        coords[i] = object.coordinate;
+//        i++;
+//    }
+//    
+//    [self.recordingMapViewController.mapView removeOverlay:self.polyline];
+//    self.polyline = [MKPolyline polylineWithCoordinates:coords count:self.allLocs.count];
+//    [self.recordingMapViewController.mapView addOverlay:self.polyline];
 }
 
 - (IBAction)startButtonClicked:(id)sender

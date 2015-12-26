@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Jogger/RecordTripViewController.m"
-            timestampString = "472779460.665284"
+            filePath = "Jogger/RecordingMapViewController.m"
+            timestampString = "472783800.315912"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
-            landmarkName = "-locationManager:didUpdateToLocation:fromLocation:"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "-mapView:viewForOverlay:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
