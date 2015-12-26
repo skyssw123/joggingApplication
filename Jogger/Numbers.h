@@ -10,5 +10,5 @@
 #define Numbers_h
 
 #define DEFAULT_ACCURACY_THRESHOLD 10.0
-
+#define KEEP_TRACK_USER_MODE YES
 #endif /* Numbers_h */

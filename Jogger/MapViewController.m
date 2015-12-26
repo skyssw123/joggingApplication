@@ -79,20 +79,21 @@ int i = 0;
 }
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
-    if (i != 1)
-    {
-        i++;
-        MKPinAnnotationView* annView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"pin"];
-        annView.pinTintColor = PRIMARY_BUTTON_COLOR;
-        return annView;
-    }
-    else
-    {
-        i = 0;
-        MKPinAnnotationView* annView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"pin"];
-        annView.pinTintColor = SECONDARY_BUTTON_COLOR;
-        return annView;
-    }
+//    if (i != 1)
+//    {
+//        i++;
+//        MKPinAnnotationView* annView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"pin"];
+//        annView.pinTintColor = PRIMARY_BUTTON_COLOR;
+//        return annView;
+//    }
+//    else
+//    {
+//        i = 0;
+//        MKPinAnnotationView* annView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"pin"];
+//        annView.pinTintColor = SECONDARY_BUTTON_COLOR;
+//        return annView;
+//    }
+    return nil;
 }
 
 /*

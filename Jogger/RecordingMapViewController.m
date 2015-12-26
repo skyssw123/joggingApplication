@@ -82,29 +82,30 @@
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
-    if (self.i == 0)
-    {
-        self.i ++;
-        return nil;
-    }
-    
-    else if (self.i == 1)
-    {
-        self.i++;
-        MKPinAnnotationView* annView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"pin"];
-        annView.pinTintColor = PRIMARY_BUTTON_COLOR;
-        return annView;
-    }
-    else if (self.i == 2)
-    {
-        self.i = 1;
-        MKPinAnnotationView* annView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"pin"];
-        annView.pinTintColor = SECONDARY_BUTTON_COLOR;
-        return annView;
-    }
-    
-    else
-        return nil;
+//    if (self.i == 0)
+//    {
+//        self.i ++;
+//        return nil;
+//    }
+//    
+//    else if (self.i == 1)
+//    {
+//        self.i++;
+//        MKPinAnnotationView* annView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"pin"];
+//        annView.pinTintColor = PRIMARY_BUTTON_COLOR;
+//        return annView;
+//    }
+//    else if (self.i == 2)
+//    {
+//        self.i = 1;
+//        MKPinAnnotationView* annView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"pin"];
+//        annView.pinTintColor = SECONDARY_BUTTON_COLOR;
+//        return annView;
+//    }
+//    
+//    else
+//        return nil;
+    return nil;
 }
 /*
  #pragma mark - Navigation

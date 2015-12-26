@@ -126,7 +126,8 @@
     self.caloriesValueLabel.text = [[NSNumber numberWithDouble:trip.calories] stringValue];
     self.speedValueLabel.text = [[NSNumber numberWithDouble:trip.avgVelocity] stringValue];
     
-    [[[TripDrawer alloc]initWithTrip:trip withMapView:self.recordingMapViewController.mapView] keepDrawingLine];
+    if(KEEP_TRACK_USER_MODE)
+        [[[TripDrawer alloc]initWithTrip:trip withMapView:self.recordingMapViewController.mapView] keepDrawingLine];
 //    CLLocationCoordinate2D coords[self.allLocs.count];
 //    int i = 0;
 //    for (CLLocation* object in self.allLocs) {
@@ -154,7 +155,7 @@
         //[self drawLineAtOnce:self.allLocs withColor:[UIColor blackColor] withLineWidth:10];
         
         NSDateFormatter *df = [[NSDateFormatter alloc]init];
-        [df setDateFormat:@"HH:mm, MMM dd, yyyy"];
+        [df setDateFormat:@"HH:mm a, MMM dd, yyyy"];
         [self.recordingMapViewController.mapView addAnnotation:[[Pin alloc]initWithCoordinate:self.recordingMapViewController.mapView.userLocation.coordinate withTitle:@"Stop" withSubtitle:[df stringFromDate:[NSDate date]]]];
     }
     
@@ -164,7 +165,7 @@
         [self removeAllPinsButUserLocation];
         self.startDate = [NSDate date];
         NSDateFormatter *df = [[NSDateFormatter alloc]init];
-        [df setDateFormat:@"HH:mm, MMM dd, yyyy"];
+        [df setDateFormat:@"HH:mm a, MMM dd, yyyy"];
         [self.recordingMapViewController.mapView addAnnotation:[[Pin alloc]initWithCoordinate:self.recordingMapViewController.mapView.userLocation.coordinate withTitle:@"Start" withSubtitle:[df stringFromDate:self.startDate]]];
         
         self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
