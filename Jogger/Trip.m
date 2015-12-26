@@ -61,8 +61,11 @@
             if(_minLongitude > currentLoc.coordinate.longitude)
                 _minLongitude = currentLoc.coordinate.longitude;
             
-            
-            distance = [currentLoc distanceFromLocation:prevLoc];
+            if([self isSamePoint:i])
+                distance = 0;
+            else
+                distance = [currentLoc distanceFromLocation:prevLoc];
+
             _totalDistance += distance;
             speed = currentLoc.speed;
             if(speed > 2.0)
@@ -134,6 +137,23 @@
         _avgVelocity = _totalDistance / _totalTimeInMiliSeconds * 1000.0;
     }
     return self;
+}
+-(BOOL)isSamePoint:(int)i
+{
+    int j = 0;
+    if(i < 5)
+        j = 0;
+    else
+        j = i - 5;
+    
+    for (j ; j < i ; j++)
+    {
+        double distance = ([[_allLocs objectAtIndex:j] distanceFromLocation:[_allLocs objectAtIndex:i]]);
+        if(distance > 3.5)
+            return false;
+    }
+    
+    return true;
 }
 @end
 
