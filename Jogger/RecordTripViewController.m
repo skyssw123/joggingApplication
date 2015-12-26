@@ -14,6 +14,7 @@
 #import "Trip.h"
 #import "TripFactory.h"
 #import "TripDrawer.h"
+#import "Numbers.h"
 
 @interface RecordTripViewController ()
 @property BOOL isTripBeingRecorded;
@@ -95,6 +96,9 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
+    if(newLocation.horizontalAccuracy < DEFAULT_ACCURACY_THRESHOLD)
+        return;
+    
     NSTimeInterval timeInMiliseconds = [newLocation.timestamp timeIntervalSince1970] * 1000;
     NSDate* timestamp = [newLocation timestamp];
     double latitude = [newLocation coordinate].latitude;
