@@ -41,6 +41,11 @@
     // Format the elapsed time and set it to the label
     NSString *timeString = [dateFormatter stringFromDate:timerDate];
     self.timeValueLabel.text = timeString;
+    
+    
+    //self.startValueLabel.text = trip.startLoc.
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

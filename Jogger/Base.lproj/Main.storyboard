@@ -389,8 +389,14 @@
                                                             <constraint firstAttribute="width" constant="10" id="mch-uV-1mN"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Start :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSH-N9-kqZ" userLabel="startLabel">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Start : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSH-N9-kqZ" userLabel="startLabel">
                                                         <rect key="frame" x="39" y="30" width="140" height="93"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHO-1P-Kjn" userLabel="startValueLabel">
+                                                        <rect key="frame" x="104" y="37" width="29" height="44"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
@@ -400,7 +406,9 @@
                                                 <constraints>
                                                     <constraint firstItem="oQ0-n5-Y9d" firstAttribute="top" secondItem="WvC-AE-Ms8" secondAttribute="top" constant="15" id="2Db-gw-kaY"/>
                                                     <constraint firstItem="oQ0-n5-Y9d" firstAttribute="leading" secondItem="WvC-AE-Ms8" secondAttribute="leading" constant="10" id="7IY-DL-Qah"/>
+                                                    <constraint firstItem="JHO-1P-Kjn" firstAttribute="leading" secondItem="gSH-N9-kqZ" secondAttribute="trailing" id="FHP-a8-R5C"/>
                                                     <constraint firstItem="gSH-N9-kqZ" firstAttribute="leading" secondItem="oQ0-n5-Y9d" secondAttribute="trailing" constant="10" id="Ohk-du-oRp"/>
+                                                    <constraint firstItem="JHO-1P-Kjn" firstAttribute="top" secondItem="WvC-AE-Ms8" secondAttribute="top" constant="10" id="PuZ-2T-fdS"/>
                                                     <constraint firstItem="gSH-N9-kqZ" firstAttribute="top" secondItem="WvC-AE-Ms8" secondAttribute="top" constant="10" id="YF4-BL-6pv"/>
                                                 </constraints>
                                             </view>
@@ -414,7 +422,13 @@
                                                             <constraint firstAttribute="height" constant="10" id="MDc-wK-dDw"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="End   :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wa4-hh-8Yi" userLabel="endLabel">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="End   : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wa4-hh-8Yi" userLabel="endLabel">
+                                                        <rect key="frame" x="43" y="35" width="42" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Xz-yO-74Y" userLabel="endValueLabel">
                                                         <rect key="frame" x="43" y="35" width="42" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -423,10 +437,12 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
+                                                    <constraint firstItem="6Xz-yO-74Y" firstAttribute="top" secondItem="RUk-Nb-m90" secondAttribute="top" constant="10" id="6lD-Iy-cGP"/>
                                                     <constraint firstItem="Wa4-hh-8Yi" firstAttribute="leading" secondItem="Xvv-x8-DVJ" secondAttribute="trailing" constant="10" id="Sya-ob-19s"/>
                                                     <constraint firstItem="Wa4-hh-8Yi" firstAttribute="top" secondItem="RUk-Nb-m90" secondAttribute="top" constant="10" id="dC1-Iy-MLI"/>
                                                     <constraint firstItem="Xvv-x8-DVJ" firstAttribute="top" secondItem="RUk-Nb-m90" secondAttribute="top" constant="15" id="qI0-AZ-c1f"/>
                                                     <constraint firstItem="Xvv-x8-DVJ" firstAttribute="leading" secondItem="RUk-Nb-m90" secondAttribute="leading" constant="10" id="vSB-9O-wgk"/>
+                                                    <constraint firstItem="6Xz-yO-74Y" firstAttribute="leading" secondItem="Wa4-hh-8Yi" secondAttribute="trailing" id="vwP-20-fVb"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -479,8 +495,10 @@
                         <outlet property="clock1ImageView" destination="oQ0-n5-Y9d" id="4lI-au-14Y"/>
                         <outlet property="clock2ImageView" destination="Xvv-x8-DVJ" id="iuK-uW-ZEW"/>
                         <outlet property="distanceValueLabel" destination="JBC-YJ-0r5" id="R2a-JT-zut"/>
+                        <outlet property="endValueLabel" destination="6Xz-yO-74Y" id="AOF-gj-aU6"/>
                         <outlet property="scrollView" destination="Ltp-0n-DNq" id="yks-yB-Udi"/>
                         <outlet property="speedValueLabel" destination="eLu-qf-hWo" id="YDU-6Y-ebV"/>
+                        <outlet property="startValueLabel" destination="JHO-1P-Kjn" id="sMj-K4-mbI"/>
                         <outlet property="timeValueLabel" destination="i7A-PL-or6" id="8eK-Py-hAv"/>
                         <outlet property="viewForMap" destination="3eS-W7-or0" id="snG-hW-TLE"/>
                         <outlet property="viewForStartEnd" destination="Pg7-WL-CS1" id="FHr-AW-9KA"/>

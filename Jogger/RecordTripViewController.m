@@ -155,6 +155,8 @@
         //[self drawLineAtOnce:self.allLocs withColor:[UIColor blackColor] withLineWidth:10];
         
         NSDateFormatter *df = [[NSDateFormatter alloc]init];
+        NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+        [df setLocale:locale];
         [df setDateFormat:@"HH:mm a, MMM dd, yyyy"];
         [self.recordingMapViewController.mapView addAnnotation:[[Pin alloc]initWithCoordinate:self.recordingMapViewController.mapView.userLocation.coordinate withTitle:@"Stop" withSubtitle:[df stringFromDate:[NSDate date]]]];
     }
@@ -165,6 +167,8 @@
         [self removeAllPinsButUserLocation];
         self.startDate = [NSDate date];
         NSDateFormatter *df = [[NSDateFormatter alloc]init];
+        NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+        [df setLocale:locale];
         [df setDateFormat:@"HH:mm a, MMM dd, yyyy"];
         [self.recordingMapViewController.mapView addAnnotation:[[Pin alloc]initWithCoordinate:self.recordingMapViewController.mapView.userLocation.coordinate withTitle:@"Start" withSubtitle:[df stringFromDate:self.startDate]]];
         
