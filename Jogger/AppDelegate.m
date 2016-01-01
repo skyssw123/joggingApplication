@@ -19,7 +19,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.locationManager = [[CLLocationManager alloc]init];
-    
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigationItem.png"]
+                                       forBarMetrics:UIBarMetricsDefault];
     
     
     return YES;

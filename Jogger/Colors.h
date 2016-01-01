@@ -12,5 +12,7 @@
 #define PRIMARY_BRAND_COLOR [UIColor redColor];
 #define PRIMARY_TEXT_COLOR [UIColor whiteColor];
 #define SECONDARY_BUTTON_COLOR [UIColor orangeColor];
-#define PRIMARY_BUTTON_COLOR [UIColor colorWithRed:0 green:0.718 blue:0 alpha:1];
+#define PRIMARY_NAVIGATION_BAR_COLOR [UIColor redColor];
+//#define PRIMARY_BUTTON_COLOR [UIColor colorWithRed:0 green:0.718 blue:0 alpha:1];
+#define PRIMARY_BUTTON_COLOR [UIColor blueColor];
 #endif /* Colors_h */
