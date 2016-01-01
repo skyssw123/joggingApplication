@@ -247,7 +247,7 @@
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="timeLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7A-PL-or6" userLabel="time">
                                                                 <rect key="frame" x="99" y="11" width="42" height="21"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -272,7 +272,7 @@
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TwQ-gu-weY" userLabel="calories">
                                                                 <rect key="frame" x="99" y="3" width="42" height="21"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -297,7 +297,7 @@
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLu-qf-hWo" userLabel="speedValueLabel">
                                                                 <rect key="frame" x="99" y="11" width="42" height="21"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -323,7 +323,7 @@
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBC-YJ-0r5" userLabel="distance">
                                                                 <rect key="frame" x="80" y="1" width="42" height="21"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -346,19 +346,20 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
+                                                    <constraint firstItem="tuP-eD-mhm" firstAttribute="width" secondItem="STX-1n-fub" secondAttribute="width" id="17u-gq-THx"/>
                                                     <constraint firstItem="Ea1-ff-Ja1" firstAttribute="centerX" secondItem="c9g-GB-iAg" secondAttribute="centerX" id="6Yf-3k-Yxe"/>
                                                     <constraint firstItem="oF9-Ho-Ui8" firstAttribute="centerX" secondItem="c9g-GB-iAg" secondAttribute="centerX" id="8wP-cT-huq"/>
                                                     <constraint firstItem="oF9-Ho-Ui8" firstAttribute="width" secondItem="c9g-GB-iAg" secondAttribute="width" id="B9g-fz-Q2B"/>
-                                                    <constraint firstItem="STX-1n-fub" firstAttribute="top" secondItem="c9g-GB-iAg" secondAttribute="top" id="FVu-F7-z8S"/>
+                                                    <constraint firstItem="STX-1n-fub" firstAttribute="top" secondItem="c9g-GB-iAg" secondAttribute="top" constant="20" id="FVu-F7-z8S"/>
                                                     <constraint firstItem="tuP-eD-mhm" firstAttribute="leading" secondItem="c9g-GB-iAg" secondAttribute="leading" id="XMk-p8-WxV"/>
                                                     <constraint firstAttribute="trailing" secondItem="STX-1n-fub" secondAttribute="trailing" id="e3W-Ra-iVE"/>
-                                                    <constraint firstItem="oF9-Ho-Ui8" firstAttribute="top" secondItem="Ea1-ff-Ja1" secondAttribute="bottom" constant="10" id="gs3-y8-AnB"/>
+                                                    <constraint firstItem="oF9-Ho-Ui8" firstAttribute="top" secondItem="Ea1-ff-Ja1" secondAttribute="bottom" constant="20" id="gs3-y8-AnB"/>
                                                     <constraint firstAttribute="bottom" secondItem="oF9-Ho-Ui8" secondAttribute="bottom" id="hMO-QG-yWs"/>
                                                     <constraint firstItem="STX-1n-fub" firstAttribute="leading" secondItem="tuP-eD-mhm" secondAttribute="trailing" id="j7B-iA-q4v"/>
                                                     <constraint firstItem="Ea1-ff-Ja1" firstAttribute="width" secondItem="c9g-GB-iAg" secondAttribute="width" id="ksM-FT-BOO"/>
-                                                    <constraint firstItem="Ea1-ff-Ja1" firstAttribute="top" secondItem="tuP-eD-mhm" secondAttribute="bottom" id="woD-ws-AIW"/>
-                                                    <constraint firstItem="tuP-eD-mhm" firstAttribute="top" secondItem="c9g-GB-iAg" secondAttribute="top" id="yf5-G2-ZPm"/>
-                                                    <constraint firstItem="Ea1-ff-Ja1" firstAttribute="top" secondItem="STX-1n-fub" secondAttribute="bottom" id="zef-1D-0LO"/>
+                                                    <constraint firstItem="Ea1-ff-Ja1" firstAttribute="top" secondItem="tuP-eD-mhm" secondAttribute="bottom" constant="20" id="woD-ws-AIW"/>
+                                                    <constraint firstItem="tuP-eD-mhm" firstAttribute="top" secondItem="c9g-GB-iAg" secondAttribute="top" constant="20" id="yf5-G2-ZPm"/>
+                                                    <constraint firstItem="Ea1-ff-Ja1" firstAttribute="top" secondItem="STX-1n-fub" secondAttribute="bottom" constant="20" id="zef-1D-0LO"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -404,8 +405,8 @@
                     <navigationItem key="navigationItem" title="Score" id="gRS-Y2-bz9"/>
                     <connections>
                         <outlet property="ViewForShinobiChart" destination="ZoH-VN-Szp" id="vgn-9d-cut"/>
-                        <outlet property="caloriesValueLabel" destination="TwQ-gu-weY" id="Iqt-Xm-eVR"/>
-                        <outlet property="distanceValueLabel" destination="JBC-YJ-0r5" id="UAm-PV-b1b"/>
+                        <outlet property="caloriesValueLabel" destination="TwQ-gu-weY" id="a1o-e7-Olh"/>
+                        <outlet property="distanceValueLabel" destination="JBC-YJ-0r5" id="R2a-JT-zut"/>
                         <outlet property="scrollView" destination="Ltp-0n-DNq" id="yks-yB-Udi"/>
                         <outlet property="speedValueLabel" destination="eLu-qf-hWo" id="YDU-6Y-ebV"/>
                         <outlet property="timeValueLabel" destination="i7A-PL-or6" id="8eK-Py-hAv"/>
@@ -494,23 +495,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6NX-l3-OCE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="95" y="1192"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="YIX-OZ-VRB">
-            <objects>
-                <viewController id="tHa-Aq-dXQ" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="2Jl-Vb-eki"/>
-                        <viewControllerLayoutGuide type="bottom" id="FwE-Yr-Xzo"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="SSs-Gv-zvH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3BU-pa-gUC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
     <resources>
