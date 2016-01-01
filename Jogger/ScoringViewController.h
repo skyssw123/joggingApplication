@@ -15,5 +15,9 @@
 @property (weak, nonatomic) IBOutlet UIView *ViewForShinobiChart;
 @property (strong, nonatomic) MapViewController* mapViewController;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UILabel *speedValueLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeValueLabel;
+@property (weak, nonatomic) IBOutlet UILabel *caloriesValueLabel;
+@property (weak, nonatomic) IBOutlet UILabel *distanceValueLabel;
 
 @end

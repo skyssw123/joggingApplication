@@ -20,24 +20,26 @@ int i = 0;
     self.mapView.mapType = MKMapTypeStandard;
     self.mapView.showsUserLocation = NO;
     
-    Trip* trip = [TripFactory produceTripWithLogs:lastTrip];
-    self.tripDrawer = [[TripDrawer alloc] initWithTrip:trip withMapView:self.mapView];
+    
+    
+    // Do any additional setup after loading the view.
+}
+- (void)viewDidAppear:(BOOL)animated
+{
+    self.tripDrawer = [[TripDrawer alloc] initWithTrip:self.trip withMapView:self.mapView];
     [self.tripDrawer drawLineAtOnceWithColor];
     [self.tripDrawer drawSpeedingEvents];
     [self.tripDrawer drawBrakingEvents];
     
-    CLLocationCoordinate2D centerCoord = CLLocationCoordinate2DMake( ((trip.minLatitude + trip.maxLatitude)/2.0), ((trip.minLongitude + trip.maxLongitude)/2.0));
+    CLLocationCoordinate2D centerCoord = CLLocationCoordinate2DMake( ((self.trip.minLatitude + self.trip.maxLatitude)/2.0), ((self.trip.minLongitude + self.trip.maxLongitude)/2.0));
     
-
-    MKCoordinateSpan span = MKCoordinateSpanMake((trip.maxLatitude - trip.minLatitude) * 5, (trip.maxLongitude - trip.minLongitude) * 5);
+    
+    MKCoordinateSpan span = MKCoordinateSpanMake((self.trip.maxLatitude - self.trip.minLatitude) * 2, (self.trip.maxLongitude - self.trip.minLongitude) * 2);
     MKCoordinateRegion adjustedRegion = MKCoordinateRegionMake(centerCoord, span);
     
     [self.mapView setRegion:adjustedRegion animated:YES];
     [self.mapView regionThatFits:adjustedRegion];
-    
-    
-    
-    // Do any additional setup after loading the view.
+
 }
 
 
