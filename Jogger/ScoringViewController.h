@@ -19,5 +19,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeValueLabel;
 @property (weak, nonatomic) IBOutlet UILabel *caloriesValueLabel;
 @property (weak, nonatomic) IBOutlet UILabel *distanceValueLabel;
-
+@property (weak, nonatomic) IBOutlet UIImageView *clock2ImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *clock1ImageView;
 @end
