@@ -36,7 +36,7 @@
     NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
     // Create a date formatter
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"HH : mm : ss.S"];
+    [dateFormatter setDateFormat:@"HH : mm : ss"];
     [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
     // Format the elapsed time and set it to the label
     NSString *timeString = [dateFormatter stringFromDate:timerDate];
