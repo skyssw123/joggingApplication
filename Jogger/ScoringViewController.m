@@ -43,9 +43,26 @@
     self.timeValueLabel.text = timeString;
     
     
-    //self.startValueLabel.text = trip.startLoc.
+    self.startValueLabel.text = [self getAddressFromLatLon:trip.startLoc.coordinate.latitude withLongitude:trip.startLoc.coordinate.longitude];
+    self.endValueLabel.text = [self getAddressFromLatLon:trip.endLoc.coordinate.latitude withLongitude:trip.endLoc.coordinate.longitude];
+}
+
+-(NSString *)getAddressFromLatLon:(double)pdblLatitude withLongitude:(double)pdblLongitude
+{
+    //    https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&key=YOUR_API_KEY
+    //server key : AIzaSyBsaSP3zPO0N_vnzB3PjGaCERZXDo7dmig
+    NSString* serverKey = @"AIzaSyBsaSP3zPO0N_vnzB3PjGaCERZXDo7dmig";
+    NSString *urlString = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/geocode/json?latlng=%f,%f&key=%@",pdblLatitude, pdblLongitude, serverKey];
+    NSError* error;
     
-    
+    NSData* data = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlString]];
+    NSDictionary* dictionary = [NSJSONSerialization JSONObjectWithData:data options:nil error:nil];
+    NSArray* locationArray = [dictionary valueForKey:@"results"];
+    NSDictionary* locationDict = [locationArray objectAtIndex:0];
+    NSString* locationString = [locationDict valueForKey:@"formatted_address"];
+    //NSString *locationString = [NSString stringWithContentsOfURL:[NSURL URLWithString:urlString] encoding:NSASCIIStringEncoding error:&error];
+   // locationString = [locationString stringByReplacingOccurrencesOfString:@"\"" withString:@""];
+    return locationString;
 }
 
 - (void)didReceiveMemoryWarning {
