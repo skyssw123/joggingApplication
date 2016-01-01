@@ -10,8 +10,10 @@
 #import "MapViewController.h"
 
 @interface ScoringViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIView *viewForStartEnd;
 @property (weak, nonatomic) IBOutlet UIView *viewForMap;
 @property (weak, nonatomic) IBOutlet UIView *ViewForShinobiChart;
 @property (strong, nonatomic) MapViewController* mapViewController;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end

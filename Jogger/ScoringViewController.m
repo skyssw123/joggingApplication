@@ -20,8 +20,12 @@
     
     self.mapViewController = [[MapViewController alloc]initWithNibName:@"MapView" bundle:nil];
     self.mapViewController.view.frame = CGRectMake(0, 0, self.viewForMap.frame.size.width, self.viewForMap.frame.size.height);
+    
     [self addChildViewController:self.mapViewController];
     [self.viewForMap addSubview:self.mapViewController.view];
+    
+    
+    self.scrollView.alwaysBounceHorizontal = NO;
 }
 
 - (void)didReceiveMemoryWarning {

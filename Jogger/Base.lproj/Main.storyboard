@@ -222,38 +222,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3eS-W7-or0">
-                                <rect key="frame" x="40" y="109" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ltp-0n-DNq">
+                                <subviews>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3eS-W7-or0">
+                                        <rect key="frame" x="30" y="148" width="240" height="128"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="MM1-O2-BCF"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZoH-VN-Szp">
+                                        <rect key="frame" x="8" y="292" width="288" height="121"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1200" id="S3Y-2i-tGY"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pg7-WL-CS1" userLabel="viewForStartEnd">
+                                        <rect key="frame" x="14" y="47" width="273" height="143"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="YEs-ko-hc8"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="MM1-O2-BCF"/>
+                                    <constraint firstItem="3eS-W7-or0" firstAttribute="top" secondItem="Pg7-WL-CS1" secondAttribute="bottom" id="5KU-UO-qTS"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZoH-VN-Szp" secondAttribute="bottom" id="5N6-h1-0Wq"/>
+                                    <constraint firstItem="ZoH-VN-Szp" firstAttribute="width" secondItem="Ltp-0n-DNq" secondAttribute="width" id="JSE-6n-c43"/>
+                                    <constraint firstItem="Pg7-WL-CS1" firstAttribute="top" secondItem="Ltp-0n-DNq" secondAttribute="top" id="K8m-Lf-Jcf"/>
+                                    <constraint firstItem="ZoH-VN-Szp" firstAttribute="centerX" secondItem="Ltp-0n-DNq" secondAttribute="centerX" id="aUd-Cp-FGR"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZoH-VN-Szp" secondAttribute="trailing" id="jGf-Ko-vPa"/>
+                                    <constraint firstItem="Pg7-WL-CS1" firstAttribute="leading" secondItem="Ltp-0n-DNq" secondAttribute="leading" id="m9k-rn-lX9"/>
+                                    <constraint firstItem="3eS-W7-or0" firstAttribute="width" secondItem="Ltp-0n-DNq" secondAttribute="width" id="myF-YR-cBK"/>
+                                    <constraint firstItem="ZoH-VN-Szp" firstAttribute="top" secondItem="3eS-W7-or0" secondAttribute="bottom" id="ooE-sB-9TI"/>
+                                    <constraint firstItem="3eS-W7-or0" firstAttribute="centerX" secondItem="Ltp-0n-DNq" secondAttribute="centerX" id="xVz-R5-3yS"/>
+                                    <constraint firstItem="Pg7-WL-CS1" firstAttribute="width" secondItem="Ltp-0n-DNq" secondAttribute="width" id="z0H-CT-HiY"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
                                         <integer key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZoH-VN-Szp">
-                                <rect key="frame" x="10" y="290" width="300" height="132"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ZoH-VN-Szp" firstAttribute="width" secondItem="I9K-CX-DqY" secondAttribute="width" id="0Qp-0N-9yN"/>
-                            <constraint firstItem="ZoH-VN-Szp" firstAttribute="top" secondItem="3eS-W7-or0" secondAttribute="bottom" id="Bkg-nl-eWU"/>
-                            <constraint firstItem="ZoH-VN-Szp" firstAttribute="centerX" secondItem="I9K-CX-DqY" secondAttribute="centerX" id="MsK-FE-ccM"/>
-                            <constraint firstItem="3eS-W7-or0" firstAttribute="width" secondItem="I9K-CX-DqY" secondAttribute="width" id="NWY-zf-t3G"/>
-                            <constraint firstItem="3eS-W7-or0" firstAttribute="top" secondItem="JgB-eF-oKp" secondAttribute="bottom" id="P8C-Sy-rhW"/>
-                            <constraint firstItem="u9v-H6-gpv" firstAttribute="top" secondItem="ZoH-VN-Szp" secondAttribute="bottom" id="PxZ-QK-7k8"/>
-                            <constraint firstItem="3eS-W7-or0" firstAttribute="centerX" secondItem="I9K-CX-DqY" secondAttribute="centerX" id="S0S-om-v3p"/>
+                            <constraint firstItem="Ltp-0n-DNq" firstAttribute="width" secondItem="I9K-CX-DqY" secondAttribute="width" id="3IM-ZW-3wn"/>
+                            <constraint firstItem="Ltp-0n-DNq" firstAttribute="centerX" secondItem="I9K-CX-DqY" secondAttribute="centerX" id="Zq2-Ab-go9"/>
+                            <constraint firstItem="Ltp-0n-DNq" firstAttribute="height" secondItem="I9K-CX-DqY" secondAttribute="height" id="e2z-nS-kE1"/>
+                            <constraint firstItem="Ltp-0n-DNq" firstAttribute="centerY" secondItem="I9K-CX-DqY" secondAttribute="centerY" id="wCk-Km-ccT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Score" id="gRS-Y2-bz9"/>
                     <connections>
                         <outlet property="ViewForShinobiChart" destination="ZoH-VN-Szp" id="vgn-9d-cut"/>
+                        <outlet property="scrollView" destination="Ltp-0n-DNq" id="yks-yB-Udi"/>
                         <outlet property="viewForMap" destination="3eS-W7-or0" id="snG-hW-TLE"/>
+                        <outlet property="viewForStartEnd" destination="Pg7-WL-CS1" id="FHr-AW-9KA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X4q-fL-FxI" userLabel="First Responder" sceneMemberID="firstResponder"/>
