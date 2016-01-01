@@ -87,7 +87,7 @@
     
     // create an array of coordinates from allPins
     NSDateFormatter *df = [[NSDateFormatter alloc]init];
-    [df setDateFormat:@"HH:mm a, MMM dd, yyyy"];
+    [df setDateFormat:@"hh:mm a, MMM dd, yyyy"];
     Pin* startPin = [[Pin alloc]initWithCoordinate:self.trip.startLoc.coordinate withTitle:@"START" withSubtitle:[df stringFromDate:self.trip.startLoc.timestamp]];
     //MKPointAnnotation* annotation = [[MKPointAnnotation alloc]init];
     [self.mapView addAnnotation:startPin];
