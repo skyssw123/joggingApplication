@@ -384,20 +384,24 @@
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="clock1" translatesAutoresizingMaskIntoConstraints="NO" id="oQ0-n5-Y9d">
                                                         <rect key="frame" x="0.0" y="-10" width="179" height="115"/>
+                                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="10" id="72l-Nz-ZP5"/>
                                                             <constraint firstAttribute="width" constant="10" id="mch-uV-1mN"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Start : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSH-N9-kqZ" userLabel="startLabel">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text="Start : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSH-N9-kqZ" userLabel="startLabel">
                                                         <rect key="frame" x="39" y="30" width="140" height="93"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="50" id="hTP-Jc-Hrp"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHO-1P-Kjn" userLabel="startValueLabel">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHO-1P-Kjn" userLabel="startValueLabel">
                                                         <rect key="frame" x="104" y="37" width="29" height="44"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -410,6 +414,7 @@
                                                     <constraint firstItem="gSH-N9-kqZ" firstAttribute="leading" secondItem="oQ0-n5-Y9d" secondAttribute="trailing" constant="10" id="Ohk-du-oRp"/>
                                                     <constraint firstItem="JHO-1P-Kjn" firstAttribute="top" secondItem="WvC-AE-Ms8" secondAttribute="top" constant="10" id="PuZ-2T-fdS"/>
                                                     <constraint firstItem="gSH-N9-kqZ" firstAttribute="top" secondItem="WvC-AE-Ms8" secondAttribute="top" constant="10" id="YF4-BL-6pv"/>
+                                                    <constraint firstAttribute="trailing" secondItem="JHO-1P-Kjn" secondAttribute="trailing" constant="10" id="tFB-C4-cDa"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RUk-Nb-m90" userLabel="EndView">
@@ -417,6 +422,7 @@
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="clock2" translatesAutoresizingMaskIntoConstraints="NO" id="Xvv-x8-DVJ">
                                                         <rect key="frame" x="0.0" y="20" width="15" height="15"/>
+                                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="10" id="GKi-bV-mrB"/>
                                                             <constraint firstAttribute="height" constant="10" id="MDc-wK-dDw"/>
@@ -424,13 +430,16 @@
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="End   : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wa4-hh-8Yi" userLabel="endLabel">
                                                         <rect key="frame" x="43" y="35" width="42" height="21"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="50" id="Mr2-bi-kAs"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Xz-yO-74Y" userLabel="endValueLabel">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Xz-yO-74Y" userLabel="endValueLabel">
                                                         <rect key="frame" x="43" y="35" width="42" height="21"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -438,6 +447,7 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="6Xz-yO-74Y" firstAttribute="top" secondItem="RUk-Nb-m90" secondAttribute="top" constant="10" id="6lD-Iy-cGP"/>
+                                                    <constraint firstAttribute="trailing" secondItem="6Xz-yO-74Y" secondAttribute="trailing" constant="10" id="ONW-x2-BZI"/>
                                                     <constraint firstItem="Wa4-hh-8Yi" firstAttribute="leading" secondItem="Xvv-x8-DVJ" secondAttribute="trailing" constant="10" id="Sya-ob-19s"/>
                                                     <constraint firstItem="Wa4-hh-8Yi" firstAttribute="top" secondItem="RUk-Nb-m90" secondAttribute="top" constant="10" id="dC1-Iy-MLI"/>
                                                     <constraint firstItem="Xvv-x8-DVJ" firstAttribute="top" secondItem="RUk-Nb-m90" secondAttribute="top" constant="15" id="qI0-AZ-c1f"/>

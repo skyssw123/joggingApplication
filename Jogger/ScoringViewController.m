@@ -17,7 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    self.clock1ImageView.tintColor = [UIColor lightGrayColor];
+    self.clock2ImageView.tintColor = [UIColor lightGrayColor];
     self.mapViewController = [[MapViewController alloc]initWithNibName:@"MapView" bundle:nil];
     self.mapViewController.view.frame = CGRectMake(0, 0, self.viewForMap.frame.size.width, self.viewForMap.frame.size.height);
     Trip* trip = [TripFactory produceTripWithLogs:lastTrip];
