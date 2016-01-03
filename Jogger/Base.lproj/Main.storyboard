@@ -42,14 +42,18 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCc-cS-b7D" userLabel="satelliteButton">
                                 <rect key="frame" x="227" y="72" width="84" height="27"/>
-                                <state key="normal" title="Satellite"/>
+                                <state key="normal" title="Satellite">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="satelliteButtonClicked:" destination="Jz3-mA-y23" eventType="touchUpInside" id="sYx-E2-Xwj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Td8-XA-xIf" userLabel="standardButton">
                                 <rect key="frame" x="115" y="82" width="90" height="17"/>
-                                <state key="normal" title="Standard"/>
+                                <state key="normal" title="Standard">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="standardButtonClicked:" destination="Jz3-mA-y23" eventType="touchUpInside" id="cLx-lh-y9R"/>
                                 </connections>
@@ -189,7 +193,9 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2iE-ZB-vBz" userLabel="hybridButton">
                                 <rect key="frame" x="20" y="108" width="50" height="20"/>
-                                <state key="normal" title="Hybrid"/>
+                                <state key="normal" title="Hybrid ">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="hybridButtonClicked:" destination="Jz3-mA-y23" eventType="touchUpInside" id="OFP-va-AoI"/>
                                 </connections>
@@ -204,9 +210,9 @@
                             <constraint firstItem="FCc-cS-b7D" firstAttribute="top" secondItem="FeS-6V-f3I" secondAttribute="bottom" constant="10" id="Vdo-rB-6Y9"/>
                             <constraint firstItem="dxO-Ut-8tD" firstAttribute="top" secondItem="S46-0P-HOa" secondAttribute="bottom" constant="10" id="Y1h-6T-r1U"/>
                             <constraint firstItem="2iE-ZB-vBz" firstAttribute="top" secondItem="FeS-6V-f3I" secondAttribute="bottom" constant="10" id="YRX-MS-nyg"/>
-                            <constraint firstItem="Td8-XA-xIf" firstAttribute="leading" secondItem="2iE-ZB-vBz" secondAttribute="trailing" constant="20" id="b92-fW-GsN"/>
+                            <constraint firstItem="Td8-XA-xIf" firstAttribute="leading" secondItem="2iE-ZB-vBz" secondAttribute="trailing" constant="50" id="b92-fW-GsN"/>
                             <constraint firstItem="Td8-XA-xIf" firstAttribute="top" secondItem="FeS-6V-f3I" secondAttribute="bottom" constant="10" id="bLo-pF-6UJ"/>
-                            <constraint firstItem="FCc-cS-b7D" firstAttribute="leading" secondItem="Td8-XA-xIf" secondAttribute="trailing" constant="20" id="fI3-ha-n1t"/>
+                            <constraint firstItem="FCc-cS-b7D" firstAttribute="leading" secondItem="Td8-XA-xIf" secondAttribute="trailing" constant="50" id="fI3-ha-n1t"/>
                             <constraint firstItem="Vpu-t7-m5J" firstAttribute="centerX" secondItem="TXV-mj-6GI" secondAttribute="centerX" id="gd5-6e-7nb"/>
                             <constraint firstItem="Oq6-mg-3lD" firstAttribute="width" secondItem="TXV-mj-6GI" secondAttribute="width" id="pcR-kl-Ukd"/>
                             <constraint firstItem="Td8-XA-xIf" firstAttribute="centerX" secondItem="TXV-mj-6GI" secondAttribute="centerX" id="quY-nS-pnd"/>
@@ -220,8 +226,11 @@
                         <outlet property="distanceValueLabel" destination="jYc-kU-pGR" id="Ezi-mf-uaP"/>
                         <outlet property="firstView" destination="Ao1-jh-pFF" id="oeP-zw-FEC"/>
                         <outlet property="fourthView" destination="zcp-6k-YxP" id="7Iw-Jj-Qbu"/>
+                        <outlet property="hybridButton" destination="2iE-ZB-vBz" id="caB-e2-bCh"/>
+                        <outlet property="satelliteButton" destination="FCc-cS-b7D" id="5Uv-yB-e0U"/>
                         <outlet property="secondView" destination="7Py-bZ-wfb" id="EQV-xp-3lf"/>
                         <outlet property="speedValueLabel" destination="uyD-nZ-bal" id="Gdo-4Y-Vic"/>
+                        <outlet property="standardButton" destination="Td8-XA-xIf" id="oy2-yE-ZnH"/>
                         <outlet property="startButton" destination="S46-0P-HOa" id="8vp-Ku-qgw"/>
                         <outlet property="thirdView" destination="Fgp-gd-E1i" id="pfi-9w-jcT"/>
                         <outlet property="timeValueLabel" destination="Mrq-FE-PUd" id="AH8-3D-tbY"/>

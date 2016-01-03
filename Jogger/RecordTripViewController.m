@@ -82,15 +82,30 @@
 }
 
 - (IBAction)hybridButtonClicked:(id)sender {
+    self.recordingMapViewController.mapView.hidden = YES;
+    [self.standardButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.hybridButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.satelliteButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.recordingMapViewController.mapView setMapType:MKMapTypeHybrid];
+    self.recordingMapViewController.mapView.hidden = NO;
 }
 
 - (IBAction)satelliteButtonClicked:(id)sender {
+    self.recordingMapViewController.mapView.hidden = YES;
+    [self.standardButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.hybridButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.satelliteButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.recordingMapViewController.mapView setMapType:MKMapTypeSatellite];
+    self.recordingMapViewController.mapView.hidden = NO;
 }
 
 - (IBAction)standardButtonClicked:(id)sender {
+    self.recordingMapViewController.mapView.hidden = YES;
+    [self.standardButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [self.hybridButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [self.satelliteButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [self.recordingMapViewController.mapView setMapType:MKMapTypeStandard];
+    self.recordingMapViewController.mapView.hidden = NO;
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation

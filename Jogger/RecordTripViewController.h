@@ -35,6 +35,9 @@
 @property (strong, nonatomic) NSDate* startDate;
 @property (strong, nonatomic) MKPolyline* polyline;
 @property (strong, nonatomic) NSMutableArray* arrayCoords;
+@property (weak, nonatomic) IBOutlet UIButton *hybridButton;
+@property (weak, nonatomic) IBOutlet UIButton *satelliteButton;
+@property (weak, nonatomic) IBOutlet UIButton *standardButton;
 
 - (IBAction)hybridButtonClicked:(id)sender;
 - (IBAction)satelliteButtonClicked:(id)sender;
