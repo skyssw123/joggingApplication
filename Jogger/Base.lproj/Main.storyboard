@@ -220,14 +220,6 @@
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8SU-jK-WCj">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="145"/>
                                 <subviews>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="dropdown-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="ysQ-lb-58b">
-                                        <rect key="frame" x="237" y="79" width="75" height="58"/>
-                                        <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="10" id="8QL-iJ-gur"/>
-                                            <constraint firstAttribute="height" constant="10" id="avh-0C-ObC"/>
-                                        </constraints>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Last work-out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWK-JX-k5H">
                                         <rect key="frame" x="172" y="97" width="42" height="21"/>
                                         <color key="tintColor" red="0.0" green="0.37224670069999999" blue="0.74494949489999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -235,14 +227,25 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5co-Nx-L6C">
+                                        <rect key="frame" x="206" y="99" width="79" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="10" id="NnK-4z-z4b"/>
+                                            <constraint firstAttribute="height" constant="10" id="u3n-0j-1FM"/>
+                                        </constraints>
+                                        <state key="normal" image="dropdown-arrow"/>
+                                        <connections>
+                                            <action selector="dropdownButtonPressed:" destination="sYb-1o-PHy" eventType="touchUpInside" id="LNY-Ja-yYE"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="5co-Nx-L6C" firstAttribute="leading" secondItem="hWK-JX-k5H" secondAttribute="trailing" constant="10" id="358-4P-Gcn"/>
                                     <constraint firstAttribute="height" constant="44" id="4DD-Kb-Zp1"/>
-                                    <constraint firstItem="ysQ-lb-58b" firstAttribute="leading" secondItem="hWK-JX-k5H" secondAttribute="trailing" constant="10" id="QLL-10-Yys"/>
-                                    <constraint firstItem="ysQ-lb-58b" firstAttribute="centerY" secondItem="8SU-jK-WCj" secondAttribute="centerY" id="VfO-AD-dOG"/>
+                                    <constraint firstItem="5co-Nx-L6C" firstAttribute="centerY" secondItem="8SU-jK-WCj" secondAttribute="centerY" id="Mbd-9W-bEz"/>
+                                    <constraint firstAttribute="trailing" secondItem="5co-Nx-L6C" secondAttribute="trailing" constant="20" id="axG-aJ-tW3"/>
                                     <constraint firstItem="hWK-JX-k5H" firstAttribute="centerY" secondItem="8SU-jK-WCj" secondAttribute="centerY" id="bqz-jX-aq1"/>
-                                    <constraint firstAttribute="trailing" secondItem="ysQ-lb-58b" secondAttribute="trailing" constant="20" id="fUn-2p-T0L"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ltp-0n-DNq">
@@ -522,7 +525,7 @@
                         <outlet property="clock1ImageView" destination="oQ0-n5-Y9d" id="4lI-au-14Y"/>
                         <outlet property="clock2ImageView" destination="Xvv-x8-DVJ" id="iuK-uW-ZEW"/>
                         <outlet property="distanceValueLabel" destination="JBC-YJ-0r5" id="R2a-JT-zut"/>
-                        <outlet property="dropdownArrow" destination="ysQ-lb-58b" id="nyq-ea-lYp"/>
+                        <outlet property="dropdownArrowButton" destination="5co-Nx-L6C" id="YLE-cu-f1n"/>
                         <outlet property="dropdownMenuLabel" destination="hWK-JX-k5H" id="8fo-A5-CUC"/>
                         <outlet property="dropdownMenuView" destination="8SU-jK-WCj" id="NKw-cJ-bg9"/>
                         <outlet property="endValueLabel" destination="6Xz-yO-74Y" id="AOF-gj-aU6"/>

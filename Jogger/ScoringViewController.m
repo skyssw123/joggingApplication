@@ -47,7 +47,7 @@
     
     self.dropdownMenuLabel.textColor = [[UIColor blueColor] colorWithAlphaComponent:0.8];
     self.dropdownMenuView.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.3];
-    self.dropdownArrow.tintColor = [[UIColor blueColor] colorWithAlphaComponent:0.8];
+    self.dropdownArrowButton.imageView.tintColor = [[UIColor blueColor] colorWithAlphaComponent:0.8];
     
     self.startValueLabel.text = [self getAddressFromLatLon:trip.startLoc.coordinate.latitude withLongitude:trip.startLoc.coordinate.longitude];
     self.endValueLabel.text = [self getAddressFromLatLon:trip.endLoc.coordinate.latitude withLongitude:trip.endLoc.coordinate.longitude];
@@ -86,4 +86,6 @@
 }
 */
 
+- (IBAction)dropdownButtonPressed:(id)sender {
+}
 @end
