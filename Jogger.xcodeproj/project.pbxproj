@@ -198,8 +198,8 @@
 		271777E31C0BE859005FE4E0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				275CAD181C0A537300190036 /* RecordTripViewController.m */,
 				275CAD171C0A537300190036 /* RecordTripViewController.h */,
+				275CAD181C0A537300190036 /* RecordTripViewController.m */,
 				274F85BC1C1BD0E200D83E5A /* MapViewController.h */,
 				274F85BD1C1BD0E200D83E5A /* MapViewController.m */,
 				274F85CA1C1BE01900D83E5A /* ScoringViewController.h */,

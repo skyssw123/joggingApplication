@@ -20,11 +20,9 @@ int i = 0;
     self.mapView.mapType = MKMapTypeStandard;
     self.mapView.showsUserLocation = NO;
     
-    
-    
     // Do any additional setup after loading the view.
 }
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
     [self drawTrip];
 }
