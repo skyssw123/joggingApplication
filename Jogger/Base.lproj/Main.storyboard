@@ -516,7 +516,7 @@
                                                 <rect key="frame" x="97" y="49" width="46" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="First Work-out">
-                                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="firstWorkoutButtonPressed:" destination="sYb-1o-PHy" eventType="touchUpInside" id="pJJ-JK-VFi"/>
@@ -537,7 +537,7 @@
                                                 <rect key="frame" x="97" y="49" width="46" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="Second Work-out">
-                                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="secondWorkoutButtonPressed:" destination="sYb-1o-PHy" eventType="touchUpInside" id="e5B-wN-7E9"/>
@@ -558,7 +558,7 @@
                                                 <rect key="frame" x="97" y="49" width="46" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="Last Work-out">
-                                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="lastWorkoutButtonPressed:" destination="sYb-1o-PHy" eventType="touchUpInside" id="Snc-Ax-N5y"/>
