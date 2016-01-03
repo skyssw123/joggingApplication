@@ -131,6 +131,7 @@ CAShapeLayer *closedMenuShape;
 {
     self.dropdownMenuBarLabel.text = @"First Work-out";
     [self updateLabel:[TripFactory produceTripWithLogs:firstTrip]];
+    [self.mapViewController drawTrip];
     self.dropdownMenuView.hidden = YES;
 }
 
