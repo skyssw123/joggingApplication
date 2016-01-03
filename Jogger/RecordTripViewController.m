@@ -15,6 +15,7 @@
 #import "TripFactory.h"
 #import "TripDrawer.h"
 #import "Numbers.h"
+#import "Settings.h"
 
 @interface RecordTripViewController ()
 @property BOOL isTripBeingRecorded;
@@ -122,7 +123,7 @@
 
 - (IBAction)discardButtonClicked:(id)sender
 {
-    
+    [[FileLogging sharedInstance] deleteFile:nil];
     self.saveDiscardButtonView.hidden = YES;
 }
 
