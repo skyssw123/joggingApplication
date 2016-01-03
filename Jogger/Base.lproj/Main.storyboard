@@ -219,9 +219,20 @@
                         <subviews>
                             <view alpha="0.29999999999999999" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8SU-jK-WCj">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="145"/>
+                                <subviews>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="dropdown-arrow" highlightedImage="dropdown-arrow-upsidedown" translatesAutoresizingMaskIntoConstraints="NO" id="ysQ-lb-58b">
+                                        <rect key="frame" x="237" y="79" width="75" height="58"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="10" id="8QL-iJ-gur"/>
+                                            <constraint firstAttribute="height" constant="10" id="avh-0C-ObC"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="4DD-Kb-Zp1"/>
+                                    <constraint firstItem="ysQ-lb-58b" firstAttribute="centerY" secondItem="8SU-jK-WCj" secondAttribute="centerY" id="VfO-AD-dOG"/>
+                                    <constraint firstAttribute="trailing" secondItem="ysQ-lb-58b" secondAttribute="trailing" constant="20" id="fUn-2p-T0L"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ltp-0n-DNq">
@@ -596,6 +607,8 @@
     <resources>
         <image name="clock1" width="25" height="25"/>
         <image name="clock2" width="25" height="25"/>
+        <image name="dropdown-arrow" width="25" height="25"/>
+        <image name="dropdown-arrow-upsidedown" width="25" height="25"/>
         <image name="icon-more" width="25" height="25"/>
         <image name="icon-more-fill" width="25" height="25"/>
         <image name="icon-record" width="25" height="25"/>
