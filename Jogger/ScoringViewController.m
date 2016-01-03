@@ -138,6 +138,7 @@ CAShapeLayer *closedMenuShape;
 {
     self.dropdownMenuBarLabel.text = @"Second Work-out";
     [self updateLabel:[TripFactory produceTripWithLogs:secondTrip]];
+    [self.mapViewController drawTrip];
     self.dropdownMenuView.hidden = YES;
 }
 
@@ -145,6 +146,7 @@ CAShapeLayer *closedMenuShape;
 {
     self.dropdownMenuBarLabel.text = @"Last Work-out";
     [self updateLabel:[TripFactory produceTripWithLogs:lastTrip]];
+    [self.mapViewController drawTrip];
     self.dropdownMenuView.hidden = YES;
 }
 
