@@ -70,7 +70,6 @@
 }
 
 
-
 - (NSString *) moveFileTo:(NSString *) directory withNewFileName:(NSString *) fileName
 {
     NSString *newFilePath = [NSString stringWithFormat:@"%@/%@", directory, fileName];
@@ -78,14 +77,10 @@
     return newFilePath;
 }
 
-
-
 - (void) deleteFile:(NSError **)error
 {
     [[NSFileManager defaultManager] removeItemAtPath:self.filePath error:error];
 }
-
-
 
 - (void) addFileHeaderMessage:(NSString *) header
 {

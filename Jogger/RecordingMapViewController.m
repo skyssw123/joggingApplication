@@ -38,12 +38,6 @@
     // Do any additional setup after loading the view.
 }
 
-
-
-- (void)viewWillAppear:(BOOL)animated
-{
-}
-
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
     CLLocationCoordinate2D centerCoordinate = CLLocationCoordinate2DMake(self.mapView.userLocation.coordinate.latitude - 0.002, (self.mapView.userLocation.coordinate.longitude));

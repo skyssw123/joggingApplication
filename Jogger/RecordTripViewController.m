@@ -74,24 +74,11 @@
     //[self.startButton setEnabled:YES];
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    
-}
-
 - (void)timerExpired
 {
     [self.timer invalidate];
     self.timer = nil;
     [self.startButton setEnabled:YES];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
