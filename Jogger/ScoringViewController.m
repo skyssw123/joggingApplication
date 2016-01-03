@@ -9,11 +9,16 @@
 #import "ScoringViewController.h"
 #import <UIKit/UIKit.h>
 
+#define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+
+
 @interface ScoringViewController ()
 
 @end
 
 @implementation ScoringViewController
+CAShapeLayer *openMenuShape;
+CAShapeLayer *closedMenuShape;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -90,5 +95,135 @@
 */
 
 - (IBAction)dropdownButtonPressed:(id)sender {
+    //[self toggleMenu];
 }
+
+//- (void) toggleMenu {
+//    if(self.menu.hidden) {
+//        [self showMenu];
+//    } else {
+//        [self hideMenu];
+//    }
+//}
+//
+//- (void) showMenu {
+//    self.menu.hidden = NO;
+//    self.menu.translatesAutoresizingMaskIntoConstraints = YES;
+//    
+//    [closedMenuShape removeFromSuperlayer];
+//    
+//    if (shouldDisplayDropShape)
+//    {
+//        [[[self view] layer] addSublayer:- (void) hideMenu {
+//            //     Set the border layer to hidden menu state
+//            [openMenuShape removeFromSuperlayer];
+//            [[[self view] layer] addSublayer:closedMenuShape];
+//            
+//            // Set new origin of menu
+//            CGRect menuFrame = self.menu.frame;
+//            menuFrame.origin.y = self.menubar.frame.size.height-menuFrame.size.height;
+//            
+//            // Set new alpha of Container View (to get fade effect)
+//            float containerAlpha = 1.0f;
+//            
+//            if (SYSTEM_VERSION_LESS_THAN(@"7.0")) {
+//                [UIView beginAnimations:nil context:nil];
+//                [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+//                [UIView setAnimationDelegate:self];
+//                [UIView setAnimationDidStopSelector:@selector(iOS6_hideMenuCompleted)];
+//                
+//                self.menu.frame = menuFrame;
+//                [self.container setAlpha:containerAlpha];
+//            } else {
+//                [UIView animateWithDuration:0.3f
+//                                      delay:0.05f
+//                     usingSpringWithDamping:1.0
+//                      initialSpringVelocity:4.0
+//                                    options: UIViewAnimationOptionCurveEaseInOut
+//                                 animations:^{
+//                                     self.menu.frame = menuFrame;
+//                                     [self.container setAlpha: containerAlpha];
+//                                 }
+//                                 completion:^(BOOL finished){
+//                                     self.menu.hidden = YES;
+//                                 }];
+//            }
+//            
+//            [UIView commitAnimations];
+//            
+//        }
+//];
+//    }
+//    
+//    // Set new origin of menu
+//    CGRect menuFrame = self.menu.frame;
+//    menuFrame.origin.y = self.menubar.frame.size.height-self.offset;
+//    
+//    // Set new alpha of Container View (to get fade effect)
+//    float fadeAlpha = 0.5f;
+//    float containerAlpha = fadeAlpha;
+//    
+//    if (SYSTEM_VERSION_LESS_THAN(@"7.0")) {
+//        [UIView beginAnimations:nil context:nil];
+//        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+//        self.menu.frame = menuFrame;
+//        [self.container setAlpha:containerAlpha];
+//    } else {
+//        [UIView animateWithDuration:0.4
+//                              delay:0.0
+//             usingSpringWithDamping:1.0
+//              initialSpringVelocity:4.0
+//                            options: UIViewAnimationOptionCurveEaseInOut
+//                         animations:^{
+//                             self.menu.frame = menuFrame;
+//                             [self.container setAlpha: containerAlpha];
+//                         }
+//                         completion:^(BOOL finished){
+//                         }];
+//    }
+//    
+//    [UIView commitAnimations];
+//    
+//}
+//
+//- (void) hideMenu {
+//    //     Set the border layer to hidden menu state
+//    [openMenuShape removeFromSuperlayer];
+//    [[[self view] layer] addSublayer:closedMenuShape];
+//    
+//    // Set new origin of menu
+//    CGRect menuFrame = self.menu.frame;
+//    menuFrame.origin.y = self.menubar.frame.size.height-menuFrame.size.height;
+//    
+//    // Set new alpha of Container View (to get fade effect)
+//    float containerAlpha = 1.0f;
+//    
+//    if (SYSTEM_VERSION_LESS_THAN(@"7.0")) {
+//        [UIView beginAnimations:nil context:nil];
+//        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+//        [UIView setAnimationDelegate:self];
+//        [UIView setAnimationDidStopSelector:@selector(iOS6_hideMenuCompleted)];
+//        
+//        self.menu.frame = menuFrame;
+//        [self.container setAlpha:containerAlpha];
+//    } else {
+//        [UIView animateWithDuration:0.3f
+//                              delay:0.05f
+//             usingSpringWithDamping:1.0
+//              initialSpringVelocity:4.0
+//                            options: UIViewAnimationOptionCurveEaseInOut
+//                         animations:^{
+//                             self.menu.frame = menuFrame;
+//                             [self.container setAlpha: containerAlpha];
+//                         }
+//                         completion:^(BOOL finished){
+//                             self.menu.hidden = YES;
+//                         }];
+//    }
+//    
+//    [UIView commitAnimations];
+//    
+//}
+
+
 @end
