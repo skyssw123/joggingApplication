@@ -130,21 +130,21 @@ CAShapeLayer *closedMenuShape;
 - (IBAction)firstWorkoutButtonPressed:(id)sender
 {
     self.dropdownMenuBarLabel.text = @"First Work-out";
-    //Reload First Work-out here
+    [self updateLabel:[TripFactory produceTripWithLogs:firstTrip]];
     self.dropdownMenuView.hidden = YES;
 }
 
 - (IBAction)secondWorkoutButtonPressed:(id)sender
 {
     self.dropdownMenuBarLabel.text = @"Second Work-out";
-    //Reload Second Work-out here
+    [self updateLabel:[TripFactory produceTripWithLogs:secondTrip]];
     self.dropdownMenuView.hidden = YES;
 }
 
 - (IBAction)lastWorkoutButtonPressed:(id)sender
 {
     self.dropdownMenuBarLabel.text = @"Last Work-out";
-    //Reload Last Work-out here
+    [self updateLabel:[TripFactory produceTripWithLogs:lastTrip]];
     self.dropdownMenuView.hidden = YES;
 }
 
