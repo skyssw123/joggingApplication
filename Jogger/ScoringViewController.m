@@ -25,13 +25,10 @@ CAShapeLayer *closedMenuShape;
     // Do any additional setup after loading the view.
     self.clock1ImageView.tintColor = [UIColor lightGrayColor];
     self.clock2ImageView.tintColor = [UIColor lightGrayColor];
-    self.mapViewController = [[MapViewController alloc]initWithNibName:@"MapView" bundle:nil];
-    self.mapViewController.view.frame = CGRectMake(0, 0, self.viewForMap.frame.size.width, self.viewForMap.frame.size.height);
-    Trip* trip = [TripFactory produceTripWithLogs:lastTrip];
     
-    [self updateLabel:trip];
-    [self addChildViewController:self.mapViewController];
-    [self.viewForMap addSubview:self.mapViewController.view];
+    Trip* trip = [TripFactory produceTripWithLogs:lastTrip];
+    [self updateData:trip];
+    
     self.scrollView.alwaysBounceHorizontal = NO;
     self.dropdownMenuView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.85];
     self.dropdownMenuBarLabel.textColor = [[UIColor blueColor] colorWithAlphaComponent:0.8];
@@ -40,6 +37,16 @@ CAShapeLayer *closedMenuShape;
     [self.dropdownButton setImage:[UIImage imageNamed:@"dropdown-arrow-upsidedown.png"] forState:UIControlStateHighlighted];
     self.dropdownButton.imageView.tintColor = [[UIColor blueColor] colorWithAlphaComponent:0.7];
     self.dropdownMenuView.hidden = YES;
+}
+
+-(void) updateData:(Trip*) trip
+{
+    self.mapViewController = nil;
+    self.mapViewController = [[MapViewController alloc]initWithNibName:@"MapView" bundle:nil];
+    self.mapViewController.view.frame = CGRectMake(0, 0, self.viewForMap.frame.size.width, self.viewForMap.frame.size.height);
+    [self updateLabel:trip];
+    [self addChildViewController:self.mapViewController];
+    [self.viewForMap addSubview:self.mapViewController.view];
 }
 
 -(void) updateLabel:(Trip*) trip
@@ -130,24 +137,21 @@ CAShapeLayer *closedMenuShape;
 - (IBAction)firstWorkoutButtonPressed:(id)sender
 {
     self.dropdownMenuBarLabel.text = @"First Work-out";
-    [self updateLabel:[TripFactory produceTripWithLogs:firstTrip]];
-    [self.mapViewController drawTrip];
+    [self updateData:[TripFactory produceTripWithLogs:firstTrip]];
     self.dropdownMenuView.hidden = YES;
 }
 
 - (IBAction)secondWorkoutButtonPressed:(id)sender
 {
     self.dropdownMenuBarLabel.text = @"Second Work-out";
-    [self updateLabel:[TripFactory produceTripWithLogs:secondTrip]];
-    [self.mapViewController drawTrip];
+    [self updateData:[TripFactory produceTripWithLogs:secondTrip]];
     self.dropdownMenuView.hidden = YES;
 }
 
 - (IBAction)lastWorkoutButtonPressed:(id)sender
 {
     self.dropdownMenuBarLabel.text = @"Last Work-out";
-    [self updateLabel:[TripFactory produceTripWithLogs:lastTrip]];
-    [self.mapViewController drawTrip];
+    [self updateData:[TripFactory produceTripWithLogs:lastTrip]];
     self.dropdownMenuView.hidden = YES;
 }
 
