@@ -36,6 +36,9 @@
 @property (strong, nonatomic) MKPolyline* polyline;
 @property (strong, nonatomic) NSMutableArray* arrayCoords;
 
+- (IBAction)hybridButtonClicked:(id)sender;
+- (IBAction)satelliteButtonClicked:(id)sender;
+- (IBAction)standardButtonClicked:(id)sender;
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation;
 @end
 

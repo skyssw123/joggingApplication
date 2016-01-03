@@ -43,10 +43,16 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCc-cS-b7D" userLabel="satelliteButton">
                                 <rect key="frame" x="227" y="72" width="84" height="27"/>
                                 <state key="normal" title="Satellite"/>
+                                <connections>
+                                    <action selector="satelliteButtonClicked:" destination="Jz3-mA-y23" eventType="touchUpInside" id="sYx-E2-Xwj"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Td8-XA-xIf" userLabel="standardButton">
                                 <rect key="frame" x="115" y="82" width="90" height="17"/>
                                 <state key="normal" title="Standard"/>
+                                <connections>
+                                    <action selector="standardButtonClicked:" destination="Jz3-mA-y23" eventType="touchUpInside" id="cLx-lh-y9R"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vpu-t7-m5J">
                                 <rect key="frame" x="40" y="334" width="240" height="128"/>
@@ -184,6 +190,9 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2iE-ZB-vBz" userLabel="hybridButton">
                                 <rect key="frame" x="20" y="108" width="50" height="20"/>
                                 <state key="normal" title="Hybrid"/>
+                                <connections>
+                                    <action selector="hybridButtonClicked:" destination="Jz3-mA-y23" eventType="touchUpInside" id="OFP-va-AoI"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

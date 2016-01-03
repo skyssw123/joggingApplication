@@ -81,6 +81,18 @@
     [self.startButton setEnabled:YES];
 }
 
+- (IBAction)hybridButtonClicked:(id)sender {
+    [self.recordingMapViewController.mapView setMapType:MKMapTypeHybrid];
+}
+
+- (IBAction)satelliteButtonClicked:(id)sender {
+    [self.recordingMapViewController.mapView setMapType:MKMapTypeSatellite];
+}
+
+- (IBAction)standardButtonClicked:(id)sender {
+    [self.recordingMapViewController.mapView setMapType:MKMapTypeStandard];
+}
+
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
     if(newLocation.horizontalAccuracy <= self.locationManager.desiredAccuracy)
