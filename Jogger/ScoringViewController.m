@@ -47,7 +47,10 @@
     
     self.dropdownMenuLabel.textColor = [[UIColor blueColor] colorWithAlphaComponent:0.8];
     self.dropdownMenuView.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.3];
-    self.dropdownArrowButton.imageView.tintColor = [[UIColor blueColor] colorWithAlphaComponent:0.8];
+    self.dropdownArrowImageView.tintColor = [[UIColor blueColor] colorWithAlphaComponent:0.8];
+    self.dropdownButton.imageView.frame = CGRectMake(0, 0, 15, 15);
+    self.dropdownButton.imageView.image = [UIImage imageNamed:@"dropdown-arrow.png"];
+    
     
     self.startValueLabel.text = [self getAddressFromLatLon:trip.startLoc.coordinate.latitude withLongitude:trip.startLoc.coordinate.longitude];
     self.endValueLabel.text = [self getAddressFromLatLon:trip.endLoc.coordinate.latitude withLongitude:trip.endLoc.coordinate.longitude];
