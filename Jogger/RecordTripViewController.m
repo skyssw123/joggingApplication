@@ -171,6 +171,8 @@
         NSDateFormatter *df = [[NSDateFormatter alloc]init];
         [df setDateFormat:@"HH:mm a, MMM dd, yyyy"];
         [self.recordingMapViewController.mapView addAnnotation:[[Pin alloc]initWithCoordinate:self.recordingMapViewController.mapView.userLocation.coordinate withTitle:@"Stop" withSubtitle:[df stringFromDate:[NSDate date]]]];
+        
+        self.startButton.hidden = YES;
     }
     
     //Start button clicked
