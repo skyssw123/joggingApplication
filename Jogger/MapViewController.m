@@ -24,6 +24,7 @@ int i = 0;
 }
 - (void)viewDidAppear:(BOOL)animated
 {
+    [super viewDidAppear:YES];
     [self drawTrip];
 }
 
