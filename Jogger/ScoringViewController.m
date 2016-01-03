@@ -44,6 +44,7 @@ CAShapeLayer *closedMenuShape;
 -(void) updateData:(Trip*) trip
 {
     [self.mapViewController removeFromParentViewController];
+    [self.mapViewController.view removeFromSuperview];
     self.mapViewController = nil;
     self.mapViewController = [[MapViewController alloc]initWithNibName:@"MapView" bundle:nil];
     self.mapViewController.view.frame = CGRectMake(0, 0, self.viewForMap.frame.size.width, self.viewForMap.frame.size.height);

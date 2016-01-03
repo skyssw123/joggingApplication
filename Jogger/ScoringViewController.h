@@ -13,7 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIView *viewForStartEnd;
 @property (weak, nonatomic) IBOutlet UIView *viewForMap;
 @property (weak, nonatomic) IBOutlet UIView *ViewForShinobiChart;
-@property (strong, nonatomic) MapViewController* mapViewController;
+@property (nonatomic) MapViewController* mapViewController;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UILabel *speedValueLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeValueLabel;
