@@ -26,6 +26,11 @@ int i = 0;
 }
 - (void)viewDidAppear:(BOOL)animated
 {
+    [self drawTrip];
+}
+
+-(void)drawTrip
+{
     self.tripDrawer = [[TripDrawer alloc] initWithTrip:self.trip withMapView:self.mapView];
     [self.tripDrawer drawLineAtOnceWithColor];
     [self.tripDrawer drawSpeedingEvents];
@@ -39,10 +44,7 @@ int i = 0;
     
     [self.mapView setRegion:adjustedRegion animated:YES];
     [self.mapView regionThatFits:adjustedRegion];
-
 }
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -17,4 +17,5 @@
 @property (strong, nonatomic) IBOutlet UIView *view;
 @property (strong, nonatomic) TripDrawer* tripDrawer;
 @property (strong, nonatomic) Trip* trip;
+-(void)drawTrip;
 @end
