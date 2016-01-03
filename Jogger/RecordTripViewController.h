@@ -38,10 +38,15 @@
 @property (weak, nonatomic) IBOutlet UIButton *hybridButton;
 @property (weak, nonatomic) IBOutlet UIButton *satelliteButton;
 @property (weak, nonatomic) IBOutlet UIButton *standardButton;
+@property (weak, nonatomic) IBOutlet UIButton *saveButton;
+@property (weak, nonatomic) IBOutlet UIButton *discardButton;
+@property (weak, nonatomic) IBOutlet UIView *saveDiscardButtonView;
 
 - (IBAction)hybridButtonClicked:(id)sender;
 - (IBAction)satelliteButtonClicked:(id)sender;
 - (IBAction)standardButtonClicked:(id)sender;
+- (IBAction)saveButtonClicked:(id)sender;
+- (IBAction)discardButtonClicked:(id)sender;
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation;
 @end
 

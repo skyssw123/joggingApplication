@@ -195,7 +195,7 @@
                                     <action selector="startButtonClicked:" destination="Jz3-mA-y23" eventType="touchUpInside" id="eNq-Nn-349"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yVV-8R-TRR">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yVV-8R-TRR" userLabel="SaveDiscardButtonView">
                                 <rect key="frame" x="40" y="220" width="240" height="128"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gtu-Z3-7EQ" userLabel="DiscardButton">
@@ -204,8 +204,11 @@
                                             <constraint firstAttribute="width" constant="150" id="bDD-WQ-hcn"/>
                                         </constraints>
                                         <state key="normal" title="Discard">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="discardButtonClicked:" destination="Jz3-mA-y23" eventType="touchUpInside" id="KcU-Uw-uDD"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C1O-X1-gJm" userLabel="SaveButton">
                                         <rect key="frame" x="59" y="49" width="46" height="30"/>
@@ -213,8 +216,11 @@
                                             <constraint firstAttribute="width" constant="150" id="Mus-zF-blA"/>
                                         </constraints>
                                         <state key="normal" title="Save">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="saveButtonClicked:" destination="Jz3-mA-y23" eventType="touchUpInside" id="7TU-RT-5wT"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -265,11 +271,14 @@
                     <navigationItem key="navigationItem" title="Run" id="O1F-t5-BxM"/>
                     <connections>
                         <outlet property="caloriesValueLabel" destination="8hZ-L3-Hh3" id="RrT-FO-6Fm"/>
+                        <outlet property="discardButton" destination="gtu-Z3-7EQ" id="daT-HT-cFm"/>
                         <outlet property="distanceValueLabel" destination="jYc-kU-pGR" id="Ezi-mf-uaP"/>
                         <outlet property="firstView" destination="Ao1-jh-pFF" id="oeP-zw-FEC"/>
                         <outlet property="fourthView" destination="zcp-6k-YxP" id="7Iw-Jj-Qbu"/>
                         <outlet property="hybridButton" destination="2iE-ZB-vBz" id="caB-e2-bCh"/>
                         <outlet property="satelliteButton" destination="FCc-cS-b7D" id="5Uv-yB-e0U"/>
+                        <outlet property="saveButton" destination="C1O-X1-gJm" id="aQg-Uz-jar"/>
+                        <outlet property="saveDiscardButtonView" destination="yVV-8R-TRR" id="ISC-Nc-qJ1"/>
                         <outlet property="secondView" destination="7Py-bZ-wfb" id="EQV-xp-3lf"/>
                         <outlet property="speedValueLabel" destination="uyD-nZ-bal" id="Gdo-4Y-Vic"/>
                         <outlet property="standardButton" destination="Td8-XA-xIf" id="oy2-yE-ZnH"/>

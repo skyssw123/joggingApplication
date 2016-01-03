@@ -39,6 +39,12 @@
     self.caloriesValueLabel.text = @"0";
     self.speedValueLabel.text = @"0";
     
+    self.saveButton.backgroundColor = PRIMARY_BUTTON_COLOR;
+    self.saveButton.tintColor = PRIMARY_TEXT_COLOR;
+    self.discardButton.backgroundColor = SECONDARY_BUTTON_COLOR;
+    self.discardButton.tintColor = PRIMARY_TEXT_COLOR;
+    self.saveDiscardButtonView.hidden = YES;
+    
     self.locationManager = [(AppDelegate*)[[UIApplication sharedApplication] delegate] locationManager];
     self.locationManager.delegate = self;
     self.locationManager.distanceFilter = kCLDistanceFilterNone;
@@ -108,6 +114,18 @@
     self.recordingMapViewController.mapView.hidden = NO;
 }
 
+- (IBAction)saveButtonClicked:(id)sender
+{
+    
+    self.saveDiscardButtonView.hidden = YES;
+}
+
+- (IBAction)discardButtonClicked:(id)sender
+{
+    
+    self.saveDiscardButtonView.hidden = YES;
+}
+
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
     if(newLocation.horizontalAccuracy <= self.locationManager.desiredAccuracy)
@@ -173,6 +191,7 @@
         [self.recordingMapViewController.mapView addAnnotation:[[Pin alloc]initWithCoordinate:self.recordingMapViewController.mapView.userLocation.coordinate withTitle:@"Stop" withSubtitle:[df stringFromDate:[NSDate date]]]];
         
         self.startButton.hidden = YES;
+        self.saveDiscardButtonView.hidden = NO;
     }
     
     //Start button clicked
