@@ -67,7 +67,16 @@
             [returnArray addObject:location];
         }
     }
-    if(returnArray == nil)
+    
+    if(period == lastTrip)
+    {
+        if(selectedTrip == firstTrip)
+            return [self produceTripWithLogs:firstTrip];
+        else if(selectedTrip == secondTrip)
+            return [self produceTripWithLogs:secondTrip];
+    }
+    
+    else if(returnArray == nil)
         return nil;
     
     trip = [[Trip alloc]initWithLocations:returnArray];
