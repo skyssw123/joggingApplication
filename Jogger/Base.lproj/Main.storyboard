@@ -520,17 +520,12 @@
                                                 </state>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="cN1-0w-9oc" firstAttribute="centerY" secondItem="uET-d6-5fr" secondAttribute="centerY" id="5hp-w1-VXX"/>
-                                            <constraint firstAttribute="height" constant="42" id="5xt-OT-8vs"/>
+                                            <constraint firstAttribute="height" constant="43" id="5xt-OT-8vs"/>
                                             <constraint firstAttribute="trailing" secondItem="cN1-0w-9oc" secondAttribute="trailing" constant="20" id="CSk-II-7HJ"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                <real key="value" value="0.25"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z5R-xN-YLC" userLabel="SecondTripView">
                                         <rect key="frame" x="43" y="99" width="240" height="128"/>
@@ -543,17 +538,12 @@
                                                 </state>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="10T-fd-4K2" firstAttribute="centerY" secondItem="Z5R-xN-YLC" secondAttribute="centerY" id="1Ho-L2-exn"/>
                                             <constraint firstAttribute="trailing" secondItem="10T-fd-4K2" secondAttribute="trailing" constant="20" id="S7K-83-TNI"/>
-                                            <constraint firstAttribute="height" constant="42" id="k9X-fK-qf4"/>
+                                            <constraint firstAttribute="height" constant="43" id="k9X-fK-qf4"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                <real key="value" value="0.25"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rdt-RQ-miX" userLabel="LastTripView">
                                         <rect key="frame" x="43" y="99" width="240" height="128"/>
@@ -566,17 +556,12 @@
                                                 </state>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="6F9-s9-EqB" secondAttribute="trailing" constant="20" id="M18-yA-31q"/>
-                                            <constraint firstAttribute="height" constant="42" id="bQF-fM-jFh"/>
+                                            <constraint firstAttribute="height" constant="43" id="bQF-fM-jFh"/>
                                             <constraint firstItem="6F9-s9-EqB" firstAttribute="centerY" secondItem="rdt-RQ-miX" secondAttribute="centerY" id="ljW-2K-sbc"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                <real key="value" value="0.25"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -590,7 +575,7 @@
                                     <constraint firstItem="uET-d6-5fr" firstAttribute="width" secondItem="dGh-Mj-ePQ" secondAttribute="width" id="kmV-mH-tif"/>
                                     <constraint firstItem="uET-d6-5fr" firstAttribute="leading" secondItem="dGh-Mj-ePQ" secondAttribute="leading" id="ndc-6b-pAT"/>
                                     <constraint firstItem="Z5R-xN-YLC" firstAttribute="leading" secondItem="dGh-Mj-ePQ" secondAttribute="leading" id="qk8-RQ-RBC"/>
-                                    <constraint firstAttribute="height" constant="126" id="uGK-Yt-D6l"/>
+                                    <constraint firstAttribute="height" constant="129" id="uGK-Yt-D6l"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -616,8 +601,9 @@
                         <outlet property="clock2ImageView" destination="Xvv-x8-DVJ" id="iuK-uW-ZEW"/>
                         <outlet property="distanceValueLabel" destination="JBC-YJ-0r5" id="R2a-JT-zut"/>
                         <outlet property="dropdownButton" destination="XwL-WK-eSy" id="yED-Uu-8xr"/>
-                        <outlet property="dropdownMenuLabel" destination="hWK-JX-k5H" id="8fo-A5-CUC"/>
-                        <outlet property="dropdownMenuView" destination="8SU-jK-WCj" id="NKw-cJ-bg9"/>
+                        <outlet property="dropdownMenuBar" destination="8SU-jK-WCj" id="rWP-uY-ea3"/>
+                        <outlet property="dropdownMenuBarLabel" destination="hWK-JX-k5H" id="3cN-Dq-cWu"/>
+                        <outlet property="dropdownMenuView" destination="dGh-Mj-ePQ" id="aan-vl-mBL"/>
                         <outlet property="endValueLabel" destination="6Xz-yO-74Y" id="AOF-gj-aU6"/>
                         <outlet property="scrollView" destination="Ltp-0n-DNq" id="yks-yB-Udi"/>
                         <outlet property="speedValueLabel" destination="eLu-qf-hWo" id="YDU-6Y-ebV"/>

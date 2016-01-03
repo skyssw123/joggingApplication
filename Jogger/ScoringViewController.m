@@ -50,11 +50,13 @@ CAShapeLayer *closedMenuShape;
     self.timeValueLabel.text = timeString;
     
     
-    self.dropdownMenuLabel.textColor = [[UIColor blueColor] colorWithAlphaComponent:0.8];
-    self.dropdownMenuView.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.3];
+    self.dropdownMenuView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.85];
+    self.dropdownMenuBarLabel.textColor = [[UIColor blueColor] colorWithAlphaComponent:0.8];
+    self.dropdownMenuBar.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.3];
     [self.dropdownButton setImage:[UIImage imageNamed:@"dropdown-arrow.png"] forState:UIControlStateNormal];
     [self.dropdownButton setImage:[UIImage imageNamed:@"dropdown-arrow-upsidedown.png"] forState:UIControlStateHighlighted];
-    self.dropdownButton.imageView.tintColor = [[UIColor blueColor] colorWithAlphaComponent:0.8];
+    self.dropdownButton.imageView.tintColor = [[UIColor blueColor] colorWithAlphaComponent:0.7];
+    self.dropdownMenuView.hidden = YES;
     
     
     self.startValueLabel.text = [self getAddressFromLatLon:trip.startLoc.coordinate.latitude withLongitude:trip.startLoc.coordinate.longitude];
@@ -95,135 +97,28 @@ CAShapeLayer *closedMenuShape;
 */
 
 - (IBAction)dropdownButtonPressed:(id)sender {
-    //[self toggleMenu];
+    [self toggleMenu];
 }
 
-//- (void) toggleMenu {
-//    if(self.menu.hidden) {
-//        [self showMenu];
-//    } else {
-//        [self hideMenu];
-//    }
-//}
-//
-//- (void) showMenu {
-//    self.menu.hidden = NO;
-//    self.menu.translatesAutoresizingMaskIntoConstraints = YES;
-//    
-//    [closedMenuShape removeFromSuperlayer];
-//    
-//    if (shouldDisplayDropShape)
-//    {
-//        [[[self view] layer] addSublayer:- (void) hideMenu {
-//            //     Set the border layer to hidden menu state
-//            [openMenuShape removeFromSuperlayer];
-//            [[[self view] layer] addSublayer:closedMenuShape];
-//            
-//            // Set new origin of menu
-//            CGRect menuFrame = self.menu.frame;
-//            menuFrame.origin.y = self.menubar.frame.size.height-menuFrame.size.height;
-//            
-//            // Set new alpha of Container View (to get fade effect)
-//            float containerAlpha = 1.0f;
-//            
-//            if (SYSTEM_VERSION_LESS_THAN(@"7.0")) {
-//                [UIView beginAnimations:nil context:nil];
-//                [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-//                [UIView setAnimationDelegate:self];
-//                [UIView setAnimationDidStopSelector:@selector(iOS6_hideMenuCompleted)];
-//                
-//                self.menu.frame = menuFrame;
-//                [self.container setAlpha:containerAlpha];
-//            } else {
-//                [UIView animateWithDuration:0.3f
-//                                      delay:0.05f
-//                     usingSpringWithDamping:1.0
-//                      initialSpringVelocity:4.0
-//                                    options: UIViewAnimationOptionCurveEaseInOut
-//                                 animations:^{
-//                                     self.menu.frame = menuFrame;
-//                                     [self.container setAlpha: containerAlpha];
-//                                 }
-//                                 completion:^(BOOL finished){
-//                                     self.menu.hidden = YES;
-//                                 }];
-//            }
-//            
-//            [UIView commitAnimations];
-//            
-//        }
-//];
-//    }
-//    
-//    // Set new origin of menu
-//    CGRect menuFrame = self.menu.frame;
-//    menuFrame.origin.y = self.menubar.frame.size.height-self.offset;
-//    
-//    // Set new alpha of Container View (to get fade effect)
-//    float fadeAlpha = 0.5f;
-//    float containerAlpha = fadeAlpha;
-//    
-//    if (SYSTEM_VERSION_LESS_THAN(@"7.0")) {
-//        [UIView beginAnimations:nil context:nil];
-//        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-//        self.menu.frame = menuFrame;
-//        [self.container setAlpha:containerAlpha];
-//    } else {
-//        [UIView animateWithDuration:0.4
-//                              delay:0.0
-//             usingSpringWithDamping:1.0
-//              initialSpringVelocity:4.0
-//                            options: UIViewAnimationOptionCurveEaseInOut
-//                         animations:^{
-//                             self.menu.frame = menuFrame;
-//                             [self.container setAlpha: containerAlpha];
-//                         }
-//                         completion:^(BOOL finished){
-//                         }];
-//    }
-//    
-//    [UIView commitAnimations];
-//    
-//}
-//
-//- (void) hideMenu {
-//    //     Set the border layer to hidden menu state
-//    [openMenuShape removeFromSuperlayer];
-//    [[[self view] layer] addSublayer:closedMenuShape];
-//    
-//    // Set new origin of menu
-//    CGRect menuFrame = self.menu.frame;
-//    menuFrame.origin.y = self.menubar.frame.size.height-menuFrame.size.height;
-//    
-//    // Set new alpha of Container View (to get fade effect)
-//    float containerAlpha = 1.0f;
-//    
-//    if (SYSTEM_VERSION_LESS_THAN(@"7.0")) {
-//        [UIView beginAnimations:nil context:nil];
-//        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-//        [UIView setAnimationDelegate:self];
-//        [UIView setAnimationDidStopSelector:@selector(iOS6_hideMenuCompleted)];
-//        
-//        self.menu.frame = menuFrame;
-//        [self.container setAlpha:containerAlpha];
-//    } else {
-//        [UIView animateWithDuration:0.3f
-//                              delay:0.05f
-//             usingSpringWithDamping:1.0
-//              initialSpringVelocity:4.0
-//                            options: UIViewAnimationOptionCurveEaseInOut
-//                         animations:^{
-//                             self.menu.frame = menuFrame;
-//                             [self.container setAlpha: containerAlpha];
-//                         }
-//                         completion:^(BOOL finished){
-//                             self.menu.hidden = YES;
-//                         }];
-//    }
-//    
-//    [UIView commitAnimations];
-//    
-//}
+- (void) toggleMenu {
+    if(self.dropdownMenuView.hidden)
+    {
+        [self showMenu];
+    }
+    else
+    {
+        [self hideMenu];
+    }
+}
 
+- (void) showMenu
+{
+    self.dropdownMenuView.hidden = NO;
+}
+
+- (void) hideMenu
+{
+    self.dropdownMenuView.hidden = YES;
+}
 
 @end

@@ -21,11 +21,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *distanceValueLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *clock2ImageView;
 @property (weak, nonatomic) IBOutlet UILabel *startValueLabel;
-@property (weak, nonatomic) IBOutlet UILabel *dropdownMenuLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dropdownMenuBarLabel;
 @property (weak, nonatomic) IBOutlet UIButton *dropdownButton;
-
-@property (weak, nonatomic) IBOutlet UILabel *endValueLabel;
 @property (weak, nonatomic) IBOutlet UIView *dropdownMenuView;
+@property (weak, nonatomic) IBOutlet UILabel *endValueLabel;
+@property (weak, nonatomic) IBOutlet UIView *dropdownMenuBar;
 @property (weak, nonatomic) IBOutlet UIImageView *clock1ImageView;
 
 - (IBAction)dropdownButtonPressed:(id)sender;
