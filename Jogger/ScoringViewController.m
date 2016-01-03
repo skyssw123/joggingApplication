@@ -123,6 +123,15 @@ CAShapeLayer *closedMenuShape;
     self.dropdownMenuView.hidden = YES;
 }
 
+- (IBAction)firstWorkoutButtonPressed:(id)sender {
+}
+
+- (IBAction)secondWorkoutButtonPressed:(id)sender {
+}
+
+- (IBAction)lastWorkoutButtonPressed:(id)sender {
+}
+
 - (IBAction)displayGestureForTapRecognizer:(UITapGestureRecognizer *)sender
 {
     // Get the location of the gesture

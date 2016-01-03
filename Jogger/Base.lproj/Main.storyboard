@@ -518,6 +518,9 @@
                                                 <state key="normal" title="First Work-out">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="firstWorkoutButtonPressed:" destination="sYb-1o-PHy" eventType="touchUpInside" id="pJJ-JK-VFi"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -536,6 +539,9 @@
                                                 <state key="normal" title="Second Work-out">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="secondWorkoutButtonPressed:" destination="sYb-1o-PHy" eventType="touchUpInside" id="e5B-wN-7E9"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -554,6 +560,9 @@
                                                 <state key="normal" title="Last Work-out">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="lastWorkoutButtonPressed:" destination="sYb-1o-PHy" eventType="touchUpInside" id="Snc-Ax-N5y"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
