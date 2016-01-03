@@ -123,13 +123,25 @@ CAShapeLayer *closedMenuShape;
     self.dropdownMenuView.hidden = YES;
 }
 
-- (IBAction)firstWorkoutButtonPressed:(id)sender {
+- (IBAction)firstWorkoutButtonPressed:(id)sender
+{
+    self.dropdownMenuBarLabel.text = @"First Work-out";
+    //Reload First Work-out here
+    self.dropdownMenuView.hidden = YES;
 }
 
-- (IBAction)secondWorkoutButtonPressed:(id)sender {
+- (IBAction)secondWorkoutButtonPressed:(id)sender
+{
+    self.dropdownMenuBarLabel.text = @"Second Work-out";
+    //Reload Second Work-out here
+    self.dropdownMenuView.hidden = YES;
 }
 
-- (IBAction)lastWorkoutButtonPressed:(id)sender {
+- (IBAction)lastWorkoutButtonPressed:(id)sender
+{
+    self.dropdownMenuBarLabel.text = @"Last Work-out";
+    //Reload Last Work-out here
+    self.dropdownMenuView.hidden = YES;
 }
 
 - (IBAction)displayGestureForTapRecognizer:(UITapGestureRecognizer *)sender
