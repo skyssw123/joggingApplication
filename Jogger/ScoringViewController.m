@@ -29,7 +29,6 @@ CAShapeLayer *closedMenuShape;
     self.mapViewController.view.frame = CGRectMake(0, 0, self.viewForMap.frame.size.width, self.viewForMap.frame.size.height);
     Trip* trip = [TripFactory produceTripWithLogs:lastTrip];
     [self updateLabel:trip];
-    
     [self addChildViewController:self.mapViewController];
     [self.viewForMap addSubview:self.mapViewController.view];
     self.scrollView.alwaysBounceHorizontal = NO;
