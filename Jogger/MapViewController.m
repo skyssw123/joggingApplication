@@ -22,7 +22,7 @@ int i = 0;
     
     // Do any additional setup after loading the view.
 }
-- (void)viewWillAppear:(BOOL)animated
+- (void)viewDidAppear:(BOOL)animated
 {
     [self drawTrip];
 }
