@@ -29,15 +29,13 @@ CAShapeLayer *closedMenuShape;
     self.mapViewController.view.frame = CGRectMake(0, 0, self.viewForMap.frame.size.width, self.viewForMap.frame.size.height);
     Trip* trip = [TripFactory produceTripWithLogs:lastTrip];
     self.mapViewController.trip = trip;
+    
     [self addChildViewController:self.mapViewController];
     [self.viewForMap addSubview:self.mapViewController.view];
-    
     self.scrollView.alwaysBounceHorizontal = NO;
-    
     self.distanceValueLabel.text = [NSString stringWithFormat:@"%.2f", (trip.totalDistance / 1000.0) ];
     self.caloriesValueLabel.text =  [NSString stringWithFormat:@"%.2f", trip.calories ];
     self.speedValueLabel.text = [NSString stringWithFormat:@"%.2f", (trip.avgVelocity * 3600.0 / 1000.0) ];
-    
     // Create date from the elapsed time
     NSTimeInterval timeInterval = [trip.endLoc.timestamp timeIntervalSinceDate:trip.startLoc.timestamp];
     NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
@@ -48,6 +46,8 @@ CAShapeLayer *closedMenuShape;
     // Format the elapsed time and set it to the label
     NSString *timeString = [dateFormatter stringFromDate:timerDate];
     self.timeValueLabel.text = timeString;
+    self.startValueLabel.text = [self getAddressFromLatLon:trip.startLoc.coordinate.latitude withLongitude:trip.startLoc.coordinate.longitude];
+    self.endValueLabel.text = [self getAddressFromLatLon:trip.endLoc.coordinate.latitude withLongitude:trip.endLoc.coordinate.longitude];
     
     
     self.dropdownMenuView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.85];
@@ -57,10 +57,6 @@ CAShapeLayer *closedMenuShape;
     [self.dropdownButton setImage:[UIImage imageNamed:@"dropdown-arrow-upsidedown.png"] forState:UIControlStateHighlighted];
     self.dropdownButton.imageView.tintColor = [[UIColor blueColor] colorWithAlphaComponent:0.7];
     self.dropdownMenuView.hidden = YES;
-    
-    
-    self.startValueLabel.text = [self getAddressFromLatLon:trip.startLoc.coordinate.latitude withLongitude:trip.startLoc.coordinate.longitude];
-    self.endValueLabel.text = [self getAddressFromLatLon:trip.endLoc.coordinate.latitude withLongitude:trip.endLoc.coordinate.longitude];
 }
 
 -(NSString *)getAddressFromLatLon:(double)pdblLatitude withLongitude:(double)pdblLongitude
