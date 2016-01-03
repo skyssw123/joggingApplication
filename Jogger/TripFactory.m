@@ -34,7 +34,6 @@
                 continue;
             }
             
-            
             if(selectedTrip == period)
             {
                 NSArray* components = [line componentsSeparatedByString:@","];
