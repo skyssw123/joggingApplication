@@ -27,7 +27,7 @@ CAShapeLayer *closedMenuShape;
     self.clock2ImageView.tintColor = [UIColor lightGrayColor];
     self.mapViewController = [[MapViewController alloc]initWithNibName:@"MapView" bundle:nil];
     self.mapViewController.view.frame = CGRectMake(0, 0, self.viewForMap.frame.size.width, self.viewForMap.frame.size.height);
-    Trip* trip = [TripFactory produceTripWithLogs:lastTrip];
+    Trip* trip = [TripFactory produceTripWithLogs:firstTrip];
     
     [self updateLabel:trip];
     [self addChildViewController:self.mapViewController];
