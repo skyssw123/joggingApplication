@@ -44,6 +44,11 @@ CAShapeLayer *closedMenuShape;
 
 -(void) updateLabel:(Trip*) trip
 {
+    if(trip == nil)
+    {
+        //Error banner goes in here!!
+        return;
+    }
     self.mapViewController.trip = trip;
     self.distanceValueLabel.text = [NSString stringWithFormat:@"%.2f", (trip.totalDistance / 1000.0) ];
     self.caloriesValueLabel.text =  [NSString stringWithFormat:@"%.2f", trip.calories ];
