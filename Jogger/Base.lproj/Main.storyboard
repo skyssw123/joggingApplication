@@ -220,14 +220,6 @@
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8SU-jK-WCj">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="145"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XwL-WK-eSy">
-                                        <rect key="frame" x="137" y="58" width="46" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="R30-vA-UJH"/>
-                                            <constraint firstAttribute="width" constant="25" id="gT7-aY-cjE"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Last work-out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWK-JX-k5H">
                                         <rect key="frame" x="172" y="97" width="42" height="21"/>
                                         <color key="tintColor" red="0.0" green="0.37224670069999999" blue="0.74494949489999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -235,22 +227,24 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="dropdown-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="aQB-jo-HSk">
-                                        <rect key="frame" x="200" y="69" width="80" height="68"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XwL-WK-eSy">
+                                        <rect key="frame" x="228" y="95" width="79" height="25"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="10" id="OOZ-ik-eMl"/>
-                                            <constraint firstAttribute="width" constant="10" id="rkl-9F-1NL"/>
+                                            <constraint firstAttribute="height" constant="25" id="R30-vA-UJH"/>
+                                            <constraint firstAttribute="width" constant="25" id="gT7-aY-cjE"/>
                                         </constraints>
-                                    </imageView>
+                                        <state key="normal" title="Button" image="dropdown-arrow"/>
+                                        <connections>
+                                            <action selector="dropdownButtonPressed:" destination="sYb-1o-PHy" eventType="touchUpInside" id="Viz-Od-1QG"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="aQB-jo-HSk" secondAttribute="trailing" constant="20" id="0SV-ih-6CW"/>
                                     <constraint firstAttribute="height" constant="44" id="4DD-Kb-Zp1"/>
                                     <constraint firstItem="XwL-WK-eSy" firstAttribute="centerY" secondItem="8SU-jK-WCj" secondAttribute="centerY" id="8yw-Ub-OD1"/>
-                                    <constraint firstItem="aQB-jo-HSk" firstAttribute="leading" secondItem="hWK-JX-k5H" secondAttribute="trailing" constant="10" id="D0X-ER-wux"/>
-                                    <constraint firstItem="aQB-jo-HSk" firstAttribute="centerY" secondItem="8SU-jK-WCj" secondAttribute="centerY" id="L5z-ww-0RD"/>
                                     <constraint firstItem="hWK-JX-k5H" firstAttribute="centerY" secondItem="8SU-jK-WCj" secondAttribute="centerY" id="bqz-jX-aq1"/>
+                                    <constraint firstItem="XwL-WK-eSy" firstAttribute="leading" secondItem="hWK-JX-k5H" secondAttribute="trailing" constant="10" id="wJ4-7X-stU"/>
                                     <constraint firstAttribute="trailing" secondItem="XwL-WK-eSy" secondAttribute="trailing" constant="10" id="xGI-3x-9lf"/>
                                 </constraints>
                             </view>
@@ -531,7 +525,6 @@
                         <outlet property="clock1ImageView" destination="oQ0-n5-Y9d" id="4lI-au-14Y"/>
                         <outlet property="clock2ImageView" destination="Xvv-x8-DVJ" id="iuK-uW-ZEW"/>
                         <outlet property="distanceValueLabel" destination="JBC-YJ-0r5" id="R2a-JT-zut"/>
-                        <outlet property="dropdownArrowImageView" destination="aQB-jo-HSk" id="I9c-E8-ccr"/>
                         <outlet property="dropdownButton" destination="XwL-WK-eSy" id="yED-Uu-8xr"/>
                         <outlet property="dropdownMenuLabel" destination="hWK-JX-k5H" id="8fo-A5-CUC"/>
                         <outlet property="dropdownMenuView" destination="8SU-jK-WCj" id="NKw-cJ-bg9"/>
