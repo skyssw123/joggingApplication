@@ -13,7 +13,9 @@
 typedef enum
 {
     noTrip = 0,
-    lastTrip = 1,
+    firstTrip = 1,
+    secondTrip = 2,
+    lastTrip = 3
 }TripPeriod;
 
 @interface TripFactory : NSObject

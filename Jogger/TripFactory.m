@@ -18,7 +18,7 @@
     NSMutableArray* returnArray = [[NSMutableArray alloc]init];
     Trip* trip;
     
-    if(period == lastTrip)
+    if(period == firstTrip)
     {
         while((line = [reader readLine]))
         {
