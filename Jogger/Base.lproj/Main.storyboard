@@ -220,7 +220,7 @@
                             <view alpha="0.29999999999999999" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8SU-jK-WCj">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="145"/>
                                 <subviews>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="dropdown-arrow" highlightedImage="dropdown-arrow-upsidedown" translatesAutoresizingMaskIntoConstraints="NO" id="ysQ-lb-58b">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="dropdown-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="ysQ-lb-58b">
                                         <rect key="frame" x="237" y="79" width="75" height="58"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="10" id="8QL-iJ-gur"/>
@@ -608,7 +608,6 @@
         <image name="clock1" width="25" height="25"/>
         <image name="clock2" width="25" height="25"/>
         <image name="dropdown-arrow" width="25" height="25"/>
-        <image name="dropdown-arrow-upsidedown" width="25" height="25"/>
         <image name="icon-more" width="25" height="25"/>
         <image name="icon-more-fill" width="25" height="25"/>
         <image name="icon-record" width="25" height="25"/>
