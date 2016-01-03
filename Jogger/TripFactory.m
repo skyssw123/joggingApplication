@@ -67,9 +67,10 @@
             [returnArray addObject:location];
         }
     }
-        
-        trip = [[Trip alloc]initWithLocations:returnArray];
-        
+    if(trip == nil)
+        return nil;
+    
+    trip = [[Trip alloc]initWithLocations:returnArray];
     //return trip;
     return trip;
 }
