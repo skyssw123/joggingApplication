@@ -96,6 +96,8 @@ CAShapeLayer *closedMenuShape;
 }
 */
 
+
+
 - (IBAction)dropdownButtonPressed:(id)sender {
     [self toggleMenu];
 }
@@ -121,4 +123,15 @@ CAShapeLayer *closedMenuShape;
     self.dropdownMenuView.hidden = YES;
 }
 
+- (IBAction)displayGestureForTapRecognizer:(UITapGestureRecognizer *)sender
+{
+    // Get the location of the gesture
+    CGPoint tapLocation = [sender locationInView:self.view];
+    // NSLog(@"Tap location X:%1.0f, Y:%1.0f", tapLocation.x, tapLocation.y);
+    
+    // If menu is open, and the tap is outside of the menu, close it.
+    if (!CGRectContainsPoint(self.dropdownMenuView.frame, tapLocation) && !self.dropdownMenuView.hidden) {
+        [self hideMenu];
+    }
+}
 @end

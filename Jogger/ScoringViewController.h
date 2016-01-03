@@ -27,6 +27,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *endValueLabel;
 @property (weak, nonatomic) IBOutlet UIView *dropdownMenuBar;
 @property (weak, nonatomic) IBOutlet UIImageView *clock1ImageView;
+- (IBAction)displayGestureForTapRecognizer:(UITapGestureRecognizer *)sender;
 
-- (IBAction)dropdownButtonPressed:(id)sender;
 @end
