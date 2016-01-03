@@ -358,16 +358,16 @@
                                                     <constraint firstItem="Ea1-ff-Ja1" firstAttribute="centerX" secondItem="c9g-GB-iAg" secondAttribute="centerX" id="6Yf-3k-Yxe"/>
                                                     <constraint firstItem="oF9-Ho-Ui8" firstAttribute="centerX" secondItem="c9g-GB-iAg" secondAttribute="centerX" id="8wP-cT-huq"/>
                                                     <constraint firstItem="oF9-Ho-Ui8" firstAttribute="width" secondItem="c9g-GB-iAg" secondAttribute="width" id="B9g-fz-Q2B"/>
-                                                    <constraint firstItem="STX-1n-fub" firstAttribute="top" secondItem="c9g-GB-iAg" secondAttribute="top" constant="20" id="FVu-F7-z8S"/>
+                                                    <constraint firstItem="STX-1n-fub" firstAttribute="top" secondItem="c9g-GB-iAg" secondAttribute="top" constant="10" id="FVu-F7-z8S"/>
                                                     <constraint firstItem="tuP-eD-mhm" firstAttribute="leading" secondItem="c9g-GB-iAg" secondAttribute="leading" id="XMk-p8-WxV"/>
                                                     <constraint firstAttribute="trailing" secondItem="STX-1n-fub" secondAttribute="trailing" id="e3W-Ra-iVE"/>
-                                                    <constraint firstItem="oF9-Ho-Ui8" firstAttribute="top" secondItem="Ea1-ff-Ja1" secondAttribute="bottom" constant="30" id="gs3-y8-AnB"/>
+                                                    <constraint firstItem="oF9-Ho-Ui8" firstAttribute="top" secondItem="Ea1-ff-Ja1" secondAttribute="bottom" constant="20" id="gs3-y8-AnB"/>
                                                     <constraint firstAttribute="bottom" secondItem="oF9-Ho-Ui8" secondAttribute="bottom" id="hMO-QG-yWs"/>
                                                     <constraint firstItem="STX-1n-fub" firstAttribute="leading" secondItem="tuP-eD-mhm" secondAttribute="trailing" id="j7B-iA-q4v"/>
                                                     <constraint firstItem="Ea1-ff-Ja1" firstAttribute="width" secondItem="c9g-GB-iAg" secondAttribute="width" id="ksM-FT-BOO"/>
-                                                    <constraint firstItem="Ea1-ff-Ja1" firstAttribute="top" secondItem="tuP-eD-mhm" secondAttribute="bottom" constant="20" id="woD-ws-AIW"/>
-                                                    <constraint firstItem="tuP-eD-mhm" firstAttribute="top" secondItem="c9g-GB-iAg" secondAttribute="top" constant="20" id="yf5-G2-ZPm"/>
-                                                    <constraint firstItem="Ea1-ff-Ja1" firstAttribute="top" secondItem="STX-1n-fub" secondAttribute="bottom" constant="20" id="zef-1D-0LO"/>
+                                                    <constraint firstItem="Ea1-ff-Ja1" firstAttribute="top" secondItem="tuP-eD-mhm" secondAttribute="bottom" constant="10" id="woD-ws-AIW"/>
+                                                    <constraint firstItem="tuP-eD-mhm" firstAttribute="top" secondItem="c9g-GB-iAg" secondAttribute="top" constant="10" id="yf5-G2-ZPm"/>
+                                                    <constraint firstItem="Ea1-ff-Ja1" firstAttribute="top" secondItem="STX-1n-fub" secondAttribute="bottom" constant="10" id="zef-1D-0LO"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
