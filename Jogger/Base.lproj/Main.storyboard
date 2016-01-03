@@ -39,11 +39,6 @@
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oq6-mg-3lD">
                                 <rect key="frame" x="66" y="28" width="280" height="379"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                        <integer key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vpu-t7-m5J">
                                 <rect key="frame" x="40" y="334" width="240" height="128"/>
@@ -222,9 +217,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8SU-jK-WCj">
+                            <view alpha="0.20000000000000001" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8SU-jK-WCj">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="145"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="4DD-Kb-Zp1"/>
                                 </constraints>
@@ -378,11 +373,6 @@
                                             <constraint firstAttribute="height" constant="182" id="S3Y-2i-tGY"/>
                                             <constraint firstItem="c9g-GB-iAg" firstAttribute="width" secondItem="ZoH-VN-Szp" secondAttribute="width" id="xyL-cD-07J"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                <integer key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pg7-WL-CS1" userLabel="viewForStartEnd">
                                         <rect key="frame" x="14" y="278" width="273" height="143"/>
@@ -476,11 +466,6 @@
                                             <constraint firstItem="WvC-AE-Ms8" firstAttribute="width" secondItem="Pg7-WL-CS1" secondAttribute="width" id="dYr-YC-bTt"/>
                                             <constraint firstItem="RUk-Nb-m90" firstAttribute="height" secondItem="WvC-AE-Ms8" secondAttribute="height" id="fFe-h0-bvM"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                <integer key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
                                 <constraints>
