@@ -47,6 +47,8 @@
     
     self.dropdownMenuLabel.textColor = [[UIColor blueColor] colorWithAlphaComponent:0.8];
     self.dropdownMenuView.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.3];
+    [self.dropdownButton setImage:[UIImage imageNamed:@"dropdown-arrow.png"] forState:UIControlStateNormal];
+    [self.dropdownButton setImage:[UIImage imageNamed:@"dropdown-arrow-upsidedown.png"] forState:UIControlStateHighlighted];
     self.dropdownButton.imageView.tintColor = [[UIColor blueColor] colorWithAlphaComponent:0.8];
     
     

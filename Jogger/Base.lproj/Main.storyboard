@@ -233,7 +233,7 @@
                                             <constraint firstAttribute="height" constant="25" id="R30-vA-UJH"/>
                                             <constraint firstAttribute="width" constant="25" id="gT7-aY-cjE"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="dropdown-arrow"/>
+                                        <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="dropdownButtonPressed:" destination="sYb-1o-PHy" eventType="touchUpInside" id="Viz-Od-1QG"/>
                                         </connections>
@@ -244,7 +244,7 @@
                                     <constraint firstAttribute="height" constant="44" id="4DD-Kb-Zp1"/>
                                     <constraint firstItem="XwL-WK-eSy" firstAttribute="centerY" secondItem="8SU-jK-WCj" secondAttribute="centerY" id="8yw-Ub-OD1"/>
                                     <constraint firstItem="hWK-JX-k5H" firstAttribute="centerY" secondItem="8SU-jK-WCj" secondAttribute="centerY" id="bqz-jX-aq1"/>
-                                    <constraint firstItem="XwL-WK-eSy" firstAttribute="leading" secondItem="hWK-JX-k5H" secondAttribute="trailing" constant="10" id="wJ4-7X-stU"/>
+                                    <constraint firstItem="XwL-WK-eSy" firstAttribute="leading" secondItem="hWK-JX-k5H" secondAttribute="trailing" id="wJ4-7X-stU"/>
                                     <constraint firstAttribute="trailing" secondItem="XwL-WK-eSy" secondAttribute="trailing" constant="10" id="xGI-3x-9lf"/>
                                 </constraints>
                             </view>
@@ -623,7 +623,6 @@
     <resources>
         <image name="clock1" width="25" height="25"/>
         <image name="clock2" width="25" height="25"/>
-        <image name="dropdown-arrow" width="25" height="25"/>
         <image name="icon-more" width="25" height="25"/>
         <image name="icon-more-fill" width="25" height="25"/>
         <image name="icon-record" width="25" height="25"/>

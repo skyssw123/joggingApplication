@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Jogger/ScoringViewController.m"
-            timestampString = "473487959.928486"
+            timestampString = "473488606.691874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "@implementation ScoringViewController"
             landmarkType = "3">
          </BreakpointContent>
