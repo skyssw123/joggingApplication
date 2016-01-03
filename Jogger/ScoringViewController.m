@@ -44,6 +44,9 @@
     self.timeValueLabel.text = timeString;
     
     
+    self.dropdownMenuLabel.textColor = [UIColor blueColor];
+    self.dropdownMenuView.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.3];
+    
     self.startValueLabel.text = [self getAddressFromLatLon:trip.startLoc.coordinate.latitude withLongitude:trip.startLoc.coordinate.longitude];
     self.endValueLabel.text = [self getAddressFromLatLon:trip.endLoc.coordinate.latitude withLongitude:trip.endLoc.coordinate.longitude];
 }
