@@ -222,10 +222,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8SU-jK-WCj">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="145"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="4DD-Kb-Zp1"/>
+                                </constraints>
+                            </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ltp-0n-DNq">
+                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="231"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3eS-W7-or0">
-                                        <rect key="frame" x="30" y="148" width="240" height="128"/>
+                                        <rect key="frame" x="30" y="379" width="240" height="128"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="MM1-O2-BCF"/>
@@ -237,7 +245,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZoH-VN-Szp">
-                                        <rect key="frame" x="8" y="292" width="288" height="121"/>
+                                        <rect key="frame" x="8" y="523" width="288" height="121"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c9g-GB-iAg">
                                                 <rect key="frame" x="24" y="-3" width="240" height="128"/>
@@ -377,7 +385,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pg7-WL-CS1" userLabel="viewForStartEnd">
-                                        <rect key="frame" x="14" y="47" width="273" height="143"/>
+                                        <rect key="frame" x="14" y="278" width="273" height="143"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WvC-AE-Ms8" userLabel="StartView">
                                                 <rect key="frame" x="-36" y="-25" width="120" height="81"/>
@@ -492,10 +500,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="8SU-jK-WCj" firstAttribute="width" secondItem="I9K-CX-DqY" secondAttribute="width" id="2rm-rI-2Pv"/>
                             <constraint firstItem="Ltp-0n-DNq" firstAttribute="width" secondItem="I9K-CX-DqY" secondAttribute="width" id="3IM-ZW-3wn"/>
+                            <constraint firstItem="Ltp-0n-DNq" firstAttribute="top" secondItem="8SU-jK-WCj" secondAttribute="bottom" id="Qtd-eA-Txn"/>
+                            <constraint firstItem="8SU-jK-WCj" firstAttribute="centerX" secondItem="I9K-CX-DqY" secondAttribute="centerX" id="Ynx-OO-gGi"/>
                             <constraint firstItem="Ltp-0n-DNq" firstAttribute="centerX" secondItem="I9K-CX-DqY" secondAttribute="centerX" id="Zq2-Ab-go9"/>
-                            <constraint firstItem="Ltp-0n-DNq" firstAttribute="height" secondItem="I9K-CX-DqY" secondAttribute="height" id="e2z-nS-kE1"/>
-                            <constraint firstItem="Ltp-0n-DNq" firstAttribute="centerY" secondItem="I9K-CX-DqY" secondAttribute="centerY" id="wCk-Km-ccT"/>
+                            <constraint firstItem="8SU-jK-WCj" firstAttribute="top" secondItem="JgB-eF-oKp" secondAttribute="bottom" id="bbq-3B-1p5"/>
+                            <constraint firstItem="u9v-H6-gpv" firstAttribute="top" secondItem="Ltp-0n-DNq" secondAttribute="bottom" id="f7K-dI-vBd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Score" id="gRS-Y2-bz9"/>
