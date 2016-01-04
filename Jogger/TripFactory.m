@@ -7,13 +7,23 @@
 //
 
 #import "TripFactory.h"
+#import "Settings.h"
 
 @implementation TripFactory
 
 +(Trip*)produceTripWithLogs:(TripPeriod)period
 {
     int selectedTrip = 0;
-    DDFileReader * reader = [[DDFileReader alloc] initWithFilePath:[FileLogging sharedInstance].filePath];
+    FileLogging* sharedInstance = [FileLogging sharedInstance];
+    NSString* filePath;
+    if(period == firstTrip)
+        filePath = [NSString stringWithFormat:@"%@/%@", sharedInstance.dirPath, DEFAULT_FIRST_TRIP_FILENAME];
+    else if(period == secondTrip)
+        filePath = [NSString stringWithFormat:@"%@/%@", sharedInstance.dirPath, DEFAULT_SECOND_TRIP_FILENAME];
+    else if(period == lastTrip)
+        filePath = [NSString stringWithFormat:@"%@/%@", sharedInstance.dirPath, DEFAULT_LAST_TRIP_FILENAME];
+
+    DDFileReader * reader = [[DDFileReader alloc] initWithFilePath:filePath];
     NSString * line = nil;
     NSMutableArray* returnArray = [[NSMutableArray alloc]init];
     Trip* trip;
