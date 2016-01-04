@@ -25,7 +25,7 @@ CAShapeLayer *closedMenuShape;
     // Do any additional setup after loading the view.
     self.clock1ImageView.tintColor = [UIColor lightGrayColor];
     self.clock2ImageView.tintColor = [UIColor lightGrayColor];
-    
+
     [self updateData:[TripFactory produceTripWithLogs:lastTrip]];
     
     self.scrollView.alwaysBounceHorizontal = NO;

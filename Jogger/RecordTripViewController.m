@@ -16,6 +16,8 @@
 #import "TripDrawer.h"
 #import "Numbers.h"
 #import "Settings.h"
+#import "ScoringViewController.h"
+#import "TripFactory.h"
 
 @interface RecordTripViewController ()
 @property BOOL isTripBeingRecorded;
@@ -142,6 +144,10 @@
         [sharedInstance moveFileFrom:DEFAULT_FILENAME withNewFileName:DEFAULT_LAST_TRIP_FILENAME];
     }
     
+    UITabBarController *tabBarController = (UITabBarController *)self.navigationController.tabBarController;
+    UINavigationController* navigationController = [tabBarController.childViewControllers objectAtIndex:0];
+    ScoringViewController* scoringViewController = [navigationController.childViewControllers objectAtIndex:0];
+    [scoringViewController updateData:[TripFactory produceTripWithLogs:lastTrip]];
     self.saveDiscardButtonView.hidden = YES;
     self.startButton.hidden = NO;
 }
