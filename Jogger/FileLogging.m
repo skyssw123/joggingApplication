@@ -83,6 +83,14 @@
     return newFilePath;
 }
 
+- (NSString *) copyFrom:(NSString*)oldFileName withNewFileName:(NSString *) newFileName
+{
+    NSString *oldFilePath = [NSString stringWithFormat:@"%@/%@", self.dirPath, oldFileName];
+    NSString *newFilePath = [NSString stringWithFormat:@"%@/%@", self.dirPath, newFileName];
+    [[NSFileManager defaultManager] copyItemAtPath:oldFilePath toPath:newFilePath error:nil];
+    return newFilePath;
+}
+
 - (void) deleteFile:(NSString *)fileName withError:(NSError **)error
 {
     NSString *newFilePath = [NSString stringWithFormat:@"%@/%@", self.dirPath, fileName];

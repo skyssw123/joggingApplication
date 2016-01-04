@@ -121,16 +121,19 @@
     
     if(![sharedInstance fileExists:DEFAULT_FIRST_TRIP_FILENAME])
     {
+        [sharedInstance copyFrom:DEFAULT_FILENAME withNewFileName:DEFAULT_LAST_TRIP_FILENAME];
         [sharedInstance moveFileFrom:DEFAULT_FILENAME withNewFileName:DEFAULT_FIRST_TRIP_FILENAME];
     }
     
     else if(![sharedInstance fileExists:DEFAULT_SECOND_TRIP_FILENAME])
     {
+        [sharedInstance copyFrom:DEFAULT_FILENAME withNewFileName:DEFAULT_LAST_TRIP_FILENAME];
         [sharedInstance moveFileFrom:DEFAULT_FILENAME withNewFileName:DEFAULT_SECOND_TRIP_FILENAME];
     }
     
     else if(![sharedInstance fileExists:DEFAULT_LAST_TRIP_FILENAME])
     {
+        [sharedInstance copyFrom:DEFAULT_FILENAME withNewFileName:DEFAULT_LAST_TRIP_FILENAME];
         [sharedInstance moveFileFrom:DEFAULT_FILENAME withNewFileName:DEFAULT_LAST_TRIP_FILENAME];
     }
     

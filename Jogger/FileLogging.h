@@ -20,4 +20,5 @@
 - (void) addFileHeaderMessage:(NSString *) header;
 - (void) deleteFile:(NSString *)fileName withError:(NSError **)error;
 - (BOOL) fileExists:(NSString *)fileName;
+- (NSString *) copyFrom:(NSString*)oldFileName withNewFileName:(NSString *) newFileName;
 @end
