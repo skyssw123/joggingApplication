@@ -15,28 +15,29 @@
 {
     int selectedTrip = 0;
     FileLogging* sharedInstance = [FileLogging sharedInstance];
-    NSString* filePath;
+    NSString* fileName;
     if(period == firstTrip)
-        filePath = [NSString stringWithFormat:@"%@/%@", sharedInstance.dirPath, DEFAULT_FIRST_TRIP_FILENAME];
+        fileName = DEFAULT_FIRST_TRIP_FILENAME;
     else if(period == secondTrip)
-        filePath = [NSString stringWithFormat:@"%@/%@", sharedInstance.dirPath, DEFAULT_SECOND_TRIP_FILENAME];
+        fileName = DEFAULT_SECOND_TRIP_FILENAME;
     else if(period == lastTrip)
     {
-        filePath = [NSString stringWithFormat:@"%@/%@", sharedInstance.dirPath, DEFAULT_LAST_TRIP_FILENAME];
-        if(![sharedInstance fileExists:filePath])
+        fileName = DEFAULT_LAST_TRIP_FILENAME;
+        if(![sharedInstance fileExists:fileName])
         {
-            filePath = [NSString stringWithFormat:@"%@/%@", sharedInstance.dirPath, DEFAULT_SECOND_TRIP_FILENAME];
-            if(![sharedInstance fileExists:filePath])
-                filePath = [NSString stringWithFormat:@"%@/%@", sharedInstance.dirPath, DEFAULT_FIRST_TRIP_FILENAME];
+            fileName = DEFAULT_SECOND_TRIP_FILENAME;
+            if(![sharedInstance fileExists:fileName])
+                fileName = DEFAULT_FIRST_TRIP_FILENAME;
         }
     }
     
-    if(![sharedInstance fileExists:filePath])
+    if(![sharedInstance fileExists:fileName])
     {
         //error banner goes in here (No Data)
         return nil;
     }
-
+    
+    NSString* filePath = [NSString stringWithFormat:@"%@/%@", sharedInstance.dirPath, fileName];
     DDFileReader * reader = [[DDFileReader alloc] initWithFilePath:filePath];
     NSString * line = nil;
     NSMutableArray* returnArray = [[NSMutableArray alloc]init];
