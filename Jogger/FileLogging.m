@@ -75,10 +75,11 @@
     return [[NSFileManager defaultManager] fileExistsAtPath:newFilePath];
 }
 
-- (NSString *) moveFileTo:(NSString *) directory withNewFileName:(NSString *) fileName
+- (NSString *) moveFileFrom:(NSString*)oldFileName withNewFileName:(NSString *) newFileName
 {
-    NSString *newFilePath = [NSString stringWithFormat:@"%@/%@", directory, fileName];
-    [[NSFileManager defaultManager] moveItemAtPath:self.filePath toPath:newFilePath error:nil];
+    NSString *oldFilePath = [NSString stringWithFormat:@"%@/%@", self.dirPath, oldFileName];
+    NSString *newFilePath = [NSString stringWithFormat:@"%@/%@", self.dirPath, newFileName];
+    [[NSFileManager defaultManager] moveItemAtPath:oldFilePath toPath:newFilePath error:nil];
     return newFilePath;
 }
 

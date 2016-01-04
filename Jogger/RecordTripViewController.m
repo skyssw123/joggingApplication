@@ -121,22 +121,25 @@
     
     if(![sharedInstance fileExists:DEFAULT_FIRST_TRIP_FILENAME])
     {
-        [sharedInstance moveFileTo:sharedInstance.documentDirectory withNewFileName:DEFAULT_FIRST_TRIP_FILENAME];
+        [sharedInstance moveFileFrom:DEFAULT_FILENAME withNewFileName:DEFAULT_FIRST_TRIP_FILENAME];
     }
     
     else if(![sharedInstance fileExists:DEFAULT_SECOND_TRIP_FILENAME])
     {
-        [sharedInstance moveFileTo:sharedInstance.documentDirectory withNewFileName:DEFAULT_SECOND_TRIP_FILENAME];
+        [sharedInstance moveFileFrom:DEFAULT_FILENAME withNewFileName:DEFAULT_SECOND_TRIP_FILENAME];
     }
     
     else if(![sharedInstance fileExists:DEFAULT_LAST_TRIP_FILENAME])
     {
-        [sharedInstance moveFileTo:sharedInstance.documentDirectory withNewFileName:DEFAULT_LAST_TRIP_FILENAME];
+        [sharedInstance moveFileFrom:DEFAULT_FILENAME withNewFileName:DEFAULT_LAST_TRIP_FILENAME];
     }
     
     else
     {
         [sharedInstance deleteFile:DEFAULT_FIRST_TRIP_FILENAME withError:nil];
+        [sharedInstance moveFileFrom:DEFAULT_SECOND_TRIP_FILENAME withNewFileName:DEFAULT_FIRST_TRIP_FILENAME];
+        [sharedInstance moveFileFrom:DEFAULT_LAST_TRIP_FILENAME withNewFileName:DEFAULT_SECOND_TRIP_FILENAME];
+        [sharedInstance moveFileFrom:DEFAULT_FILENAME withNewFileName:DEFAULT_LAST_TRIP_FILENAME];
     }
     
     self.saveDiscardButtonView.hidden = YES;
