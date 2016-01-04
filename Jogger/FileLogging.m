@@ -69,6 +69,11 @@
     return fileCreated;
 }
 
+- (NSString *) fileExists:(NSString *) fileName
+{
+    NSString *newFilePath = [NSString stringWithFormat:@"%@/%@", self.dirPath, fileName];
+    return [[NSFileManager defaultManager] fileExistsAtPath:newFilePath];
+}
 
 - (NSString *) moveFileTo:(NSString *) directory withNewFileName:(NSString *) fileName
 {

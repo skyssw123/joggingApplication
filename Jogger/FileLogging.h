@@ -16,7 +16,7 @@
 @property (strong, nonatomic) NSString *fileName;
 + (FileLogging *) sharedInstance;
 - (void) log:(NSString *) message;
-- (NSString *) moveFileTo:(NSString *) directory withNewFileName:(NSString *) fileName;
+- (NSString *) moveFileTo:(NSString *)directory withNewFileName:(NSString *) fileName;
 - (void) addFileHeaderMessage:(NSString *) header;
 - (void) deleteFile:(NSError **)error;
 @end
