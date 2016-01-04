@@ -118,21 +118,34 @@
 - (IBAction)saveButtonClicked:(id)sender
 {
     FileLogging* sharedInstance = [FileLogging sharedInstance];
-    NSString* filePathFirstTrip = [NSString stringWithFormat:@"%@/%@", sharedInstance.documentDirectory, DEFAULT_FIRST_TRIP_FILENAME];
-    NSString* filePathSecondTrip = [NSString stringWithFormat:@"%@/%@", sharedInstance.documentDirectory, DEFAULT_SECOND_TRIP_FILENAME];
-    NSString* filePathLastTrip = [NSString stringWithFormat:@"%@/%@", sharedInstance.documentDirectory, DEFAULT_LAST_TRIP_FILENAME];
     
-    if(![[NSFileManager defaultManager] fileExistsAtPath:filePathFirstTrip])
+    if(![sharedInstance fileExists:DEFAULT_FIRST_TRIP_FILENAME])
     {
         [sharedInstance moveFileTo:sharedInstance.documentDirectory withNewFileName:DEFAULT_FIRST_TRIP_FILENAME];
     }
+    
+    else if(![sharedInstance fileExists:DEFAULT_SECOND_TRIP_FILENAME])
+    {
+        [sharedInstance moveFileTo:sharedInstance.documentDirectory withNewFileName:DEFAULT_SECOND_TRIP_FILENAME];
+    }
+    
+    else if(![sharedInstance fileExists:DEFAULT_LAST_TRIP_FILENAME])
+    {
+        [sharedInstance moveFileTo:sharedInstance.documentDirectory withNewFileName:DEFAULT_LAST_TRIP_FILENAME];
+    }
+    
+    else
+    {
+        [sharedInstance deleteFile:DEFAULT_FIRST_TRIP_FILENAME withError:nil];
+    }
+    
     self.saveDiscardButtonView.hidden = YES;
     self.startButton.hidden = NO;
 }
 
 - (IBAction)discardButtonClicked:(id)sender
 {
-    [[FileLogging sharedInstance] deleteFile:nil];
+    [[FileLogging sharedInstance] deleteFile:DEFAULT_FILENAME withError:nil];
     self.saveDiscardButtonView.hidden = YES;
     self.startButton.hidden = NO;
 }

@@ -18,5 +18,6 @@
 - (void) log:(NSString *) message;
 - (NSString *) moveFileTo:(NSString *)directory withNewFileName:(NSString *) fileName;
 - (void) addFileHeaderMessage:(NSString *) header;
-- (void) deleteFile:(NSError **)error;
+- (void) deleteFile:(NSString *)fileName withError:(NSError **)error;
+- (BOOL) fileExists:(NSString *)fileName;
 @end

@@ -69,7 +69,7 @@
     return fileCreated;
 }
 
-- (NSString *) fileExists:(NSString *) fileName
+- (BOOL) fileExists:(NSString *) fileName
 {
     NSString *newFilePath = [NSString stringWithFormat:@"%@/%@", self.dirPath, fileName];
     return [[NSFileManager defaultManager] fileExistsAtPath:newFilePath];
@@ -82,9 +82,10 @@
     return newFilePath;
 }
 
-- (void) deleteFile:(NSError **)error
+- (void) deleteFile:(NSString *)fileName withError:(NSError **)error
 {
-    [[NSFileManager defaultManager] removeItemAtPath:self.filePath error:error];
+    NSString *newFilePath = [NSString stringWithFormat:@"%@/%@", self.dirPath, fileName];
+    [[NSFileManager defaultManager] removeItemAtPath:newFilePath error:error];
 }
 
 - (void) addFileHeaderMessage:(NSString *) header
