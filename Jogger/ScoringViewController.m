@@ -26,10 +26,7 @@ CAShapeLayer *closedMenuShape;
     self.clock1ImageView.tintColor = [UIColor lightGrayColor];
     self.clock2ImageView.tintColor = [UIColor lightGrayColor];
     
-    self.lastTrip = [TripFactory produceTripWithLogs:lastTrip];
-    self.secondTrip = [TripFactory produceTripWithLogs:secondTrip];
-    self.firstTrip = [TripFactory produceTripWithLogs:firstTrip];
-    [self updateData:self.lastTrip];
+    [self updateData:[TripFactory produceTripWithLogs:lastTrip]];
     
     self.scrollView.alwaysBounceHorizontal = NO;
     self.dropdownMenuView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.85];
@@ -141,21 +138,21 @@ CAShapeLayer *closedMenuShape;
 - (IBAction)firstWorkoutButtonPressed:(id)sender
 {
     self.dropdownMenuBarLabel.text = @"First Work-out";
-    [self updateData:self.firstTrip];
+    [self updateData:[TripFactory produceTripWithLogs:firstTrip]];
     self.dropdownMenuView.hidden = YES;
 }
 
 - (IBAction)secondWorkoutButtonPressed:(id)sender
 {
     self.dropdownMenuBarLabel.text = @"Second Work-out";
-    [self updateData:self.secondTrip];
+    [self updateData:[TripFactory produceTripWithLogs:secondTrip]];
     self.dropdownMenuView.hidden = YES;
 }
 
 - (IBAction)lastWorkoutButtonPressed:(id)sender
 {
     self.dropdownMenuBarLabel.text = @"Last Work-out";
-    [self updateData:self.lastTrip];
+    [self updateData:[TripFactory produceTripWithLogs:lastTrip]];
     self.dropdownMenuView.hidden = YES;
 }
 

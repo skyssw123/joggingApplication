@@ -28,10 +28,6 @@
 @property (weak, nonatomic) IBOutlet UIView *dropdownMenuBar;
 @property (weak, nonatomic) IBOutlet UIImageView *clock1ImageView;
 
-@property (strong, nonatomic) Trip* firstTrip;
-@property (strong, nonatomic) Trip* secondTrip;
-@property (strong, nonatomic) Trip* lastTrip;
-
 - (IBAction)firstWorkoutButtonPressed:(id)sender;
 - (IBAction)secondWorkoutButtonPressed:(id)sender;
 - (IBAction)lastWorkoutButtonPressed:(id)sender;
