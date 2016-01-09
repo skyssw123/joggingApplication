@@ -187,12 +187,9 @@
     
     
     Trip* trip = [TripFactory produceTripWithLocations:self.allLocs];
-    self.distanceValueLabel.text = [NSString stringWithFormat:@"%.2f", (trip.totalDistance / 1000.0) ];
-    self.caloriesValueLabel.text =  [NSString stringWithFormat:@"%.2f", trip.calories ];
-    self.speedValueLabel.text = [NSString stringWithFormat:@"%.2f", (trip.avgVelocity * 3600.0 / 1000.0) ];
+    [self updateLabelAndDrawRoute:trip];
     
-    if(KEEP_TRACK_USER_MODE)
-        [[[TripDrawer alloc]initWithTrip:trip withMapView:self.recordingMapViewController.mapView] keepDrawingLine];
+    
 //    CLLocationCoordinate2D coords[self.allLocs.count];
 //    int i = 0;
 //    for (CLLocation* object in self.allLocs) {
@@ -205,12 +202,20 @@
 //    [self.recordingMapViewController.mapView addOverlay:self.polyline];
 }
 
+- (void)updateLabelAndDrawRoute:(Trip*) trip
+{
+    self.distanceValueLabel.text = [NSString stringWithFormat:@"%.2f", (trip.totalDistance / 1000.0) ];
+    self.caloriesValueLabel.text =  [NSString stringWithFormat:@"%.2f", trip.calories ];
+    self.speedValueLabel.text = [NSString stringWithFormat:@"%.2f", (trip.avgVelocity * 3600.0 / 1000.0) ];
+    if(KEEP_TRACK_USER_MODE)
+        [[[TripDrawer alloc]initWithTrip:trip withMapView:self.recordingMapViewController.mapView] keepDrawingLine];
+}
+
 - (IBAction)startButtonClicked:(id)sender
 {
     //Stop button clicked
     if(self.isTripBeingRecorded)
     {
-        [self.locationManager stopUpdatingLocation];
         [self.startButton setTitle:@"Start Running" forState:UIControlStateNormal];
         
         self.startButton.backgroundColor = PRIMARY_BUTTON_COLOR;
@@ -225,6 +230,8 @@
         
         self.startButton.hidden = YES;
         self.saveDiscardButtonView.hidden = NO;
+        [self.locationManager stopUpdatingLocation];
+        [self updateLabelAndDrawRoute:[TripFactory produceTripWithLogs:currentTrip]];
     }
     
     //Start button clicked

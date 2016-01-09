@@ -31,6 +31,15 @@
         }
     }
     
+    else if(period == currentTrip)
+    {
+        fileName = DEFAULT_FILENAME;
+        if(![sharedInstance fileExists:fileName])
+        {
+            return nil;
+        }
+    }
+    
     if(![sharedInstance fileExists:fileName])
     {
         //error banner goes in here (No Data)
