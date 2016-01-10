@@ -796,17 +796,27 @@
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dct-F5-VUS">
                                 <rect key="frame" x="26" y="72" width="274" height="55"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRd-WT-fqi">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Weight" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRd-WT-fqi">
                                         <rect key="frame" x="116" y="17" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="0" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="b02-WM-tKM">
+                                        <rect key="frame" x="213" y="13" width="43" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="b02-WM-tKM" firstAttribute="height" secondItem="xRd-WT-fqi" secondAttribute="height" id="8kh-vn-vn0"/>
                                     <constraint firstAttribute="height" constant="44" id="9nf-ow-Otq"/>
-                                    <constraint firstItem="xRd-WT-fqi" firstAttribute="leading" secondItem="dct-F5-VUS" secondAttribute="leading" constant="10" id="TVa-9f-JSt"/>
+                                    <constraint firstItem="b02-WM-tKM" firstAttribute="width" secondItem="xRd-WT-fqi" secondAttribute="width" id="LWX-y0-FzW"/>
+                                    <constraint firstAttribute="trailing" secondItem="b02-WM-tKM" secondAttribute="trailing" constant="20" id="Mfs-Ah-Tij"/>
+                                    <constraint firstItem="xRd-WT-fqi" firstAttribute="leading" secondItem="dct-F5-VUS" secondAttribute="leading" constant="20" id="TVa-9f-JSt"/>
+                                    <constraint firstItem="b02-WM-tKM" firstAttribute="centerY" secondItem="dct-F5-VUS" secondAttribute="centerY" id="rLE-eW-xNF"/>
                                     <constraint firstItem="xRd-WT-fqi" firstAttribute="centerY" secondItem="dct-F5-VUS" secondAttribute="centerY" id="u2B-Xt-Re9"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
