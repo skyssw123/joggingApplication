@@ -5,24 +5,34 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--More-->
-        <scene sceneID="gFt-Ln-ja1">
+        <!--More View Controller-->
+        <scene sceneID="kaz-mj-xBA">
             <objects>
-                <viewController id="e9k-su-bIz" customClass="MoreViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="SX1-PE-6EH"/>
-                        <viewControllerLayoutGuide type="bottom" id="6OP-pB-bgd"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="sPP-hI-kC4" customClass="More">
+                <tableViewController id="sBQ-xw-XnA" customClass="MoreViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="RfF-QD-KVG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="More" id="Bac-c8-b02"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Mcv-SN-dRb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Fqv-0s-euc">
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fqv-0s-euc" id="Z7V-AJ-a9y">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="sBQ-xw-XnA" id="u4i-8s-X62"/>
+                            <outlet property="delegate" destination="sBQ-xw-XnA" id="J2O-lu-idG"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Xk7-vZ-XNE"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Obq-ZK-A1g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="627" y="1192"/>
+            <point key="canvasLocation" x="540" y="1192"/>
         </scene>
         <!--Run-->
         <scene sceneID="Sh5-pZ-Cei">
@@ -793,7 +803,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="e9k-su-bIz" kind="relationship" relationship="rootViewController" id="lty-zz-3yo"/>
+                        <segue destination="sBQ-xw-XnA" kind="relationship" relationship="rootViewController" id="AVS-8I-M4c"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6NX-l3-OCE" userLabel="First Responder" sceneMemberID="firstResponder"/>
