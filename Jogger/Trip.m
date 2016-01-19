@@ -131,8 +131,10 @@
         
         SpeedEvent* brakingEvent = [[SpeedEvent alloc]initWithLocationArray:brakingEventArray];
         [_brakingEvents addObject:brakingEvent];
-        
-        _avgVelocity = _totalDistance / _totalTimeInMiliSeconds * 1000.0;
+        if(_totalTimeInMiliSeconds <= 100.0)
+            _avgVelocity = 0.0;
+        else
+            _avgVelocity = _totalDistance / _totalTimeInMiliSeconds * 1000.0;
     }
     return self;
 }
