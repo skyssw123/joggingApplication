@@ -37,10 +37,7 @@
     [self.startButton setTitle:@"Start Running" forState:UIControlStateNormal];
     self.startButton.backgroundColor = PRIMARY_BUTTON_COLOR;
     self.startButton.tintColor = PRIMARY_TEXT_COLOR;
-    self.timeValueLabel.text = @"00 : 00 : 00.0";
-    self.distanceValueLabel.text = @"0";
-    self.caloriesValueLabel.text = @"0";
-    self.speedValueLabel.text = @"0";
+    [self setValueLabelZero];
     
     self.saveButton.backgroundColor = PRIMARY_BUTTON_COLOR;
     self.saveButton.tintColor = PRIMARY_TEXT_COLOR;
@@ -81,6 +78,14 @@
 //    recognizer.minimumPressDuration = 0.5;
 //    [self.mapView addGestureRecognizer:recognizer];
     //[self.startButton setEnabled:YES];
+}
+
+- (void)setValueLabelZero
+{
+    self.timeValueLabel.text = @"00 : 00 : 00.0";
+    self.distanceValueLabel.text = @"0";
+    self.caloriesValueLabel.text = @"0";
+    self.speedValueLabel.text = @"0";
 }
 
 - (void)timerExpired
@@ -150,6 +155,7 @@
     [scoringViewController updateData:[TripFactory produceTripWithLogs:lastTrip]];
     self.saveDiscardButtonView.hidden = YES;
     self.startButton.hidden = NO;
+    [self setValueLabelZero];
 }
 
 - (IBAction)discardButtonClicked:(id)sender
@@ -157,6 +163,7 @@
     [[FileLogging sharedInstance] deleteFile:DEFAULT_FILENAME withError:nil];
     self.saveDiscardButtonView.hidden = YES;
     self.startButton.hidden = NO;
+    [self setValueLabelZero];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
