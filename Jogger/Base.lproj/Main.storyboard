@@ -808,23 +808,23 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" keyboardDismissMode="onDrag" text="0" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="b02-WM-tKM">
-                                        <rect key="frame" x="177" y="13" width="43" height="30"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dIK-LU-QXU">
+                                        <rect key="frame" x="116" y="13" width="97" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="lbK-b8-4WP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="b02-WM-tKM" firstAttribute="height" secondItem="xRd-WT-fqi" secondAttribute="height" id="8kh-vn-vn0"/>
                                     <constraint firstAttribute="height" constant="44" id="9nf-ow-Otq"/>
-                                    <constraint firstItem="b02-WM-tKM" firstAttribute="width" secondItem="xRd-WT-fqi" secondAttribute="width" id="LWX-y0-FzW"/>
+                                    <constraint firstItem="yWD-0D-01g" firstAttribute="leading" secondItem="dIK-LU-QXU" secondAttribute="trailing" constant="13" id="Is5-Xx-f2G"/>
+                                    <constraint firstItem="dIK-LU-QXU" firstAttribute="centerY" secondItem="dct-F5-VUS" secondAttribute="centerY" id="OT3-YF-a4t"/>
                                     <constraint firstItem="xRd-WT-fqi" firstAttribute="leading" secondItem="dct-F5-VUS" secondAttribute="leading" constant="20" id="TVa-9f-JSt"/>
                                     <constraint firstItem="yWD-0D-01g" firstAttribute="centerY" secondItem="dct-F5-VUS" secondAttribute="centerY" id="Td7-PA-eVX"/>
-                                    <constraint firstItem="yWD-0D-01g" firstAttribute="leading" secondItem="b02-WM-tKM" secondAttribute="trailing" constant="1" id="Wmg-2h-PbA"/>
                                     <constraint firstAttribute="trailing" secondItem="yWD-0D-01g" secondAttribute="trailing" constant="20" id="jd2-FD-ZsM"/>
-                                    <constraint firstItem="b02-WM-tKM" firstAttribute="centerY" secondItem="dct-F5-VUS" secondAttribute="centerY" id="rLE-eW-xNF"/>
                                     <constraint firstItem="xRd-WT-fqi" firstAttribute="centerY" secondItem="dct-F5-VUS" secondAttribute="centerY" id="u2B-Xt-Re9"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -842,6 +842,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="More" id="p0s-HQ-6oY"/>
+                    <connections>
+                        <outlet property="weightValueTextField" destination="dIK-LU-QXU" id="l9L-ET-NQr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XRL-dD-jEf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

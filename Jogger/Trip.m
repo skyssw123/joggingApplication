@@ -11,6 +11,7 @@
 @implementation Trip
 -(id)initWithLocations:(NSMutableArray*)locs
 {
+    double weight = [[NSUserDefaults standardUserDefaults] doubleForKey:@"weightDOuble"];
     self = [super init];
     if(self)
     {
@@ -124,6 +125,7 @@
                 distance = 0;
             }
             _totalDistance += distance;
+            _calories = 0.67 * weight * _totalDistance;
             prevLoc = currentLoc;
         }
         SpeedEvent* speedEvent = [[SpeedEvent alloc]initWithLocationArray:speedEventArray];

@@ -16,14 +16,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.weightValueTextField.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"weightString"];
+    if([self.weightValueTextField.text isEqualToString:@""])
+        self.weightValueTextField.text = @"0";
     // Do any additional setup after loading the view.
+    self.weightValueTextField.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
+    if (theTextField == self.weightValueTextField) {
+        [theTextField resignFirstResponder];
+        NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
+        [userDefaults setObject:theTextField.text forKey:@"weightString"];
+        [userDefaults setDouble:[theTextField.text doubleValue] forKey:@"weightDouble"];
+    }
+    return YES;
+}
 /*
 #pragma mark - Navigation
 

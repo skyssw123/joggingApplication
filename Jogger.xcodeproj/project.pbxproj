@@ -204,10 +204,10 @@
 				274F85BD1C1BD0E200D83E5A /* MapViewController.m */,
 				274F85CA1C1BE01900D83E5A /* ScoringViewController.h */,
 				274F85CB1C1BE01900D83E5A /* ScoringViewController.m */,
-				274F85CF1C2CD24600D83E5A /* MoreViewController.h */,
-				274F85D01C2CD24600D83E5A /* MoreViewController.m */,
 				274F85D41C2D06BD00D83E5A /* RecordingMapViewController.h */,
 				274F85D51C2D06BD00D83E5A /* RecordingMapViewController.m */,
+				274F85CF1C2CD24600D83E5A /* MoreViewController.h */,
+				274F85D01C2CD24600D83E5A /* MoreViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";

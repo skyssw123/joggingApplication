@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MoreViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet UITextField *weightValueTextField;
 @end
