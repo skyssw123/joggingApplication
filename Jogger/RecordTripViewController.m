@@ -153,6 +153,7 @@
     UINavigationController* navigationController = [tabBarController.childViewControllers objectAtIndex:0];
     ScoringViewController* scoringViewController = [navigationController.childViewControllers objectAtIndex:0];
     [scoringViewController updateData:[TripFactory produceTripWithLogs:lastTrip]];
+    scoringViewController.dropdownMenuBarLabel.text = @"Last Work-out";
     self.saveDiscardButtonView.hidden = YES;
     self.startButton.hidden = NO;
     [self setValueLabelZero];
