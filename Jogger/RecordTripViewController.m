@@ -225,6 +225,9 @@
     if(self.isTripBeingRecorded)
     {
         [self.startButton setTitle:@"Start Running" forState:UIControlStateNormal];
+        FileLogging* sharedInstance = [FileLogging sharedInstance];
+        if([sharedInstance fileExists:DEFAULT_FILENAME])
+            [sharedInstance deleteFile:DEFAULT_FILENAME withError:nil];
         
         self.startButton.backgroundColor = PRIMARY_BUTTON_COLOR;
         [self.timer invalidate];
