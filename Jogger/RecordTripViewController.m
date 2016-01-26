@@ -225,9 +225,6 @@
     if(self.isTripBeingRecorded)
     {
         [self.startButton setTitle:@"Start Running" forState:UIControlStateNormal];
-        FileLogging* sharedInstance = [FileLogging sharedInstance];
-        if([sharedInstance fileExists:DEFAULT_FILENAME])
-            [sharedInstance deleteFile:DEFAULT_FILENAME withError:nil];
         
         self.startButton.backgroundColor = PRIMARY_BUTTON_COLOR;
         [self.timer invalidate];
@@ -249,6 +246,10 @@
     else
     {
         [self removeAllPinsButUserLocation];
+        FileLogging* sharedInstance = [FileLogging sharedInstance];
+        if([sharedInstance fileExists:DEFAULT_FILENAME])
+            [sharedInstance deleteFile:DEFAULT_FILENAME withError:nil];
+        
         self.startDate = [NSDate date];
         NSDateFormatter *df = [[NSDateFormatter alloc]init];
         [df setDateFormat:@"HH:mm a, MMM dd, yyyy"];
